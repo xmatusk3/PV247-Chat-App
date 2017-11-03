@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run Mocha tests" type="mocha-javascript-test-runner" factoryName="Mocha">
+    <node-interpreter>project</node-interpreter>
+    <node-options />
+    <working-directory>$PROJECT_DIR$</working-directory>
+    <pass-parent-env>true</pass-parent-env>
+    <envs>
+      <env name="NODE_ENV" value="test" />
+    </envs>
+    <ui>bdd</ui>
+    <extra-mocha-options>--compilers ts:ts-node/register,js:babel-core/register -r ./test/unit/init.js</extra-mocha-options>
+    <test-kind>PATTERN</test-kind>
+    <test-pattern>test/**/*.test.js test/**/*.test.ts</test-pattern>
+    <method />
+  </configuration>
+</component>

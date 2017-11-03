@@ -1,0 +1,1 @@
+export const DEMO_GOT_CLICKED = 'DEMO_GOT_CLICKED';

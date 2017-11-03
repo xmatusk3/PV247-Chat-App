@@ -1,0 +1,52 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CheckEmptyScriptTag" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ConstantConditionalExpressionJS" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ConstantIfStatementJS" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ES6ModulesDependencies" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="Eslint" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="12">
+            <item index="0" class="java.lang.String" itemvalue="className" />
+            <item index="1" class="java.lang.String" itemvalue="key" />
+            <item index="2" class="java.lang.String" itemvalue="ref" />
+            <item index="3" class="java.lang.String" itemvalue="classname" />
+            <item index="4" class="java.lang.String" itemvalue="htmlfor" />
+            <item index="5" class="java.lang.String" itemvalue="value" />
+            <item index="6" class="java.lang.String" itemvalue="aria-hidden" />
+            <item index="7" class="java.lang.String" itemvalue="data-balloon" />
+            <item index="8" class="java.lang.String" itemvalue="data-balloon-pos" />
+            <item index="9" class="java.lang.String" itemvalue="error" />
+            <item index="10" class="java.lang.String" itemvalue="button-icon-class" />
+            <item index="11" class="java.lang.String" itemvalue="button-tooltip" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="JSEqualityComparisonWithCoercion.TS" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="JSLastCommaInArrayLiteral" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSLastCommaInObjectLiteral" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSMethodCanBeStatic" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="JSUnfilteredForInLoop" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="false" />
+      <option name="processComments" value="false" />
+    </inspection_tool>
+    <inspection_tool class="Stylelint" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="TsLint" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="TypeScriptAccessibilityCheck" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="TypeScriptPreferShortImport" enabled="true" level="TYPO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryLocalVariableJS" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
+      <option name="m_ignoreAnnotatedVariables" value="false" />
+    </inspection_tool>
+    <inspection_tool class="UnterminatedStatementJS" enabled="true" level="ERROR" enabled_by_default="true">
+      <option name="ignoreSemicolonAtEndOfBlock" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
