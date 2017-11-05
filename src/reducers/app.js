@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { incresdNumbah } from './demoDirectory/demoReducer';
+import { isAuthenticating } from './shared/isAuthenticating';
+//import { shared } from './shared/shared';
+//import { incresdNumbah } from './demoDirectory/demoReducer';
 
 export const app = combineReducers({
-    incresdNumbah,
+    isAuthenticating,
 });
