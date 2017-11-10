@@ -30,7 +30,8 @@ bower_components
 .lock-wscript
 
 # Compiled
-*/build
+build/
+build_zaloha/
 
 # Dependency directories
 node_modules/
