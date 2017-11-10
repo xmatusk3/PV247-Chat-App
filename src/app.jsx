@@ -1,4 +1,6 @@
-import { DemoComponent } from './containers-redux/demo/demoComponent.jsx';
+//import { DemoComponent } from './containers-redux/demo/demoComponent.jsx';
+import './utils/global-styles.js';
+import { LoginLayout } from './components/login/LoginLayout.jsx';
 
 require.context('../static/', true);
 import ReactDom from 'react-dom';
@@ -14,7 +16,7 @@ const store = createStore(history);
 ReactDom.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <DemoComponent />
+            <LoginLayout />
         </ConnectedRouter>
     </Provider>,
     document.getElementById('app'));
