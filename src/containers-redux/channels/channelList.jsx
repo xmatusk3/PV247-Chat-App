@@ -1,14 +1,25 @@
 import { connect } from 'react-redux';
 import { uuid } from '../../utils/uuidGenerator';
-import { Channel } from '../../components/channels/channel.jsx';
-import List from 'immutable';
+import { ChannelList } from '../../components/channels/channelList.jsx';
+import Immutable from 'immutable';
+import { openAddNewChannel } from '../../actions/channels/actionCreators';
 
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
     id: uuid(),
-    list: new List()
+    list: Immutable.List([
+        {id: uuid(), name: 'riba'},
+        {id: uuid(), name: 'ris'},
+        {id: uuid(), name: 'risavi'},
+        {id: uuid(), name: 'jozko'}
+    ])
 });
 
-const enhancer = connect(mapStateToProps);
-const connectedComponent = enhancer(Channel);
+const mapDispatchToProps = (dispatch) => ({
+    onAddChannelClick: () => dispatch(openAddNewChannel()),
+});
 
-export { connectedComponent as Channel };
+
+const enhancer = connect(mapStateToProps, mapDispatchToProps);
+const connectedComponent = enhancer(ChannelList);
+
+export { connectedComponent as ChannelList };

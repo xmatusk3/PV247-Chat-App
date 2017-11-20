@@ -4,10 +4,12 @@ import {
     DARK_BLUE_CHANNEL_ITEM_BACKGROUND
 } from '../../../constants/cssColours';
 
-export const Channel = styled.div`
+export const ChannelDiv = styled.div`
     background-color: ${DARK_BLUE_CHANNEL_ITEM_BACKGROUND};
     height: 35px;
     width: 100%;
     color: ${DARK_BLUE_CHANNEL_FONT};
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
