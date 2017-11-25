@@ -1,42 +1,56 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { uuid } from '../../utils/uuidGenerator';
-import { StartChattingButton } from './LoginForm.styles';
-import { FormGroup } from './LoginForm.styles';
-import { Input } from './LoginForm.styles';
-import { InputDiv } from './LoginForm.styles';
-import { ButtonWrap } from './LoginForm.styles';
-import { InputGroupAddon } from './LoginForm.styles';
-import { MailIcon } from './LoginForm.styles';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import { authenticateUser } from '../../actions/shared/actionCreators';
 
-class LoginForm extends React.PureComponent {
+import { StartChattingButton, FormGroup, Input, InputDiv, ButtonWrap, InputGroupAddon, MailIcon } from './LoginForm.styles';
+
+class LoginForm extends React.Component {
     static propTypes = {
-        onSubmit: PropTypes.func.isRequired,
+        authenticateUser: PropTypes.func.isRequired,
+        handleSubmit: PropTypes.func.isRequired,
+        from: PropTypes.object.isRequired
     };
 
-    componentWillMount() {
-        this.setState(() => ({ componentId: uuid() }));
+    onSubmit(values) {
+        this.props.authenticateUser(values);
     }
 
-    //<span className="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+    renderEmail(field) {
+        const {meta: { touched, error} } = field;
+        // eslint-disable-next-line
+        console.log(field);
+        return (
+            <FormGroup>
+                <InputDiv>
+                    <InputGroupAddon>
+                        <MailIcon />
+                    </InputGroupAddon>
+                    <Input
+                        placeholder="email@mail.com"
+                        type="text"
+                        {...field.input}
+                    />
+                    <div>
+                        {touched ? error : ''}
+                    </div>
+                </InputDiv>
+            </FormGroup>
+        );
+    }
+
     render() {
-        const { componentId } = this.state;
-        const loginId = `${componentId}_login`;
+        const { handleSubmit } = this.props;
 
         return (
-            <form>
-                <FormGroup>
-                    <InputDiv>
-                        <InputGroupAddon>
-                            <MailIcon />
-                        </InputGroupAddon>
-                        <Input placeholder="email@mail.com"
-                               type="email"
-                               id={loginId} />
-                    </InputDiv>
-                </FormGroup>
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                <Field
+                    name="email"
+                    component={this.renderEmail}
+                />
                 <ButtonWrap>
-                    <StartChattingButton onClick={this.props.onSubmit}>
+                    <StartChattingButton type="submit">
                         Start chatting
                     </StartChattingButton>
                 </ButtonWrap>
@@ -45,6 +59,28 @@ class LoginForm extends React.PureComponent {
     }
 }
 
-//StartChattingButton  className="btn btn-success btn-lg"
+const validate = (values) => {
+    const errors = {};
 
-export { LoginForm };
+    //eslint-disable-next-line
+    console.log('I am inside validation ', values.email);
+
+    if(!values.email) {
+        //eslint-disable-next-line
+        console.log('Email is: ', values.email);
+        errors.email = 'Enter an email!';
+    }
+
+    if( !(/.+@.+\.com/.test(values.email))) {
+        errors.email = 'Please enter an email with pattern: something@something.something';
+    }
+
+    return errors;
+};
+
+export default reduxForm({
+    validate,
+    form: 'EmailLogin'
+})(
+    connect(null, {authenticateUser})(LoginForm)
+);

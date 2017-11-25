@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 import { ChannelListDiv,  } from './__styles__/channelList.styles.jsx';
 import { Channel } from './channel.jsx';
-import {setIsBeingEdited} from 'actions/channels/actionCreators.js';
+import {setIsBeingEdited, fetchChannels} from 'actions/channels/actionCreators.js';
 
 const FontAwesome = require('react-fontawesome');
 
@@ -15,7 +15,7 @@ class ChannelList extends React.PureComponent {
     };
 
     render() {
-        let channels = this.props.list.map(item =>
+        const channels = this.props.list.map(item =>
             <Channel key={item.id} name={item.name} />
         );
 
@@ -38,13 +38,12 @@ class ChannelList extends React.PureComponent {
 
 export default connect(
     (state) => {
-        console.log(state); // eslint-disable-line no-console
-
         return {
             list: state.channels.channelList,
         };
     },
     (dispatch) => ({
-        setIsBeingEdited: (payload) => dispatch(setIsBeingEdited(payload)),
+        fetchChannels: dispatch(fetchChannels),
+        setIsBeingEdited: (payload) => dispatch(setIsBeingEdited(payload))
     })
 )(ChannelList);

@@ -46,6 +46,7 @@ module.exports = {
             path.join(__dirname, 'src'),
             'node_modules',
         ],
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
@@ -100,5 +101,5 @@ module.exports = {
         ]
     },
     devtool: env === productionEnv ? '' : 'source-map',
-    plugins: plugins
+    plugins: plugins,
 };

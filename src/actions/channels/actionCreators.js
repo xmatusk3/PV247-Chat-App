@@ -25,12 +25,6 @@ export const setNewChannelName = (payload) => ({
     payload,
 });
 
-// TOTO JE THUNK
-//
-// export const addChannel = () => async (dispatch, getState) => {
-//     const state = getState();
-//
-//     await apiPutNewChannel(buildChannelData());
-//
-//     dispatch({type: actionTypes.ADD_CHANNEL, payload: buildChannelData()});
-// };
+export const fetchChannels = () => ({
+    type: actionTypes.FETCH_CHANNELS,
+});

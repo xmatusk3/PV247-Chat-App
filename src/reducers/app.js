@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { isAuthenticating } from './shared/isAuthenticating';
-import { channelReducers } from './channels/channelReducers';
-//import { shared } from './shared/shared';
-//import { incresdNumbah } from './demoDirectory/demoReducer';
+import authenticationReducers from './shared/authenticationReducers';
+import channelReducers from './channels/channelReducers';
 
-export const app = combineReducers({
-    isAuthenticating,
+const app = combineReducers({
+    auth: authenticationReducers,
     channels: channelReducers,
 });
+
+export default app;
