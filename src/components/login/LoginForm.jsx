@@ -8,19 +8,18 @@ import { StartChattingButton, FormGroup, Input, InputDiv, ButtonWrap, InputGroup
 
 class LoginForm extends React.Component {
     static propTypes = {
+        authError: PropTypes.string.isRequired,
         authenticateUser: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
         from: PropTypes.object.isRequired
     };
 
-    onSubmit(values) {
-        this.props.authenticateUser(values);
+    onSubmit({ email }) {
+        this.props.authenticateUser(email);
     }
 
     renderEmail(field) {
         const {meta: { touched, error} } = field;
-        // eslint-disable-next-line
-        console.log(field);
         return (
             <FormGroup>
                 <InputDiv>
@@ -31,6 +30,7 @@ class LoginForm extends React.Component {
                         placeholder="email@mail.com"
                         type="text"
                         {...field.input}
+                        value={field.input.value}
                     />
                     <div>
                         {touched ? error : ''}
@@ -45,6 +45,7 @@ class LoginForm extends React.Component {
 
         return (
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                {this.props.authError}
                 <Field
                     name="email"
                     component={this.renderEmail}
@@ -59,19 +60,14 @@ class LoginForm extends React.Component {
     }
 }
 
-const validate = (values) => {
+const validate = ({ email }) => {
     const errors = {};
 
-    //eslint-disable-next-line
-    console.log('I am inside validation ', values.email);
-
-    if(!values.email) {
-        //eslint-disable-next-line
-        console.log('Email is: ', values.email);
+    if(!email) {
         errors.email = 'Enter an email!';
     }
 
-    if( !(/.+@.+\.com/.test(values.email))) {
+    if( !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]+$/i.test(email)) {
         errors.email = 'Please enter an email with pattern: something@something.something';
     }
 
@@ -82,5 +78,5 @@ export default reduxForm({
     validate,
     form: 'EmailLogin'
 })(
-    connect(null, {authenticateUser})(LoginForm)
+    connect((state) => ({ authError: state.auth.authResult.error }), {authenticateUser})(LoginForm)
 );

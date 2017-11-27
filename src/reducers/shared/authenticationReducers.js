@@ -19,12 +19,18 @@ const isAuthenticating = (prevState = false, action) => {
     }
 };
 
-const isAuthenticated = (state = false, action) => {
+const resolveAuthentication = (state = {token: '', error: ''}, action) => {
     switch (action.type) {
         case SHARED_RECEIVE_TOKEN:
-            return true;
+            return {
+                token: action.payload,
+                error: ''
+            };
         case SHARED_AUTHENTICATION_FAILED:
-            return false;
+            return {
+                token: '',
+                error: action.payload
+            };
         default:
             return state;
     }
@@ -32,5 +38,5 @@ const isAuthenticated = (state = false, action) => {
 
 export default combineReducers({
     isAuthenticating,
-    isAuthenticated
+    authResult: resolveAuthentication
 });
