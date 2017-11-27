@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { authenticateUser } from '../../actions/shared/actionCreators';
+import validateEmail from '../../utils/validateEmail';
 
 import { StartChattingButton, FormGroup, Input, InputDiv, ButtonWrap, InputGroupAddon, MailIcon } from './LoginForm.styles';
 
@@ -30,7 +31,6 @@ class LoginForm extends React.Component {
                         placeholder="email@mail.com"
                         type="text"
                         {...field.input}
-                        value={field.input.value}
                     />
                     <div>
                         {touched ? error : ''}
@@ -67,7 +67,7 @@ const validate = ({ email }) => {
         errors.email = 'Enter an email!';
     }
 
-    if( !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]+$/i.test(email)) {
+    if( !validateEmail(email)) {
         errors.email = 'Please enter an email with pattern: something@something.something';
     }
 

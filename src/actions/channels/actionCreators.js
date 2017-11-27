@@ -20,10 +20,17 @@ export const addChannel = () => ({
     type: actionTypes.ADD_CHANNEL,
 });
 
-export const setNewChannelName = (payload) => ({
-    type: actionTypes.SET_NEW_CHANNEL_NAME,
-    payload,
-});
+export const setNewChannelName = (payload) =>
+    (dispatch) => {
+        dispatch({
+            type: actionTypes.SET_NEW_CHANNEL_NAME,
+            payload
+        });
+        dispatch({
+            type: actionTypes.SET_EDITOR_OPEN,
+            payload: false
+        });
+    };
 
 export const fetchChannels = () => ({
     type: actionTypes.FETCH_CHANNELS,

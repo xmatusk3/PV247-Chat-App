@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import { Field, reduxForm } from 'redux-form';
 import {addChannel, setNewChannelName} from 'actions/channels/actionCreators';
 
 class EditedChannel extends React.PureComponent{
@@ -8,26 +9,62 @@ class EditedChannel extends React.PureComponent{
         newChannelName: PropTypes.string.isRequired,
         onAddChannel: PropTypes.func.isRequired,
         setNewChannelName: PropTypes.func.isRequired,
+        handleSubmit: PropTypes.func.isRequired
     };
 
+    renderChannelName(field) {
+        const {meta: { touched, error} } = field;
+
+        return(
+            <div>
+                <label>Channel name:</label>
+                <input
+                    placeholder="Channel name"
+                    type="text"
+                    {...field.input}
+                />
+                <div>
+                    {touched ? error : ''}
+                </div>
+            </div>
+        );
+    }
+
     render() {
-        const {newChannelName, onAddChannel, setNewChannelName} = this.props;
+        const {handleSubmit} = this.props;
 
         return (
             <div>
-                <input type="text" value={newChannelName} onChange={setNewChannelName}/>
-                <button onClick={onAddChannel}>Add Channel</button>
+                <form onSubmit={handleSubmit(this.setNewChannelName)}>
+                    <Field
+                        name="channelName"
+                        component={this.renderChannelName}
+                    />
+                    <button type="submit">Add Channel</button>
+                </form>
             </div>
         );
     }
 }
 
-export default connect(
-    (state) => ({
-        newChannelName: state.channels.ui.newChannelName,
-    }),
-    (dispatch) => ({
-        onAddChannel: () => dispatch(addChannel),
-        setNewChannelName: (e) => dispatch(setNewChannelName(e.target.value)),
-    })
-)(EditedChannel);
+const validate = ({ channelName }) => {
+    const errors = {};
+
+    if (!channelName) {
+        errors.channelName = 'Enter a nonempty channel name!';
+    }
+};
+
+export default reduxForm({
+    validate,
+    form: 'EditChannelForm'
+})(
+    connect(
+        (state) => ({
+            newChannelName: state.channels.ui.newChannelName,
+        }),
+        (dispatch) => ({
+            onAddChannel: () => dispatch(addChannel),
+            setNewChannelName: ({channelName}) => dispatch(setNewChannelName(channelName)),
+        }))(EditedChannel)
+);

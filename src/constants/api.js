@@ -3,7 +3,7 @@ const API_APP_ID = '7ffcaf56-d36a-4a93-a8d9-b2c04571c10a';
 
 export const API_AUTH_URI = `${API_URI}/auth`;
 export const API_FILE_URI = `${API_URI}/file`;
-export const createApiUserUri = (userEmail) => `${API_URI}/${API_APP_ID}/user/${userEmail}`;
+export const createApiUserUri = (userEmail) => encodeURIComponent(`${API_URI}/${API_APP_ID}/user/"${userEmail}"`);
 export const createApiFilerUri = (fileId) => `${API_URI}//file/${fileId}/download-link`;
 
 export const USER_EMAIL = 'admin@admin.admin';

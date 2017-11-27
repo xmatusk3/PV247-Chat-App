@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as actionTypes from '../../constants/actionTypes';
-import {API_AUTH_URI} from '../../constants/api';
+import { createApiUserUri ,API_AUTH_URI} from '../../constants/api';
 import { push } from 'connected-react-router';
 
 export const authenticateUser = (email) =>
@@ -16,8 +16,9 @@ export const authenticateUser = (email) =>
         return request
             .then((token) => {
                 dispatch(receiveValidToken(token));
-                dispatch(push('/chat'));
             })
+            .then(() =>
+                dispatch(fetchLoggedUser(email, dispatch)))
             .catch(() => {
                 dispatch(failAuthentication());
             });
@@ -33,6 +34,28 @@ export const receiveValidToken = ({data}) => ({
 });
 
 export const failAuthentication = () => ({
-    type: actionTypes.SHARED_AUTHENTICATION_FAILED,
+    type: actionTypes.SHARED_LOGIN_FAILED,
     payload: 'No user is registered under submitted email.'
 });
+
+const fetchLoggedUser = (email) =>
+    (dispatch) => {
+        const headers = { 'Accept': 'application/json' };
+        const request = axios.get(createApiUserUri(email), headers);
+
+        return request
+            .then((user) => {
+                dispatch({
+                    type: actionTypes.SHARED_LOGIN_SUCCESS,
+                    payload: user
+                });
+                dispatch(push('/chat'));
+            })
+            .catch(() => {
+                dispatch({
+                    type: actionTypes.SHARED_LOGIN_FAILED,
+                    payload: 'Could not login, please try again.'
+                });
+            });
+    };
+
