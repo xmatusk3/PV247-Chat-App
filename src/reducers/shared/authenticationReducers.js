@@ -37,7 +37,7 @@ const resolveAuthentication = (state = {token: '', error: ''}, action) => {
     }
 };
 
-const saveLoggedUser = (state = {}, action) => {
+const saveLoggedUser = (state = {email: '', customData: ''}, action) => {
     switch (action.type) {
         case SHARED_LOGIN_SUCCESS:
             return action.payload;

@@ -1,14 +1,18 @@
+import axios from 'axios';
 import { API_AUTH_URI } from '../../constants/api';
-import { validateResponse } from './validateResponse';
 
-export const fetchAuthToken = (userEmail) => fetch(
-    API_AUTH_URI,
-    {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        },
-        body: JSON.stringify(userEmail)
-    })
-    .then(validateResponse);
+export const fetchAuthToken = (userEmail) =>
+    axios.post(
+        API_AUTH_URI,
+        `"${userEmail}"`,
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+        .catch(errorMessage => {
+            const error = new Error(errorMessage);
+
+            throw error;
+        });

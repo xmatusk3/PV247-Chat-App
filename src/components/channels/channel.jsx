@@ -6,7 +6,6 @@ export class Channel extends React.PureComponent {
     static propTypes = {
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
-        ownerId: PropTypes.string.isRequired
     };
 
     render() {

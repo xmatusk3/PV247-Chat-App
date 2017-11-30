@@ -16,7 +16,7 @@ class ChannelList extends React.PureComponent {
 
     render() {
         const channels = this.props.list.map(item =>
-            <Channel key={item.id} name={item.name} />
+            <Channel key={item.id} name={item.name} ownerId={item.ownerId} id={item.id} users={item.users} />
         );
 
         return (

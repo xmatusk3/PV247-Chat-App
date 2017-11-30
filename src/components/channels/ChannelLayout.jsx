@@ -12,14 +12,15 @@ class ChannelLayout extends React.PureComponent {
         user: PropTypes.string.isRequired
     };
 
+
     render() {
         return (
             <div>
+                <h3>{`Currently logged as ${this.props.user}`}</h3>
                 <ChannelLayoutDiv>
                     <ChannelList />
                     {this.props.isBeingEdited ?  <EditedChannel /> : <p>Risko zere hovna a mu chuci</p> }
                 </ChannelLayoutDiv>
-                <h3>{`Currently logged as ${this.props.user}`}</h3>
             </div>
         );
     }
@@ -28,7 +29,7 @@ class ChannelLayout extends React.PureComponent {
 export default connect(
     (state) => ({
         isBeingEdited: state.channels.ui.isBeingEdited,
-        user: state.auth.user
+        user: state.auth.user.email
     }),
-    null,
+    null
 )(ChannelLayout);

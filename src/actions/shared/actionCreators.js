@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as actionTypes from '../../constants/actionTypes';
-import { createApiUserUri ,API_AUTH_URI} from '../../constants/api';
+import { fetchApiUserUri ,API_AUTH_URI} from '../../constants/api';
 import { push } from 'connected-react-router';
 
 export const authenticateUser = (email) =>
@@ -16,9 +16,8 @@ export const authenticateUser = (email) =>
         return request
             .then((token) => {
                 dispatch(receiveValidToken(token));
+                dispatch(fetchLoggedUser(email, token));
             })
-            .then(() =>
-                dispatch(fetchLoggedUser(email, dispatch)))
             .catch(() => {
                 dispatch(failAuthentication());
             });
@@ -38,16 +37,19 @@ export const failAuthentication = () => ({
     payload: 'No user is registered under submitted email.'
 });
 
-const fetchLoggedUser = (email) =>
+const fetchLoggedUser = (email, {data}) =>
     (dispatch) => {
-        const headers = { 'Accept': 'application/json' };
-        const request = axios.get(createApiUserUri(email), headers);
+        const headers = {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${data}`
+        };
+        const request = axios.get(fetchApiUserUri(email), {headers});
 
         return request
-            .then((user) => {
+            .then((data) => {
                 dispatch({
                     type: actionTypes.SHARED_LOGIN_SUCCESS,
-                    payload: user
+                    payload: data.data
                 });
                 dispatch(push('/chat'));
             })
