@@ -2,7 +2,6 @@ import {
     SHARED_LOGIN_FAILED,
     SHARED_AUTHENTICATION_STARTED,
     SHARED_RECEIVE_TOKEN,
-    SHARED_LOGIN_SUCCESS,
 } from '../../constants/actionTypes';
 import { combineReducers } from 'redux';
 
@@ -37,17 +36,7 @@ const resolveAuthentication = (state = {token: '', error: ''}, action) => {
     }
 };
 
-const saveLoggedUser = (state = {email: '', customData: ''}, action) => {
-    switch (action.type) {
-        case SHARED_LOGIN_SUCCESS:
-            return action.payload;
-        default:
-            return state;
-    }
-};
-
 export default combineReducers({
     isAuthenticating,
     authResult: resolveAuthentication,
-    user: saveLoggedUser
 });

@@ -26,6 +26,8 @@ const channelListReducer = (state = Immutable.List(), {type, payload}) => {
     switch (type) {
         case Actions.ADD_CHANNEL:
             return state.push(payload);
+        case Actions.UPDATE_CHANNELS:
+            return payload;
         default:
             return state;
     }

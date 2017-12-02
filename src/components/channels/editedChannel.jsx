@@ -1,33 +1,35 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {List} from 'immutable';
 import { Field, reduxForm } from 'redux-form';
 import {addNewChannel} from 'actions/channels/actionCreators';
 
 class EditedChannel extends React.PureComponent{
     static propTypes = {
         newChannelName: PropTypes.string.isRequired,
-        setNewChannelName: PropTypes.func.isRequired,
+        addNewChannel: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
         userId: PropTypes.string.isRequired,
-        serverError: PropTypes.string.isRequired
+        serverError: PropTypes.string.isRequired,
+        users: PropTypes.instanceOf(List)
     };
 
-    onSubmit({ channelName }) {
-        this.props.setNewChannelName(channelName, this.props.userId);
+    onSubmit(formData) {
+        this.props.addNewChannel(formData, this.props.userId);
     }
 
-    renderChannelName(field) {
+    renderField(field) {
         const {meta: { touched, error} } = field;
 
         return(
             <div>
-                <label>Channel name:</label>
+                <label>{field.type === 'text' ? field.label : ''}</label>
                 <input
-                    placeholder="Channel name"
-                    type="text"
                     {...field.input}
+                    type={field.type}
                 />
+                <label>{field.type === 'checkbox' ? field.label : ''}</label>
                 <div>
                     {touched ? error : ''}
                 </div>
@@ -38,14 +40,31 @@ class EditedChannel extends React.PureComponent{
     render() {
         const {handleSubmit} = this.props;
 
+        const users = this.props.users
+            .filter((user) => user.email !== this.props.userId)
+            .map((user) =>
+                <Field
+                    label={user.email}
+                    key={user.email}
+                    name={user.email}
+                    value={user.email}
+                    type="checkbox"
+                    component={this.renderField}
+                />);
+
         return (
             <div>
                 {this.props.serverError}
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                     <Field
                         name="channelName"
-                        component={this.renderChannelName}
+                        label="Channel name:"
+                        type="text"
+                        placeholder="Channel name"
+                        component={this.renderField}
                     />
+                    <p>Add users to channel:</p>
+                    {users}
                     <button type="submit">Add Channel</button>
                 </form>
             </div>
@@ -70,10 +89,11 @@ export default reduxForm({
     connect(
         (state) => ({
             newChannelName: state.channels.ui.newChannelName,
-            userId: state.auth.user.email,
-            serverError: state.channels.ui.error
+            userId: state.users.user.email,
+            serverError: state.channels.ui.error,
+            users: state.users.all
         }),
         (dispatch) => ({
-            setNewChannelName: (newChannelData, user) => dispatch(addNewChannel(newChannelData, user)),
+            addNewChannel: (newChannelData, user) => dispatch(addNewChannel(newChannelData, user)),
         }))(EditedChannel)
 );

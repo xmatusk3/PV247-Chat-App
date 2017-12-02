@@ -1,8 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import ChannelList from 'components/channels/channelList.jsx';
 import {connect} from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
+import ChannelList from 'components/channels/channelList.jsx';
 import EditedChannel from 'components/channels/editedChannel.jsx';
 import { ChannelLayoutDiv } from './__styles__/channelLayout.styles.jsx';
 
@@ -12,8 +13,15 @@ class ChannelLayout extends React.PureComponent {
         user: PropTypes.string.isRequired
     };
 
+    isLoggedIn() {
+        return this.props.user !== '';
+    }
 
     render() {
+        if (!this.isLoggedIn()) {
+            return <Redirect to='/' />;
+        }
+
         return (
             <div>
                 <h3>{`Currently logged as ${this.props.user}`}</h3>
@@ -29,7 +37,7 @@ class ChannelLayout extends React.PureComponent {
 export default connect(
     (state) => ({
         isBeingEdited: state.channels.ui.isBeingEdited,
-        user: state.auth.user.email
+        user: state.users.user.email
     }),
     null
 )(ChannelLayout);

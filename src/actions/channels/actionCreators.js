@@ -4,6 +4,7 @@ import {
     API_APP_URI,
 } from '../../constants/api';
 import { fetchAuthToken } from '../../utils/api/fetchAuthToken';
+import parseChannelResponse from '../../utils/api/parseChannelResponse';
 
 export const updateChannel = (item) => ({
     type: actionTypes.CHANNEL_UPDATE_CHANNEL,
@@ -21,18 +22,26 @@ export const setIsBeingEdited = (payload) => ({
     payload,
 });
 
-export const addNewChannel = (channelName, userID) =>
+export const addNewChannel = (data, userID) =>
     (dispatch) => {
+        const userIds = [];
+
+        for (const channel in data) {
+            if (channel !== 'channelName') {
+                userIds.push(`${channel}`);
+            }
+        }
+
         const customData = {
-            'ownerIds': [userID],
-            'userIds': []
+            ownerIds: [userID],
+            userIds: userIds
         };
 
         const requestData = [{
             'path': '/channels/-',
             'op': 'add',
             'value': {
-                'name': channelName,
+                'name': data.channelName,
                 'customData': JSON.stringify(customData)
             }
         }];
@@ -51,7 +60,7 @@ export const addNewChannel = (channelName, userID) =>
             .then((response) => {
                 dispatch({
                     type: actionTypes.ADD_CHANNEL,
-                    payload: response.data['channels'][response.data['channels'].length - 1]
+                    payload: parseChannelResponse(response.data['channels'][response.data['channels'].length - 1])
                 });
                 dispatch({
                     type: actionTypes.SET_EDITOR_OPEN,
@@ -66,8 +75,3 @@ export const addNewChannel = (channelName, userID) =>
             });
 
     };
-
-
-export const fetchChannels = () => ({
-    type: actionTypes.FETCH_CHANNELS,
-});

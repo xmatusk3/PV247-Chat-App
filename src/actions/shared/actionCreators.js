@@ -1,7 +1,14 @@
 import axios from 'axios';
 import * as actionTypes from '../../constants/actionTypes';
-import { fetchApiUserUri ,API_AUTH_URI} from '../../constants/api';
+import {List} from 'immutable';
+import {
+    fetchApiUserUri,
+    API_AUTH_URI,
+    API_USER_ALL,
+    API_APP_URI
+} from '../../constants/api';
 import { push } from 'connected-react-router';
+import parseChannelResponse from '../../utils/api/parseChannelResponse';
 
 export const authenticateUser = (email) =>
     (dispatch) => {
@@ -17,6 +24,8 @@ export const authenticateUser = (email) =>
             .then((token) => {
                 dispatch(receiveValidToken(token));
                 dispatch(fetchLoggedUser(email, token));
+                dispatch(fetchAllUsers(token));
+                dispatch(fetchAllChannels(token));
             })
             .catch(() => {
                 dispatch(failAuthentication());
@@ -54,10 +63,59 @@ const fetchLoggedUser = (email, {data}) =>
                 dispatch(push('/chat'));
             })
             .catch(() => {
-                dispatch({
-                    type: actionTypes.SHARED_LOGIN_FAILED,
-                    payload: 'Could not login, please try again.'
-                });
+                dispatch(serverLoginError);
             });
     };
 
+
+const fetchAllUsers = ({data}) =>
+    (dispatch) => {
+        const headers = {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${data}`
+        };
+        const request = axios.get(API_USER_ALL, {headers});
+
+        return request
+            .then(({data}) =>
+                dispatch({
+                    type: actionTypes.UPDATE_USERS,
+                    payload: List(data)
+                }))
+            .catch((response) => {
+                dispatch(serverLoginError);
+                throw new Error(response);
+            });
+    };
+
+const fetchAllChannels = ({data}) =>
+    (dispatch) => {
+        const headers = {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${data}`
+        };
+
+        const request = axios.get(API_APP_URI, {headers});
+
+        return request
+            .then(({data: {channels}}) => {
+                let parsedChannels = List();
+
+                for (const channel of channels) {
+                    parsedChannels = parsedChannels.push(parseChannelResponse(channel));
+                }
+                return dispatch({
+                    type: actionTypes.UPDATE_CHANNELS,
+                    payload: parsedChannels
+                });
+            })
+            .catch((response) => {
+                dispatch(serverLoginError);
+                throw new Error(response);
+            });
+    };
+
+const serverLoginError = () => ({
+    type: actionTypes.SHARED_LOGIN_FAILED,
+    payload: 'Could not load all the data from server. Please try again later.'
+});
