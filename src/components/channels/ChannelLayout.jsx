@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import ChannelList from 'components/channels/channelList.jsx';
-import EditedChannel from 'components/channels/editedChannel.jsx';
+import EditedChannel from 'components/channels/addChannel.jsx';
 import { ChannelLayoutDiv } from './__styles__/channelLayout.styles.jsx';
 
 class ChannelLayout extends React.PureComponent {

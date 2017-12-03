@@ -24,13 +24,19 @@ const channelUiReducer = (state = defaultUiState, {type, payload}) => {
 
 const channelListReducer = (state = Immutable.List(), {type, payload}) => {
     switch (type) {
+        case Actions.CHANNEL_LEAVE_CHANNEL:
+            return {...state,
+                ownerIds: state.ownerIds.filter(owner => owner !== payload),
+                userIds: state.userIds.filter(user => user !== payload)};
+        case Actions.CHANNEL_DELETE_CHANNEL:
+            return state.filter((item) => item.id !== payload);
         case Actions.ADD_CHANNEL:
             return state.push(payload);
         case Actions.UPDATE_CHANNELS:
             return payload;
         default:
             return state;
-    }
+    }//state.ownerIds.filter(owner => owner != payload)
 };
 
 export default combineReducers({

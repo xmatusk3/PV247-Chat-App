@@ -3,20 +3,31 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {List} from 'immutable';
 import { Field, reduxForm } from 'redux-form';
-import {addNewChannel} from 'actions/channels/actionCreators';
+import {addNewChannel, closeAddChannel} from 'actions/channels/actionCreators';
 
-class EditedChannel extends React.PureComponent{
+class AddChannel extends React.PureComponent{
     static propTypes = {
         newChannelName: PropTypes.string.isRequired,
         addNewChannel: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
         userId: PropTypes.string.isRequired,
         serverError: PropTypes.string.isRequired,
-        users: PropTypes.instanceOf(List)
+        users: PropTypes.instanceOf(List),
+        closeAddChannel: PropTypes.func.isRequired
     };
 
     onSubmit(formData) {
-        this.props.addNewChannel(formData, this.props.userId);
+        const formKeys = Object.values(Object.keys(formData));
+
+        const users = this.props.users
+            .filter((user) => formKeys.includes(user.customData))
+            .map((user) => user.email);
+
+        this.props.addNewChannel({channelName: formData.channelName, users}, this.props.userId);
+    }
+
+    onCancel() {
+        this.props.closeAddChannel();
     }
 
     renderField(field) {
@@ -46,7 +57,7 @@ class EditedChannel extends React.PureComponent{
                 <Field
                     label={user.email}
                     key={user.email}
-                    name={user.email}
+                    name={user.customData}
                     value={user.email}
                     type="checkbox"
                     component={this.renderField}
@@ -67,6 +78,7 @@ class EditedChannel extends React.PureComponent{
                     {users}
                     <button type="submit">Add Channel</button>
                 </form>
+                <button type="button" onClick={this.onCancel.bind(this)}>Cancel</button>
             </div>
         );
     }
@@ -95,5 +107,6 @@ export default reduxForm({
         }),
         (dispatch) => ({
             addNewChannel: (newChannelData, user) => dispatch(addNewChannel(newChannelData, user)),
-        }))(EditedChannel)
+            closeAddChannel: () => dispatch(closeAddChannel())
+        }))(AddChannel)
 );

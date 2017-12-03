@@ -10,6 +10,6 @@ export const ChannelDiv = styled.div`
     width: 100%;
     color: ${DARK_BLUE_CHANNEL_FONT};
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 `;
