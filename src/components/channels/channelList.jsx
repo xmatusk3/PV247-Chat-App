@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 import { ChannelListDiv,  } from './__styles__/channelList.styles.jsx';
 import Channel from './channel.jsx';
-import {setIsBeingEdited} from 'actions/channels/actionCreators.js';
+import {setIsBeingCreated} from 'actions/channels/actionCreators.js';
 
 const FontAwesome = require('react-fontawesome');
 
 class ChannelList extends React.PureComponent {
     static propTypes = {
         channelList: PropTypes.instanceOf(Immutable.List),
-        setIsBeingEdited: PropTypes.func.isRequired,
+        setIsBeingCreated: PropTypes.func.isRequired,
         user: PropTypes.string.isRequired
     };
 
@@ -30,7 +30,7 @@ class ChannelList extends React.PureComponent {
                     size='2x'
                     spin
                     style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                    onClick = {() => this.props.setIsBeingEdited(true)}
+                    onClick = {() => this.props.setIsBeingCreated(true)}
                 >
                 </FontAwesome>
             </ChannelListDiv>
@@ -46,6 +46,6 @@ export default connect(
         };
     },
     (dispatch) => ({
-        setIsBeingEdited: (payload) => dispatch(setIsBeingEdited(payload))
+        setIsBeingCreated: (payload) => dispatch(setIsBeingCreated(payload))
     })
 )(ChannelList);

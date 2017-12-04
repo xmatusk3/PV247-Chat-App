@@ -6,8 +6,8 @@ const parse = (channelResponse) => {
     return{
         id: channelResponse.id,
         name: channelResponse.name,
-        ownerIds: List(customData.ownerIds),
-        userIds: List(customData.userIds)
+        ownerIds: List(customData.ownerIds || []),
+        userIds: List(customData.userIds || [])
     };
 };
 

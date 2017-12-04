@@ -96,7 +96,7 @@ const validate = ({ channelName }) => {
 
 export default reduxForm({
     validate,
-    form: 'EditChannelForm'
+    form: 'AddChannelForm'
 })(
     connect(
         (state) => ({

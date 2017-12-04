@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { ChannelDiv } from './__styles__/channel.styles.jsx';
-import { deleteChannel, leaveChannel } from '../../actions/channels/actionCreators';
+import { deleteChannel, leaveChannel, startEditChannel } from '../../actions/channels/actionCreators';
 
 const FontAwesome = require('react-fontawesome');
 
@@ -11,7 +11,8 @@ class Channel extends React.Component {
         user: PropTypes.string.isRequired,
         channel: PropTypes.object.isRequired,
         deleteChannel: PropTypes.func.isRequired,
-        leaveChannel: PropTypes.func.isRequired
+        leaveChannel: PropTypes.func.isRequired,
+        startEditChannel: PropTypes.func.isRequired
     };
 
     isAdmin = () => this.props.channel.ownerIds.includes(this.props.user);
@@ -30,7 +31,7 @@ class Channel extends React.Component {
                     size='lg'
                     spin
                     style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                    // onClick = {() => this.props.setIsBeingEdited(true)}
+                    onClick = {() => this.props.startEditChannel(this.props.channel)}
                 />}
                 {this.isAdmin() &&
                 <FontAwesome
@@ -56,4 +57,4 @@ class Channel extends React.Component {
     }
 }
 
-export default connect(null, { deleteChannel, leaveChannel })(Channel);
+export default connect(null, { deleteChannel, leaveChannel, startEditChannel })(Channel);

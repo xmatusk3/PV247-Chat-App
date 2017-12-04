@@ -14,14 +14,64 @@ export const updateChannel = (item) => ({
 });
 
 export const closeAddChannel = () => ({
-    type: actionTypes.SET_EDITOR_OPEN,
+    type: actionTypes.SET_ADD_CHANNEL_OPEN,
     payload: false
 });
 
-export const setIsBeingEdited = (payload) => ({
-    type: actionTypes.SET_EDITOR_OPEN,
+export const setIsBeingCreated = (payload) => ({
+    type: actionTypes.SET_ADD_CHANNEL_OPEN,
     payload,
 });
+
+export const startEditChannel = (channel) => ({
+    type: actionTypes.CHANNEL_OPEN_EDITING_CHANNEL,
+    payload: {open: true, channel},
+});
+
+export const cancelEditing = () => ({
+    type: actionTypes.CHANNEL_CANCEL_EDITING_CHANNEL,
+    payload: {open: false, channel: null}
+});
+
+export const editChannel = (channel, userEmail) =>
+    (dispatch) => {
+        const newCustomData = {
+            ownerIds: channel.ownerIds,
+            userIds: channel.userIds
+        };
+
+        const requestData = [{
+            'path': `/channels/${channel.id}`,
+            'op': 'replace',
+            'value': {
+                'name': channel.name,
+                'customData': JSON.stringify(newCustomData)
+            }
+        }];
+
+        const request = fetchAuthToken(userEmail).then((token) => {
+            const headers = {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${token.data}`,
+                'Content-Type': 'application/json-patch+json'
+            };
+
+            return axios.patch(API_APP_URI, requestData, { headers });
+        });
+
+        return request
+            .then(() => {
+                dispatch({
+                    type: actionTypes.CHANNEL_UPDATE_CHANNEL,
+                    payload: channel
+                });
+            })
+            .catch(() => {
+                dispatch(serverError);
+            });
+    };
+
+
 
 export const addNewChannel = (data, userEmail) =>
     (dispatch) => {
@@ -62,7 +112,7 @@ export const addNewChannel = (data, userEmail) =>
                     payload: parseChannelResponse(response.data['channels'][response.data['channels'].length - 1])
                 });
                 dispatch({
-                    type: actionTypes.SET_EDITOR_OPEN,
+                    type: actionTypes.SET_ADD_CHANNEL_OPEN,
                     payload: false
                 });
             })
@@ -105,18 +155,18 @@ export const deleteChannel = (channelId, userEmail) =>
 
 export const leaveChannel = ({id, name, ownerIds, userIds}, userEmail) =>
     (dispatch) => {
-        const customData = `{"ownerIds": "[${(ownerIds.filter(owner => owner !== userEmail)).toArray()}]",
-                            "userIds": "[${(userIds.filter(user => user !== userEmail).toArray())}]"}`;
+        const newOwners = ownerIds.filter(owner => owner !== userEmail).toArray();
+        const newUsers = userIds.filter(user => user !== userEmail).toArray();
 
-        //eslint-disable-next-line
-        console.log(customData);
+        const customData = {ownerIds: newOwners, userIds: newUsers};
+
         const requestData = [{
             'path': `/channels/${id}`,
             'op': 'replace',
             'value': {
                 'id': id,
                 'name': name,
-                'customData': customData
+                'customData': JSON.stringify(customData)
             }
         }];
 
@@ -134,7 +184,7 @@ export const leaveChannel = ({id, name, ownerIds, userIds}, userEmail) =>
             .then(() => {
                 dispatch({
                     type: actionTypes.CHANNEL_LEAVE_CHANNEL,
-                    payload: userEmail
+                    payload: id
                 });
             })
             .catch(() => {
