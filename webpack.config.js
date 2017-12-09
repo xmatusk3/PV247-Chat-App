@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 const webpack = require('webpack');
+const path = require('path');
 
 const productionEnv = 'production';
 const env = process.env.NODE_ENV;
@@ -33,6 +34,19 @@ module.exports = {
     output: {
         path: __dirname + '/build',
         filename: 'app.js'
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'build'),
+        compress: true,
+        port: 9000,
+        inline: true,
+    },
+    resolve: {
+        modules: [
+            path.join(__dirname, 'src'),
+            'node_modules',
+        ],
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
@@ -87,5 +101,5 @@ module.exports = {
         ]
     },
     devtool: env === productionEnv ? '' : 'source-map',
-    plugins: plugins
+    plugins: plugins,
 };

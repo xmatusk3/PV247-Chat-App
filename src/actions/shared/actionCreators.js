@@ -1,26 +1,121 @@
+import axios from 'axios';
 import * as actionTypes from '../../constants/actionTypes';
-//import { errorActionFactory } from '../../utils/errorActionFactory';
+import {List} from 'immutable';
+import {
+    fetchApiUserUri,
+    API_AUTH_URI,
+    API_USER_ALL,
+    API_APP_URI
+} from '../../constants/api';
+import { push } from 'connected-react-router';
+import parseChannelResponse from '../../utils/api/parseChannelResponse';
 
-export const receiveValidToken = (token) => ({
-    type: actionTypes.SHARED_RECEIVE_TOKEN,
-    payload: {
-        token,
-    }
-});
+export const authenticateUser = (email) =>
+    (dispatch) => {
+        dispatch(startAuthentication());
 
-export const invalidateToken = () => ({
-    type: actionTypes.SHARED_INVALIDATE_TOKEN,
-});
+        const headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        };
+        const request = axios.post(API_AUTH_URI, `"${email}"`, {headers});
+
+        return request
+            .then((token) => {
+                dispatch(receiveValidToken(token));
+                dispatch(fetchLoggedUser(email, token));
+                dispatch(fetchAllUsers(token));
+                dispatch(fetchAllChannels(token));
+            })
+            .catch(() => {
+                dispatch(failAuthentication());
+            });
+    };
 
 export const startAuthentication = () => ({
-    type: actionTypes.SHARED_AUTHENTICATION_STARTED,
+    type: actionTypes.SHARED_AUTHENTICATION_STARTED
 });
 
-/*export const dismissError = (errorId) => ({
-    type: actionTypes.SHARED_DISMISS_ERROR,
-    payload: {
-        errorId,
-    }
-});*/
+export const receiveValidToken = ({data}) => ({
+    type: actionTypes.SHARED_RECEIVE_TOKEN,
+    payload: `Bearer ${data}`
+});
 
-//export const failAuthentication = errorActionFactory(actionTypes.SHARED_AUTHENTICATION_FAILED);
+export const failAuthentication = () => ({
+    type: actionTypes.SHARED_LOGIN_FAILED,
+    payload: 'No user is registered under submitted email.'
+});
+
+const fetchLoggedUser = (email, {data}) =>
+    (dispatch) => {
+        const headers = {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${data}`
+        };
+        const request = axios.get(fetchApiUserUri(email), {headers});
+
+        return request
+            .then((data) => {
+                dispatch({
+                    type: actionTypes.SHARED_LOGIN_SUCCESS,
+                    payload: data.data
+                });
+                dispatch(push('/chat'));
+            })
+            .catch(() => {
+                dispatch(serverLoginError);
+            });
+    };
+
+
+const fetchAllUsers = ({data}) =>
+    (dispatch) => {
+        const headers = {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${data}`
+        };
+        const request = axios.get(API_USER_ALL, {headers});
+
+        return request
+            .then(({data}) =>
+                dispatch({
+                    type: actionTypes.UPDATE_USERS,
+                    payload: List(data)
+                }))
+            .catch((response) => {
+                dispatch(serverLoginError);
+                throw new Error(response);
+            });
+    };
+
+const fetchAllChannels = ({data}) =>
+    (dispatch) => {
+        const headers = {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${data}`
+        };
+
+        const request = axios.get(API_APP_URI, {headers});
+
+        return request
+            .then(({data: {channels}}) => {
+                let parsedChannels = List();
+
+                for (const channel of channels) {
+                    parsedChannels = parsedChannels.push(parseChannelResponse(channel));
+                }
+                return dispatch({
+                    type: actionTypes.UPDATE_CHANNELS,
+                    payload: parsedChannels
+                });
+            })
+            .catch((response) => {
+                dispatch(serverLoginError);
+                throw new Error(response);
+            });
+    };
+
+const serverLoginError = () => ({
+    type: actionTypes.SHARED_LOGIN_FAILED,
+    payload: 'Could not load all the data from server. Please try again later.'
+});
