@@ -2,6 +2,7 @@ import * as actionTypes from '../../constants/actionTypes';
 import axios from 'axios';
 import {
     API_APP_URI,
+    API_MESSAGE,
     API_USER_ALL
 } from '../../constants/api';
 import { fetchAuthToken } from '../../utils/api/fetchAuthToken';
@@ -62,11 +63,6 @@ export const removeUserUI = (channel) => ({
     payload: channel
 });
 
-export const openChannel = (channelId) => ({
-    type: actionTypes.CHANNEL_OPEN_CHANNEL,
-    payload: channelId
-});
-
 export const cancelEditing = (channel, usersToPromote, usersToKick) => {
     channel.userIds = channel.userIds.union(usersToPromote).union(usersToKick);
 
@@ -78,6 +74,35 @@ export const cancelEditing = (channel, usersToPromote, usersToKick) => {
         }
     };
 };
+
+export const openChannel = (channelId) =>
+    (dispatch, getState) => {
+        const request =
+            fetchAuthToken(getState().users.user.email)
+            .then((token) => {
+                const headers = {
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token.data}`,
+                };
+
+                return axios.get(API_MESSAGE(channelId), { headers });
+            });
+
+        return request
+            .then(({data}) => {
+                dispatch({
+                    type: actionTypes.CHANNEL_OPEN_CHANNEL,
+                    payload: channelId
+                });
+                dispatch({
+                    type: actionTypes.CHANNEL_LOAD_MESSAGES,
+                    payload: data
+                });
+            })
+            .catch(() => {
+                dispatch(serverError());
+            });
+    };
 
 export const cancelInviting = () => ({
     type: actionTypes.CHANNEL_CANCEL_INVITING,

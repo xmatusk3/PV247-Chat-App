@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import TextEditor from './textEditor';
+import MessageWindow from './messageWindow';
 
 class ChannelLayout extends Component {
     render() {
         return (
-            <div>
-                <TextEditor/>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <MessageWindow />
+                <TextEditor />
             </div>
         );
     }
