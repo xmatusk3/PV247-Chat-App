@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/components/channels/editChannel.jsx" line="98" />
+    <bookmark url="file://$PROJECT_DIR$/src/components/channels/editChannel.jsx" line="95" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44326bda-fc14-4cf4-8da2-3b0bc5c1090d" name="Default" comment="">
@@ -9,13 +9,12 @@
       <change beforePath="$PROJECT_DIR$/build/app.js" afterPath="$PROJECT_DIR$/build/app.js" />
       <change beforePath="$PROJECT_DIR$/build/app.js.map" afterPath="$PROJECT_DIR$/build/app.js.map" />
       <change beforePath="$PROJECT_DIR$/src/actions/channels/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/channels/actionCreators.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/channels/ChannelLayout.jsx" afterPath="$PROJECT_DIR$/src/components/channels/ChannelLayout.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/app.jsx" afterPath="$PROJECT_DIR$/src/app.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/channels/ChannelLayout.jsx" afterPath="$PROJECT_DIR$/src/components/Layout.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/channels/channel.jsx" afterPath="$PROJECT_DIR$/src/components/channels/channel.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/channels/editChannel.jsx" afterPath="$PROJECT_DIR$/src/components/channels/editChannel.jsx" />
       <change beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" afterPath="$PROJECT_DIR$/src/constants/actionTypes.js" />
+      <change beforePath="$PROJECT_DIR$/src/constants/api.js" afterPath="$PROJECT_DIR$/src/constants/api.js" />
       <change beforePath="$PROJECT_DIR$/src/reducers/channels/channelReducers.js" afterPath="$PROJECT_DIR$/src/reducers/channels/channelReducers.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/users/userReducers.js" afterPath="$PROJECT_DIR$/src/reducers/users/userReducers.js" />
-      <change beforePath="$PROJECT_DIR$/src/utils/api/parseChannelResponse.js" afterPath="$PROJECT_DIR$/src/utils/api/parseChannelResponse.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,10 +31,10 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="addChannel.jsx" pinned="false" current-in-tab="true">
+            <file leaf-file-name="addChannel.jsx" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/components/channels/addChannel.jsx">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="713">
+                  <state relative-caret-position="765">
                     <caret line="105" column="34" lean-forward="false" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="34" />
                     <folding>
                       <element signature="e#0#26#0" expanded="true" />
@@ -44,13 +43,25 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="editChannel.jsx" pinned="false" current-in-tab="false">
+            <file leaf-file-name="editChannel.jsx" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/components/channels/editChannel.jsx">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="883">
-                    <caret line="87" column="30" lean-forward="false" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
+                  <state relative-caret-position="639">
+                    <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
                     <folding>
                       <element signature="e#0#26#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-3189">
+                    <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="22" selection-end-column="14" />
+                    <folding>
+                      <element signature="e#0#59#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -63,33 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userReducers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#103#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="channelReducers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="57" column="27" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="27" />
+            <state relative-caret-position="172">
+              <caret line="74" column="58" lean-forward="false" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -97,35 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
+      <file leaf-file-name="textEditor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/messages/textEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="channel.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/channels/channel.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="43" column="52" lean-forward="false" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inviteUsers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/channels/inviteUsers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-121">
-              <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+            <state relative-caret-position="391">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -133,11 +98,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChannelLayout.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/channels/ChannelLayout.jsx">
+      <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/actions/messages/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+            <state relative-caret-position="357">
+              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/shared/actionCreators.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="104" column="68" lean-forward="false" selection-start-line="104" selection-start-column="68" selection-end-line="104" selection-end-column="68" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Layout.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Layout.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -145,12 +134,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen-reader-styles.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/react-fontawesome/lib/screen-reader-styles.js">
+      <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/constants/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+              <folding>
+                <element signature="e#150#183#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,18 +159,18 @@
       <file leaf-file-name="actionTypes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/constants/actionTypes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="65" lean-forward="false" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+            <state relative-caret-position="391">
+              <caret line="23" column="57" lean-forward="false" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/react-fontawesome/lib/index.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -225,12 +226,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/shared/SavingSpinner.jsx" />
-        <option value="$PROJECT_DIR$/src/components/shared/SavingSpinner.js" />
-        <option value="$PROJECT_DIR$/src/components/shared/SavingSpinner.styles.js" />
-        <option value="$PROJECT_DIR$/src/reducers/shared/isAuthenticating.js" />
-        <option value="$PROJECT_DIR$/src/utils/api/getPersistedToken.js" />
-        <option value="$PROJECT_DIR$/src/utils/global-styles.js" />
         <option value="$PROJECT_DIR$/src/components/login/LoginForm.styles.js" />
         <option value="$PROJECT_DIR$/src/containers-redux/channels/channelList.jsx.js" />
         <option value="$PROJECT_DIR$/static/app.html" />
@@ -246,7 +241,6 @@
         <option value="$PROJECT_DIR$/src/utils/getInitialState.js" />
         <option value="$PROJECT_DIR$/src/reducers/channels/editedChannel.js" />
         <option value="$PROJECT_DIR$/src/reducers/channels/openChannelEditor.js" />
-        <option value="$PROJECT_DIR$/src/app.jsx" />
         <option value="$PROJECT_DIR$/.eslintrc.json" />
         <option value="$PROJECT_DIR$/src/actions/shared/authenticateUser.js" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -259,7 +253,6 @@
         <option value="$PROJECT_DIR$/src/reducers/users/users.js" />
         <option value="$PROJECT_DIR$/src/reducers/app.js" />
         <option value="$PROJECT_DIR$/src/reducers/shared/authenticationReducers.js" />
-        <option value="$PROJECT_DIR$/src/constants/api.js" />
         <option value="$PROJECT_DIR$/src/components/channels/editedChannel.jsx" />
         <option value="$PROJECT_DIR$/src/components/channels/__styles__/channel.styles.jsx" />
         <option value="$PROJECT_DIR$/src/utils/renderField.js" />
@@ -268,14 +261,22 @@
         <option value="$PROJECT_DIR$/src/actions/shared/actionCreators.js" />
         <option value="$PROJECT_DIR$/src/utils/api/parseChannelResponse.js" />
         <option value="$PROJECT_DIR$/src/components/channels/ChannelLayout.jsx" />
-        <option value="$PROJECT_DIR$/src/constants/actionTypes.js" />
-        <option value="$PROJECT_DIR$/src/reducers/channels/channelReducers.js" />
-        <option value="$PROJECT_DIR$/src/components/channels/editChannel.jsx" />
-        <option value="$PROJECT_DIR$/src/components/channels/channel.jsx" />
         <option value="$PROJECT_DIR$/src/components/channels/inviteUsers.js" />
         <option value="$PROJECT_DIR$/src/components/channels/addChannel.jsx" />
         <option value="$PROJECT_DIR$/src/reducers/users/userReducers.js" />
+        <option value="$PROJECT_DIR$/src/components/channels/editChannel.jsx" />
+        <option value="$PROJECT_DIR$/src/components/messages/TextEditor.js" />
+        <option value="$PROJECT_DIR$/src/components/messages/ChatLayout.js" />
+        <option value="$PROJECT_DIR$/src/components/ChannelLayout.jsx" />
+        <option value="$PROJECT_DIR$/src/app.jsx" />
+        <option value="$PROJECT_DIR$/src/components/channels/channel.jsx" />
         <option value="$PROJECT_DIR$/src/actions/channels/actionCreators.js" />
+        <option value="$PROJECT_DIR$/src/components/Layout.jsx" />
+        <option value="$PROJECT_DIR$/src/constants/api.js" />
+        <option value="$PROJECT_DIR$/src/constants/actionTypes.js" />
+        <option value="$PROJECT_DIR$/src/reducers/channels/channelReducers.js" />
+        <option value="$PROJECT_DIR$/src/components/messages/textEditor.js" />
+        <option value="$PROJECT_DIR$/src/actions/messages/actionCreators.js" />
       </list>
     </option>
   </component>
@@ -340,6 +341,20 @@
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
               <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="messages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -355,6 +370,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="messages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
@@ -381,6 +403,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
               <item name="channels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
@@ -414,17 +443,17 @@
     <property name="SearchEverywhereHistoryKey" value="CHANNEL_UPDATE&#9;null&#9;null&#10;userIds&#9;null&#9;null&#10;owner&#9;null&#9;null&#10;ownerIds&#9;null&#9;null&#10;addch&#9;null&#9;null&#10;channelLi&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/src/components/channels/channelList.jsx&#10;edite&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/src/containers-redux/channels/editedChannel.jsx&#10;editedCha&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/src/components/channels/editedChannel.jsx&#10;edited&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/src/containers-redux/channels/editedChannel.jsx&#10;containers-redux/&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/src/containers-redux&#10;channell&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/src/components/channels/channelList.jsx&#10;channelli&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/src/components/channels/channelList.jsx&#10;web&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/webpack.config.js&#10;channelRe&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/src/reducers/channels/channelReducers.js&#10;initst&#9;FILE&#9;file://C:/programovanie/JS/Chat App/PV247-Chat-App/src/utils/getInitialState.js" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static\assets" />
-      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static" />
-      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static\assets\fonts" />
-      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\src\utils" />
-      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\src\components\login" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static" />
       <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static\assets" />
       <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static\assets\fonts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\src\components" />
+      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static\assets" />
+      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static" />
+      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static\assets\fonts" />
+      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\src\utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -507,7 +536,7 @@
       <workItem from="1512649122888" duration="794000" />
       <workItem from="1512737070312" duration="19748000" />
       <workItem from="1512814552995" duration="3293000" />
-      <workItem from="1512819559979" duration="13491000" />
+      <workItem from="1512819559979" duration="26572000" />
     </task>
     <servers />
   </component>
@@ -532,7 +561,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="291345000" />
+    <option name="totallyTimeSpent" value="304426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -576,10 +605,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/containers/channels/channel.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/actions/demoActionCreators.js" />
-    <entry file="file://$PROJECT_DIR$/src/constants/demoActionTypes.js" />
-    <entry file="file://$PROJECT_DIR$/src/containers/login/LoginForm.jsx" />
     <entry file="file://$PROJECT_DIR$/src/constants/localStorageKeys.js" />
     <entry file="file://$PROJECT_DIR$/src/utils/getInitialState.js" />
     <entry file="file://$PROJECT_DIR$/src/utils/getPersistedToken.js" />
@@ -710,23 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-177">
@@ -734,43 +742,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/shared/authenticationReducers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/createStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/parseChannelResponse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/shared/actionCreators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/channels/channelList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="84" lean-forward="false" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,14 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -822,47 +789,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/actionTypes.js">
+    <entry file="file://$PROJECT_DIR$/src/components/channels/channelList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="65" lean-forward="false" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+          <caret line="21" column="84" lean-forward="false" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/channels/ChannelLayout.jsx">
+    <entry file="file://$PROJECT_DIR$/src/reducers/shared/authenticationReducers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        <state relative-caret-position="442">
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#103#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/channels/inviteUsers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-376">
+          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/messages/chatLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/api/parseChannelResponse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="63" lean-forward="false" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/channels/channel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Layout.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/channels/editChannel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="87" column="30" lean-forward="false" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/channels/channel.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="43" column="52" lean-forward="false" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/channels/addChannel.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
+        <state relative-caret-position="765">
           <caret line="105" column="34" lean-forward="false" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -870,10 +873,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/channels/inviteUsers.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/shared/actionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        <state relative-caret-position="202">
+          <caret line="104" column="68" lean-forward="false" selection-start-line="104" selection-start-column="68" selection-end-line="104" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+          <folding>
+            <element signature="e#150#183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/actionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="57" lean-forward="false" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3189">
+          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="22" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/channels/editChannel.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/messages/textEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -882,28 +949,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="57" column="27" lean-forward="false" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="27" />
+        <state relative-caret-position="172">
+          <caret line="74" column="58" lean-forward="false" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.js">
+    <entry file="file://$PROJECT_DIR$/src/components/messages/message.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#103#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/messages/actionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+        <state relative-caret-position="357">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>

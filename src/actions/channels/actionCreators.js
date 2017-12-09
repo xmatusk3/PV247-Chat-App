@@ -32,7 +32,7 @@ export const sendInvite = (newEmail, userEmail) =>
                     payload: data
                 });
             })
-            .catch((e) => {
+            .catch(() => {
                 dispatch(serverError);
             });
     };
@@ -60,6 +60,11 @@ export const startInviteUsers = (channel) => ({
 export const removeUserUI = (channel) => ({
     type: actionTypes.CHANNEL_UPDATE_EDITED_CHANNEL,
     payload: channel
+});
+
+export const openChannel = (channelId) => ({
+    type: actionTypes.CHANNEL_OPEN_CHANNEL,
+    payload: channelId
 });
 
 export const cancelEditing = (channel, usersToPromote, usersToKick) => {

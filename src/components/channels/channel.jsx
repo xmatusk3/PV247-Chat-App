@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { ChannelDiv } from './__styles__/channel.styles.jsx';
-import { deleteChannel, leaveChannel, startEditChannel, startInviteUsers } from '../../actions/channels/actionCreators';
+import { deleteChannel, leaveChannel, startEditChannel, startInviteUsers, openChannel } from '../../actions/channels/actionCreators';
 
 const FontAwesome = require('react-fontawesome');
 
@@ -13,7 +13,8 @@ class Channel extends React.Component {
         deleteChannel: PropTypes.func.isRequired,
         leaveChannel: PropTypes.func.isRequired,
         startEditChannel: PropTypes.func.isRequired,
-        startInviteUsers: PropTypes.func.isRequired
+        startInviteUsers: PropTypes.func.isRequired,
+        openChannel: PropTypes.func.isRequired
     };
 
     isAdmin = () => this.props.channel.ownerIds.includes(this.props.user);
@@ -22,7 +23,7 @@ class Channel extends React.Component {
     render() {
         return (
             <ChannelDiv id={this.props.channel.id}>
-                <div>
+                <div onClick={() => this.props.openChannel(this.props.channel.id)}>
                     {this.props.channel.name}
                 </div>
                 {this.isAdmin() &&
@@ -67,4 +68,5 @@ class Channel extends React.Component {
     }
 }
 
-export default connect(null, { deleteChannel, leaveChannel, startEditChannel, startInviteUsers })(Channel);
+export default connect(null,
+    { deleteChannel, leaveChannel, startEditChannel, startInviteUsers, openChannel })(Channel);

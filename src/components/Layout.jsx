@@ -7,13 +7,15 @@ import ChannelList from 'components/channels/channelList.jsx';
 import AddChannel from 'components/channels/addChannel.jsx';
 import EditChannel from 'components/channels/editChannel.jsx';
 import InviteUsers from 'components/channels/inviteUsers';
-import { ChannelLayoutDiv } from './__styles__/channelLayout.styles.jsx';
+import ChatLayout from './messages/chatLayout';
+import { ChannelLayoutDiv } from './channels/__styles__/channelLayout.styles.jsx';
 
 class ChannelLayout extends React.PureComponent {
     static propTypes = {
         isBeingEdited: PropTypes.bool.isRequired,
         isBeingAdded: PropTypes.bool.isRequired,
         isBeingInvited: PropTypes.bool.isRequired,
+        isBeingOpened: PropTypes.bool.isRequired,
         user: PropTypes.string.isRequired
     };
 
@@ -34,6 +36,7 @@ class ChannelLayout extends React.PureComponent {
                     {this.props.isBeingAdded && <AddChannel />}
                     {this.props.isBeingEdited && <EditChannel />}
                     {this.props.isBeingInvited && <InviteUsers />}
+                    {this.props.isBeingOpened && <ChatLayout />}
                 </ChannelLayoutDiv>
             </div>
         );
@@ -45,6 +48,7 @@ export default connect(
         isBeingAdded: state.channels.ui.isBeingAdded,
         isBeingEdited: state.channels.ui.isBeingEdited,
         isBeingInvited: state.channels.ui.isBeingInvited,
+        isBeingOpened: state.channels.ui.isBeingOpened,
         user: state.users.user.email
     }),
     null
