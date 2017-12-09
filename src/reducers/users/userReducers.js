@@ -1,4 +1,8 @@
-import { SHARED_LOGIN_SUCCESS, UPDATE_USERS } from '../../constants/actionTypes';
+import {
+    ADD_USER,
+    SHARED_LOGIN_SUCCESS,
+    UPDATE_USERS
+} from '../../constants/actionTypes';
 import { combineReducers } from 'redux';
 import { List } from 'immutable';
 
@@ -15,6 +19,8 @@ const saveAllUsers = (state = List(), {type, payload}) => {
     switch(type) {
         case UPDATE_USERS:
             return payload;
+        case ADD_USER:
+            return state.push({ email: payload.email, customData: payload.customData });
         default:
             return state;
     }

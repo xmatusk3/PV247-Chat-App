@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { ChannelDiv } from './__styles__/channel.styles.jsx';
-import { deleteChannel, leaveChannel, startEditChannel } from '../../actions/channels/actionCreators';
+import { deleteChannel, leaveChannel, startEditChannel, startInviteUsers } from '../../actions/channels/actionCreators';
 
 const FontAwesome = require('react-fontawesome');
 
@@ -12,11 +12,12 @@ class Channel extends React.Component {
         channel: PropTypes.object.isRequired,
         deleteChannel: PropTypes.func.isRequired,
         leaveChannel: PropTypes.func.isRequired,
-        startEditChannel: PropTypes.func.isRequired
+        startEditChannel: PropTypes.func.isRequired,
+        startInviteUsers: PropTypes.func.isRequired
     };
 
     isAdmin = () => this.props.channel.ownerIds.includes(this.props.user);
-    isOnlyAdmin = () => this.props.channel.ownerIds.size === 1 && this.props.channel.ownerIds.get(0) === this.props.user;
+    isOnlyAdmin = () => this.props.channel.ownerIds.size === 1 && this.props.channel.ownerIds.includes(this.props.user);
 
     render() {
         return (
@@ -33,6 +34,15 @@ class Channel extends React.Component {
                     style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                     onClick = {() => this.props.startEditChannel(this.props.channel)}
                 />}
+                {this.isAdmin() &&
+                <FontAwesome
+                    className='fa fa-plus-square'
+                    name='fa-plus-square'
+                    size='lg'
+                    spin
+                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                    onClick = {() => this.props.startInviteUsers(this.props.channel)}
+                    />}
                 {this.isAdmin() &&
                 <FontAwesome
                     className='fa fa-times'
@@ -57,4 +67,4 @@ class Channel extends React.Component {
     }
 }
 
-export default connect(null, { deleteChannel, leaveChannel, startEditChannel })(Channel);
+export default connect(null, { deleteChannel, leaveChannel, startEditChannel, startInviteUsers })(Channel);
