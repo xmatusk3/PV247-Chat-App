@@ -5,6 +5,7 @@ import * as Actions from 'constants/actionTypes';
 const defaultUiState = {
     isBeingAdded: false,
     isBeingEdited: false,
+    profileIsOpened: false,
     isBeingInvited: false,
     isBeingOpened: false,
     newChannelName: '',
@@ -15,12 +16,14 @@ const channelUiReducer = (state = defaultUiState, {type, payload}) => {
     switch (type) {
         case Actions.CHANNEL_CANCEL_EDITING_CHANNEL:
         case Actions.CHANNEL_OPEN_EDITING_CHANNEL:
-            return {...state, isBeingEdited: payload.open, isBeingAdded: false, isBeingInvited: false, isBeingOpened: false};
+            return {...state, isBeingEdited: payload.open, isBeingOpened: false, isBeingAdded: false, isBeingInvited: false, profileIsOpened: false};
         case Actions.SET_ADD_CHANNEL_OPEN:
-            return {...state, isBeingAdded: payload, isBeingEdited: false, isBeingInvited: false, isBeingOpened: false};
+            return {...state, isBeingAdded: payload, isBeingOpened: false, isBeingEdited: false, isBeingInvited: false, profileIsOpened: false};
         case Actions.CHANNEL_CANCEL_INVITING:
         case Actions.CHANNEL_OPEN_INVITING:
-            return {...state, isBeingInvited: payload.open, isBeingEdited: false, isBeingAdded: false, isBeingOpened: false};
+            return {...state, isBeingInvited: payload.open, isBeingEdited: false, isBeingAdded: false, profileIsOpened: false};
+        case Actions.OPEN_EDIT_PROFILE:
+            return {...state, isBeingOpened: false, isBeingAdded: false, isBeingEdited: false, isBeingInvited: false, profileIsOpened: payload };
         case Actions.CHANNEL_OPEN_CHANNEL:
             return {...state,  isBeingOpened: true, isBeingInvited: false, isBeingEdited: false, isBeingAdded: false};
         case Actions.SET_NEW_CHANNEL_NAME:

@@ -7,6 +7,11 @@ import ChannelList from 'components/channels/channelList.jsx';
 import AddChannel from 'components/channels/addChannel.jsx';
 import EditChannel from 'components/channels/editChannel.jsx';
 import InviteUsers from 'components/channels/inviteUsers';
+import { TopBarDiv, TopBarHeader } from './profile/__styles__/topBarProfile.styles';
+import Profile from './profile/Profile.jsx';
+import { setProfileIsOpened } from '../actions/channels/actionCreators';
+
+const FontAwesome = require('react-fontawesome');
 import ChatLayout from './messages/chatLayout';
 import { ChannelLayoutDiv } from './channels/__styles__/channelLayout.styles.jsx';
 
@@ -16,6 +21,8 @@ class ChannelLayout extends React.PureComponent {
         isBeingAdded: PropTypes.bool.isRequired,
         isBeingInvited: PropTypes.bool.isRequired,
         isBeingOpened: PropTypes.bool.isRequired,
+        profileIsOpened: PropTypes.bool.isRequired,
+        setProfileIsOpened: PropTypes.func.isRequired,
         user: PropTypes.string.isRequired
     };
 
@@ -30,13 +37,24 @@ class ChannelLayout extends React.PureComponent {
 
         return (
             <div>
-                <h3>{`Currently logged as ${this.props.user}`}</h3>
+                <TopBarDiv>
+                    <FontAwesome
+                        className='fa fa-user'
+                        name='fa-user'
+                        size='lg'
+                        spin
+                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                        onClick = {this.props.setProfileIsOpened}
+                    />
+                    <TopBarHeader>{`Currently logged as ${this.props.user}`}</TopBarHeader>
+                </TopBarDiv>
                 <ChannelLayoutDiv>
                     <ChannelList />
                     {this.props.isBeingAdded && <AddChannel />}
                     {this.props.isBeingEdited && <EditChannel />}
                     {this.props.isBeingInvited && <InviteUsers />}
                     {this.props.isBeingOpened && <ChatLayout />}
+                    {this.props.profileIsOpened && <Profile />}
                 </ChannelLayoutDiv>
             </div>
         );
@@ -49,7 +67,8 @@ export default connect(
         isBeingEdited: state.channels.ui.isBeingEdited,
         isBeingInvited: state.channels.ui.isBeingInvited,
         isBeingOpened: state.channels.ui.isBeingOpened,
+        profileIsOpened: state.channels.ui.profileIsOpened,
         user: state.users.user.email
     }),
-    null
+    {setProfileIsOpened}
 )(ChannelLayout);

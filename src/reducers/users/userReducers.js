@@ -1,17 +1,32 @@
 import {
     ADD_USER,
     SHARED_LOGIN_SUCCESS,
-    UPDATE_USERS
+    UPDATE_USERS,
+    PROFILE_UPDATE_DETAILS
 } from '../../constants/actionTypes';
 import { combineReducers } from 'redux';
 import { List } from 'immutable';
 
-const saveLoggedUser = (state = {email: '', customData: ''}, action) => {
-    switch (action.type) {
+export const defaultDetails = {
+    email: '',
+    nickname: '',
+    avatarId: '',
+    id: '',
+};
+
+const saveLoggedUser = (prevState = defaultDetails, {type, payload}) => {
+    switch (type) {
         case SHARED_LOGIN_SUCCESS:
-            return action.payload;
+            return payload;
+        case PROFILE_UPDATE_DETAILS:
+            return {...prevState,
+                email: payload.email || prevState.email,
+                nickname: payload.nickname || prevState.nickname,
+                avatarId: payload.avatarId || prevState.avatarId,
+                id: payload.id || prevState.id,
+            };
         default:
-            return state;
+            return prevState;
     }
 };
 

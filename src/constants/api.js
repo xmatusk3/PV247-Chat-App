@@ -8,4 +8,6 @@ export const API_MESSAGE_CHANGE = (channelId, messageId) => `${API_MESSAGE(chann
 export const API_AUTH_URI = `${API_URI}/auth`;
 export const API_FILE_URI = `${API_URI}/file`;
 export const fetchApiUserUri = (userEmail) => (`${API_URI}/${API_APP_ID}/user/${encodeURIComponent(userEmail)}`);
-export const createApiFilerUri = (fileId) => `${API_URI}//file/${fileId}/download-link`;
+export const createApiFileUri = (fileId) => `${API_URI}//file/${fileId}/download-link`;
+
+export const createApiUserUri = (userEmail) => `${API_URI}/${API_APP_ID}/user/${userEmail}`;
