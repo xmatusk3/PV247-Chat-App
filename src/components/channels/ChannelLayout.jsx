@@ -6,20 +6,15 @@ import { Redirect } from 'react-router-dom';
 import ChannelList from 'components/channels/channelList.jsx';
 import AddChannel from 'components/channels/addChannel.jsx';
 import EditChannel from 'components/channels/editChannel.jsx';
+import InviteUsers from 'components/channels/inviteUsers';
 import { ChannelLayoutDiv } from './__styles__/channelLayout.styles.jsx';
-import { TopBarDiv, TopBarHeader } from '../profile/__styles__/topBarProfile.styles';
-import Profile from '../profile/Profile.jsx';
-import { setProfileIsOpened } from '../../actions/channels/actionCreators';
-
-const FontAwesome = require('react-fontawesome');
 
 class ChannelLayout extends React.PureComponent {
     static propTypes = {
         isBeingEdited: PropTypes.bool.isRequired,
         isBeingAdded: PropTypes.bool.isRequired,
-        profileIsOpened: PropTypes.bool.isRequired,
-        user: PropTypes.string.isRequired,
-        setProfileIsOpened: PropTypes.func.isRequired
+        isBeingInvited: PropTypes.bool.isRequired,
+        user: PropTypes.string.isRequired
     };
 
     isLoggedIn() {
@@ -33,22 +28,12 @@ class ChannelLayout extends React.PureComponent {
 
         return (
             <div>
-                <TopBarDiv>
-                    <FontAwesome
-                        className='fa fa-user'
-                        name='fa-user'
-                        size='lg'
-                        spin
-                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                        onClick = {this.props.setProfileIsOpened}
-                    />
-                    <TopBarHeader>{`Currently logged as ${this.props.user}`}</TopBarHeader>
-                </TopBarDiv>
+                <h3>{`Currently logged as ${this.props.user}`}</h3>
                 <ChannelLayoutDiv>
                     <ChannelList />
                     {this.props.isBeingAdded && <AddChannel />}
                     {this.props.isBeingEdited && <EditChannel />}
-                    {this.props.profileIsOpened && <Profile />}
+                    {this.props.isBeingInvited && <InviteUsers />}
                 </ChannelLayoutDiv>
             </div>
         );
@@ -59,8 +44,8 @@ export default connect(
     (state) => ({
         isBeingAdded: state.channels.ui.isBeingAdded,
         isBeingEdited: state.channels.ui.isBeingEdited,
-        profileIsOpened: state.channels.ui.profileIsOpened,
+        isBeingInvited: state.channels.ui.isBeingInvited,
         user: state.users.user.email
     }),
-    {setProfileIsOpened}
+    null
 )(ChannelLayout);

@@ -1,4 +1,4 @@
-import { List } from 'immutable';
+import { Set } from 'immutable';
 
 const parse = (channelResponse) => {
     const customData  = JSON.parse(channelResponse.customData);
@@ -6,8 +6,8 @@ const parse = (channelResponse) => {
     return{
         id: channelResponse.id,
         name: channelResponse.name,
-        ownerIds: List(customData.ownerIds || []),
-        userIds: List(customData.userIds || [])
+        ownerIds: Set(customData.ownerIds || []),
+        userIds: Set(customData.userIds || [])
     };
 };
 
