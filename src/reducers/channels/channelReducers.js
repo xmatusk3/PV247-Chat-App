@@ -5,6 +5,7 @@ import * as Actions from 'constants/actionTypes';
 const defaultUiState = {
     isBeingAdded: false,
     isBeingEdited: false,
+    profileIsOpened: false,
     newChannelName: '',
     error: '',
 };
@@ -13,9 +14,11 @@ const channelUiReducer = (state = defaultUiState, {type, payload}) => {
     switch (type) {
         case Actions.CHANNEL_CANCEL_EDITING_CHANNEL:
         case Actions.CHANNEL_OPEN_EDITING_CHANNEL:
-            return {...state, isBeingEdited: payload.open, isBeingAdded: false};
+            return {...state, isBeingEdited: payload.open, isBeingAdded: false, profileIsOpened: false };
         case Actions.SET_ADD_CHANNEL_OPEN:
-            return {...state, isBeingAdded: payload, isBeingEdited: false};
+            return {...state, isBeingAdded: payload, isBeingEdited: false, profileIsOpened: false };
+        case Actions.OPEN_EDIT_PROFILE:
+            return {...state, isBeingAdded: false, isBeingEdited: false, profileIsOpened: payload };
         case Actions.SET_NEW_CHANNEL_NAME:
             return {...state, newChannelName: payload};
         case Actions.SHARED_API_ERROR:

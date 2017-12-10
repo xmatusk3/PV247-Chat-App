@@ -5,13 +5,7 @@ import {
 } from '../../constants/api';
 import { fetchAuthToken } from '../../utils/api/fetchAuthToken';
 import parseChannelResponse from '../../utils/api/parseChannelResponse';
-
-export const updateChannel = (item) => ({
-    type: actionTypes.CHANNEL_UPDATE_CHANNEL,
-    payload: {
-        item,
-    }
-});
+import { serverError } from '../shared/actionCreators';
 
 export const closeAddChannel = () => ({
     type: actionTypes.SET_ADD_CHANNEL_OPEN,
@@ -21,6 +15,11 @@ export const closeAddChannel = () => ({
 export const setIsBeingCreated = (payload) => ({
     type: actionTypes.SET_ADD_CHANNEL_OPEN,
     payload,
+});
+
+export const setProfileIsOpened = () => ({
+    type: actionTypes.OPEN_EDIT_PROFILE,
+    payload: true,
 });
 
 export const startEditChannel = (channel) => ({
@@ -191,8 +190,3 @@ export const leaveChannel = ({id, name, ownerIds, userIds}, userEmail) =>
                 dispatch(serverError);
             });
     };
-
-const serverError = () => ({
-    type: actionTypes.SHARED_API_ERROR,
-    payload: 'Server error, please try again later.'
-});
