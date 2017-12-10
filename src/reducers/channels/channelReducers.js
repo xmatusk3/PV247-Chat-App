@@ -79,6 +79,10 @@ const openedChannelReducer = (state = {channelId: null, messages: Immutable.List
         case Actions.SET_ADD_CHANNEL_OPEN:
         case Actions.CHANNEL_OPEN_INVITING:
             return { channelId: null, messages: Immutable.List() };
+        case Actions.MESSAGE_DELETE_MESSAGE:
+            return {...state, messages: state.messages.filter(m => m.id !== payload)};
+        case Actions.CHANNEL_UPDATE_OPENED_CHANNEL:
+            return {...state, payload};
         default:
             return state;
     }

@@ -8,6 +8,7 @@ import {
 import { fetchAuthToken } from '../../utils/api/fetchAuthToken';
 import parseChannelResponse from '../../utils/api/parseChannelResponse';
 import { uuid } from '../../utils/uuidGenerator';
+import parseMessageResponse from '../../utils/api/parseMessageResponse';
 
 export const sendInvite = (newEmail, userEmail) =>
     (dispatch) => {
@@ -91,12 +92,12 @@ export const openChannel = (channelId) =>
         return request
             .then(({data}) => {
                 dispatch({
-                    type: actionTypes.CHANNEL_OPEN_CHANNEL,
-                    payload: channelId
+                    type: actionTypes.CHANNEL_LOAD_MESSAGES,
+                    payload: data.map(message => (parseMessageResponse(message)))
                 });
                 dispatch({
-                    type: actionTypes.CHANNEL_LOAD_MESSAGES,
-                    payload: data
+                    type: actionTypes.CHANNEL_OPEN_CHANNEL,
+                    payload: channelId
                 });
             })
             .catch(() => {

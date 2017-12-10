@@ -14,14 +14,13 @@ class MessageWindow extends Component {
             (
                 <Message
                     key={m.id}
-                    message={m.value}
-                    sender={m.createdBy}
+                    message={m}
                     isOwnMessage={m.createdBy === this.props.userEmail}
                 />
             ));
 
         return (
-            <div style={{display: 'flex', flexDirection: 'column-reverse'}}>
+            <div style={{border: '1px solid black', display: 'flex', flexDirection: 'column-reverse'}}>
                 {messages}
             </div>
         );
