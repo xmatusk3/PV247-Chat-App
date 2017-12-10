@@ -2,12 +2,14 @@ import * as actionTypes from '../../constants/actionTypes';
 import axios from 'axios';
 import {
     API_APP_URI,
+    API_MESSAGE,
     API_USER_ALL
 } from '../../constants/api';
 import { fetchAuthToken } from '../../utils/api/fetchAuthToken';
 import parseChannelResponse from '../../utils/api/parseChannelResponse';
 import { serverError } from '../shared/actionCreators';
 import { uuid } from '../../utils/uuidGenerator';
+import parseMessageResponse from '../../utils/api/parseMessageResponse';
 
 export const sendInvite = (newEmail, userEmail) =>
     (dispatch) => {
@@ -79,6 +81,35 @@ export const cancelEditing = (channel, usersToPromote, usersToKick) => {
         }
     };
 };
+
+export const openChannel = (channelId) =>
+    (dispatch, getState) => {
+        const request =
+            fetchAuthToken(getState().users.user.email)
+            .then((token) => {
+                const headers = {
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token.data}`,
+                };
+
+                return axios.get(API_MESSAGE(channelId), { headers });
+            });
+
+        return request
+            .then(({data}) => {
+                dispatch({
+                    type: actionTypes.CHANNEL_LOAD_MESSAGES,
+                    payload: data.map(message => (parseMessageResponse(message)))
+                });
+                dispatch({
+                    type: actionTypes.CHANNEL_OPEN_CHANNEL,
+                    payload: channelId
+                });
+            })
+            .catch(() => {
+                dispatch(serverError());
+            });
+    };
 
 export const cancelInviting = () => ({
     type: actionTypes.CHANNEL_CANCEL_INVITING,
