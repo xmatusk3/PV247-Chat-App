@@ -5,6 +5,7 @@ import * as Actions from 'constants/actionTypes';
 const defaultUiState = {
     isBeingAdded: false,
     isBeingEdited: false,
+    profileIsOpened: false,
     isBeingInvited: false,
     newChannelName: '',
     error: '',
@@ -14,12 +15,14 @@ const channelUiReducer = (state = defaultUiState, {type, payload}) => {
     switch (type) {
         case Actions.CHANNEL_CANCEL_EDITING_CHANNEL:
         case Actions.CHANNEL_OPEN_EDITING_CHANNEL:
-            return {...state, isBeingEdited: payload.open, isBeingAdded: false, isBeingInvited: false};
+            return {...state, isBeingEdited: payload.open, isBeingAdded: false, isBeingInvited: false, profileIsOpened: false};
         case Actions.SET_ADD_CHANNEL_OPEN:
-            return {...state, isBeingAdded: payload, isBeingEdited: false, isBeingInvited: false};
+            return {...state, isBeingAdded: payload, isBeingEdited: false, isBeingInvited: false, profileIsOpened: false};
         case Actions.CHANNEL_CANCEL_INVITING:
         case Actions.CHANNEL_OPEN_INVITING:
-            return {...state, isBeingInvited: payload.open, isBeingEdited: false, isBeingAdded: false};
+            return {...state, isBeingInvited: payload.open, isBeingEdited: false, isBeingAdded: false, profileIsOpened: false};
+        case Actions.OPEN_EDIT_PROFILE:
+            return {...state, isBeingAdded: false, isBeingEdited: false, isBeingInvited: false, profileIsOpened: payload };
         case Actions.SET_NEW_CHANNEL_NAME:
             return {...state, newChannelName: payload};
         case Actions.SHARED_API_ERROR:

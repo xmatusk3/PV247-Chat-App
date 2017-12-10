@@ -9,6 +9,7 @@ import {
 } from '../../constants/api';
 import { push } from 'connected-react-router';
 import parseChannelResponse from '../../utils/api/parseChannelResponse';
+import { getUserData } from '../profile/actionCreators';
 
 export const authenticateUser = (email) =>
     (dispatch) => {
@@ -55,10 +56,11 @@ const fetchLoggedUser = (email, {data}) =>
         const request = axios.get(fetchApiUserUri(email), {headers});
 
         return request
-            .then((data) => {
+            .then(({data}) => {
+                const details = getUserData(data).customData;
                 dispatch({
                     type: actionTypes.SHARED_LOGIN_SUCCESS,
-                    payload: data.data
+                    payload: {...details, email: email}
                 });
                 dispatch(push('/chat'));
             })
@@ -118,4 +120,9 @@ const fetchAllChannels = ({data}) =>
 const serverLoginError = () => ({
     type: actionTypes.SHARED_LOGIN_FAILED,
     payload: 'Could not load all the data from server. Please try again later.'
+});
+
+export const serverError = () => ({
+    type: actionTypes.SHARED_API_ERROR,
+    payload: 'Server error, please try again later.'
 });
