@@ -9,4 +9,5 @@ export const AvatarImage = styled.div`
     width: 120px;
     overflow: hidden;
     margin: 10px 5px;
+    border-radius: 6px;
 `;

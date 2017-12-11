@@ -1,8 +1,10 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
-import { AvatarLoaderPane } from './AvatarLoader.styles';
+import { AvatarLoaderPane } from './__styles__/AvatarLoader.styles';
 import { SavingSpinner } from '../shared/SavingSpinner.jsx';
+
+const FontAwesome = require('react-fontawesome');
 
 class AvatarLoader extends React.PureComponent {
     static propTypes = {
@@ -28,7 +30,14 @@ class AvatarLoader extends React.PureComponent {
 
         const message = isUploading
             ? <SavingSpinner />
-            : <i className='glyphicon glyphicon-open' />;
+            : <FontAwesome
+                className='fa fa-upload'
+                name='fa-upload'
+                size='3x'
+                spin
+                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
+                    transform: 'translate(-50%, -50%)', top: '50%', left: '50%', position: 'absolute' }}
+            />;
 
         return (
             <AvatarLoaderPane
