@@ -31,7 +31,7 @@ const AvatarWithOverlay = withOverlay(Avatar, AvatarLoader);
 export default connect(
     (state) => {
         return {
-            uri: state.profile.avatarUri,
+            uri: state.users.user.avatarUri,
             isUploading: state.profile.isUploadingAvatar,
         };
     },

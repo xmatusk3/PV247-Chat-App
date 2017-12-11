@@ -10,12 +10,18 @@ import parseChannelResponse from '../../utils/api/parseChannelResponse';
 import { serverError } from '../shared/actionCreators';
 import { uuid } from '../../utils/uuidGenerator';
 import parseMessageResponse from '../../utils/api/parseMessageResponse';
+import { parseUser }  from '../../utils/api/parseUserResponse';
 
 export const sendInvite = (newEmail, userEmail) =>
     (dispatch) => {
         const requestData = {
             'email': newEmail,
-            'customData':  uuid()
+            'customData':  JSON.stringify({
+                id: uuid(),
+                avatarId: '',
+                nickname: '',
+                avatarUri: ''
+            })
         };
 
         const request = fetchAuthToken(userEmail).then((token) => {
@@ -25,14 +31,14 @@ export const sendInvite = (newEmail, userEmail) =>
                 'Content-Type': 'application/json-patch+json'
             };
 
-            return axios.post(API_USER_ALL, JSON.stringify(requestData), { headers });
+            return axios.post(API_USER_ALL, requestData, { headers });
         });
 
         request
             .then(( {data} ) => {
                 dispatch({
                     type: actionTypes.ADD_USER,
-                    payload: data
+                    payload: parseUser(data)
                 });
             })
             .catch(() => {

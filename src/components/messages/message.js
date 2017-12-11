@@ -2,66 +2,53 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
+import { AvatarImage } from '../profile/Avatar.styles';
 
 import { deleteMessage, changeVoteMessage } from '../../actions/messages/actionCreators';
 
 class Message extends Component {
-    constructor(props) {
-        super(props);
-
-        const {customData: {votedBy}} = this.props.message;
-
-        this.state ={
-            messageScore: votedBy.valueSeq().reduce((res, val) => res+val, 0),
-            alreadyUpvoted: votedBy.has(this.props.user.email) && votedBy.get(this.props.user.email) === 1,
-            alreadyDownvoted: votedBy.has(this.props.user.email) && votedBy.get(this.props.user.email) === -1
-        };
-    }
-
     static propTypes = {
         message: PropTypes.object.isRequired,
         user: PropTypes.object.isRequired,
         deleteMessage: PropTypes.func.isRequired,
-        changeVoteMessage: PropTypes.func.isRequired
+        changeVoteMessage: PropTypes.func.isRequired,
+        senderUser: PropTypes.object.isRequired
     };
 
-    onChangeVote = (alreadyUpvoted, newVote) => {
+    onChangeVote = (newVote) => {
         this.props.changeVoteMessage(this.props.message, newVote);
-        this.setState({
-            messageScore: this.state.messageScore + newVote === 0 ? alreadyUpvoted ? -1 : 1 : newVote,
-            alreadyUpvoted: newVote === 0 ? false : newVote === 1,
-            alreadyDownvoted: newVote === 0 ? false : newVote === -1
-        });
     };
 
     render() {
         const isOwnMessage = this.props.user.email === this.props.message.createdBy;
+        const {customData: {votedBy}} = this.props.message;
+        const alreadyUpvoted = votedBy.has(this.props.user.email) && votedBy.get(this.props.user.email) === 1;
+        const alreadyDownvoted = votedBy.has(this.props.user.email) && votedBy.get(this.props.user.email) === -1;
 
         return (
             <div style={{width: '1300px', display: 'flex auto'}}>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
                     <div style={{flexWrap: 'wrap', margin: '2px', border: '1px solid black', display: 'flex', flexDirection: 'column', alignSelf: isOwnMessage ? 'flex-end' : 'flex-start', backgroundColor: isOwnMessage ? 'orange' : 'grey'}}>
                         <div style={{display: 'flex', justifyContent: 'space-between' }}>
-                            <div>
-                                <FontAwesome
-                                    className='fa fa-user'
-                                    name='fa-user'
-                                    spin
-                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                            <div style={{display: 'flex', justifyContent: 'flex-start'}}>
+                                <AvatarImage
+                                    className="img-rounded"
+                                    alt="Profile picture"
+                                    src={this.props.senderUser.avatarUri}
+                                    title={this.props.message.createdBy}
                                 />
-                                {this.props.message.createdBy}
                             </div>
                             <div>
                                 <span style={{backgroundColor: 'white'}}>
-                                    {this.state.messageScore}
+                                    {votedBy.valueSeq().reduce((res, val) => res+val, 0)}
                                 </span>
                                 <FontAwesome
                                     className='fa fa-arrow-up'
                                     name='fa-arrow-up'
                                     size='lg'
                                     spin
-                                    style={{color: this.state.alreadyUpvoted ? 'red' : 'black', marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                                    onClick={() => this.onChangeVote(this.state.alreadyUpvoted, this.state.alreadyUpvoted ? 0 : 1)}
+                                    style={{color: alreadyUpvoted ? 'red' : 'black', marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                    onClick={() => this.onChangeVote(alreadyUpvoted ? 0 : 1)}
 
                                 />
                                 <FontAwesome
@@ -69,8 +56,8 @@ class Message extends Component {
                                     name='fa-arrow-down'
                                     size='lg'
                                     spin
-                                    style={{color: this.state.alreadyDownvoted ? 'red' : 'black', marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                                    onClick={() => this.onChangeVote(this.state.alreadyUpvoted, this.state.alreadyDownvoted ? 0 : -1)}
+                                    style={{color: alreadyDownvoted ? 'red' : 'black', marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                    onClick={() => this.onChangeVote(alreadyDownvoted ? 0 : -1)}
                                 />
                                 {isOwnMessage &&
                                 <FontAwesome

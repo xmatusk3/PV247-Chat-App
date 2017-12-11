@@ -21,11 +21,11 @@ const channelUiReducer = (state = defaultUiState, {type, payload}) => {
             return {...state, isBeingAdded: payload, isBeingOpened: false, isBeingEdited: false, isBeingInvited: false, profileIsOpened: false};
         case Actions.CHANNEL_CANCEL_INVITING:
         case Actions.CHANNEL_OPEN_INVITING:
-            return {...state, isBeingInvited: payload.open, isBeingEdited: false, isBeingAdded: false, profileIsOpened: false};
+            return {...state, isBeingInvited: payload.open, isBeingEdited: false, isBeingAdded: false, profileIsOpened: false, isBeingOpened: false};
         case Actions.OPEN_EDIT_PROFILE:
             return {...state, isBeingOpened: false, isBeingAdded: false, isBeingEdited: false, isBeingInvited: false, profileIsOpened: payload };
         case Actions.CHANNEL_OPEN_CHANNEL:
-            return {...state,  isBeingOpened: true, isBeingInvited: false, isBeingEdited: false, isBeingAdded: false};
+            return {...state,  isBeingOpened: true, profileIsOpened: false, isBeingInvited: false, isBeingEdited: false, isBeingAdded: false};
         case Actions.SET_NEW_CHANNEL_NAME:
             return {...state, newChannelName: payload};
         case Actions.SHARED_API_ERROR:
@@ -85,7 +85,7 @@ const openedChannelReducer = (state = {channelId: null, messages: Immutable.List
         case Actions.MESSAGE_DELETE_MESSAGE:
             return {...state, messages: state.messages.filter(m => m.id !== payload)};
         case Actions.CHANNEL_UPDATE_OPENED_CHANNEL:
-            return {...state, payload};
+            return {...payload};
         default:
             return state;
     }
