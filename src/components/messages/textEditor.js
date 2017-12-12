@@ -6,20 +6,15 @@ import createStyles from 'draft-js-custom-styles';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { TextEditorDiv } from './__styles__/textEditor.styles';
-
+import Immutable from 'immutable';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import createLinkifyPlugin from 'draft-js-linkify-plugin';
+import createMentionPlugin, { defaultSuggestionsFilter } from 'draft-js-mention-plugin';
+import {sendChatMessage} from '../../actions/messages/actionCreators';
+import mentionsStyles from './__styles__/mentionStyles.css';
 
 const hashtagPlugin = createHashtagPlugin();
 const linkifyPlugin = createLinkifyPlugin();
-
-const plugins = [
-    hashtagPlugin,
-    linkifyPlugin,
-];
-
-import {sendChatMessage} from '../../actions/messages/actionCreators';
-
 
 const customStyleMap = {
     MARK: {
@@ -32,12 +27,42 @@ const { styles, customStyleFn, exporter } = createStyles(['font-size', 'color', 
 
 class TextEditor extends React.Component {
     static propTypes = {
-        sendChatMessage: PropTypes.func.isRequired
+        sendChatMessage: PropTypes.func.isRequired,
+        userList: PropTypes.instanceOf(Immutable.Set),
+        ownerList: PropTypes.instanceOf(Immutable.Set),
+        allUsers: PropTypes.instanceOf(Immutable.List)
     };
+
     constructor(props) {
         super(props);
+
+        const userIdList = this.props.userList.union(this.props.ownerList);
+
+        this.mentions = this.props.allUsers
+            .reduce((reduceList, user) => {
+                if (userIdList.includes(user.email)) {
+                    reduceList = reduceList.push({
+                        name: user.nickname || user.email,
+                        avatar: user.avatarUri
+                    });
+                }
+                return reduceList;
+            }, Immutable.List()).toArray();
+
+        this.mentionPlugin = createMentionPlugin({
+            mentions: this.mentions,
+            entityMutability: 'IMMUTABLE',
+            theme: mentionsStyles,
+            mentionPrefix: '@'
+        });
+        this.plugins = [
+            hashtagPlugin,
+            linkifyPlugin,
+            this.mentionPlugin
+        ];
         this.state = {
             editorState: new Raw().addBlock('').toEditorState(),
+            suggestions: this.mentions,
             readOnly: false,
         };
         this.updateEditorState = editorState => this.setState({ editorState });
@@ -47,6 +72,20 @@ class TextEditor extends React.Component {
         const inlineStyles = exporter(this.state.editorState);
         const parsedContent = {message: JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent())), inlineStyles: inlineStyles};
         this.props.sendChatMessage(parsedContent);
+    };
+
+    onSearchChange = ({ value }) => {
+        this.setState({
+            suggestions: defaultSuggestionsFilter(value, this.mentions),
+        });
+    };
+
+    onAddMention = () => {
+        // get the mention object selected
+    };
+
+    focus = () => {
+        this.editor.focus();
     };
 
     toggleFontSize = fontSize => {
@@ -74,6 +113,7 @@ class TextEditor extends React.Component {
     };
 
     render() {
+        const { MentionSuggestions } = this.mentionPlugin;
         const { editorState } = this.state;
         const options = x => x.map(fontSize => {
             return <option key={fontSize} value={fontSize}>{fontSize}</option>;
@@ -81,8 +121,6 @@ class TextEditor extends React.Component {
         return (
             <TextEditorDiv style={{ display: 'flex', flexDirection: 'column', padding: '15px' }}>
                 <div style={{ flex: '1 0 25%' }}>
-
-
                     <select onChange={e => this.toggleFontSize(e.target.value)}>
                         {options(['12px', '24px', '36px', '50px', '72px'])}
                     </select>
@@ -93,7 +131,7 @@ class TextEditor extends React.Component {
                         {options(['uppercase', 'capitalize', 'lowercase'])}
                     </select>
                 </div>
-                <div style={{ flex: '1 0 25%' }}>
+                <div style={{ flex: '1 0 25%' }} onClick={this.focus}>
                     <button onClick={() => this.toggleCommonStyle('BOLD')}>Bold</button>
                     <button onClick={() => this.toggleCommonStyle('ITALIC')}>Italic</button>
                     <button onClick={() => this.toggleCommonStyle('MARK')}>Mark</button>
@@ -105,7 +143,13 @@ class TextEditor extends React.Component {
                         onTab={this.onTab}
                         readOnly={this.state.readOnly}
                         spellCheck
-                        plugins={plugins}
+                        plugins={this.plugins}
+                        ref={(element) => { this.editor = element; }}
+                    />
+                    <MentionSuggestions
+                        onSearchChange={this.onSearchChange}
+                        suggestions={this.state.suggestions}
+                        onAddMention={this.onAddMention}
                     />
                 </div>
                 <button type="submit" onClick={this.onSubmit}>Send!</button>
@@ -115,6 +159,10 @@ class TextEditor extends React.Component {
 }
 
 export default connect(
-    null,
+    (state) => ({
+        userList: state.channels.openedChannel.channel.userIds,
+        ownerList: state.channels.openedChannel.channel.ownerIds,
+        allUsers: state.users.all
+    }),
     { sendChatMessage }
 )(TextEditor);

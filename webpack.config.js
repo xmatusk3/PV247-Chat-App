@@ -62,22 +62,25 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'styles/[name].[ext]',
-                        },
-                    },
-                    {
-                        loader: 'extract-loader',
-                        options: {
-                            publicPath: '../',
-                        }
-                    },
-                    { loader: 'css-loader' }
-                ]
+                use: [ 'style-loader', 'css-loader' ]
             },
+                // test: /\.css$/,
+                // loader: [
+                //     {
+                //         loader: 'file-loader',
+                //         options: {
+                //             name: 'styles/[name].[ext]',
+                //         },
+                //     },
+                //     {
+                //         loader: 'extract-loader',
+                //         options: {
+                //             publicPath: '../',
+                //         }
+                //     },
+                //     // { loader: 'postcss-loader' },
+                //     // { loader: 'css-loader' }
+                // ]
             {
                 test: /\.(eot|svg|ttf|woff|woff2)/,
                 use: {

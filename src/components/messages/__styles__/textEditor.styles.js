@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 export const TextEditorDiv = styled.div`
-    border: '1px solid #ccc';
-    cursor: 'text';
-    minHeight: 80;
-    padding: 10;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    cursor: text;
+    padding: 16px;
+    border-radius: 2px;
+    margin-bottom: 2em;
+    box-shadow: inset 0px 1px 8px -3px #ABABAB;
+    background: #fefefe;
+    min-height: 140px;
 `;

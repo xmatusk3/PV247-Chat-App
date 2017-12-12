@@ -92,10 +92,4 @@ class Message extends Component {
     }
 }
 
-// const a = (m, iS) => {
-//     const c = convertFromRaw(m);
-//     const b = stateToHTML(convertFromRaw(this.props.message.value), {inlineStyles: this.props.message.customData.inlineStyles});
-//     return b;
-// };
-
 export default connect((state) => ({user: state.users.user}), {deleteMessage, changeVoteMessage})(Message);

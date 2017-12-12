@@ -88,20 +88,20 @@ export const cancelEditing = (channel, usersToPromote, usersToKick) => {
     };
 };
 
-export const openChannel = (channelId) =>
+export const openChannel = (channel) =>
     (dispatch) => {
         dispatch({
             type: actionTypes.CHANNEL_OPEN_CHANNEL,
-            payload: channelId
+            payload: channel
         });
-        dispatch(fetchMessages(channelId));
+        dispatch(fetchMessages(channel.id));
     };
 
 export const fetchMessages = (channelId = null) =>
     (dispatch, getState) => {
         const state = getState();
         const { users: {user} } = state;
-        const openedChannelId = channelId || state.channels.openedChannel.channelId;
+        const openedChannelId = channelId || state.channels.openedChannel.channel.id;
 
         const request =
             fetchAuthToken(user.email)
