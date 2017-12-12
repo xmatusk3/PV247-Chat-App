@@ -1,9 +1,9 @@
-//import { DemoComponent } from './containers-redux/demo/demoComponent.jsx';
 import './utils/global-styles.js';
 
 require.context('../static/', true);
 import ReactDom from 'react-dom';
 import React from 'react';
+import 'es6-shim';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 

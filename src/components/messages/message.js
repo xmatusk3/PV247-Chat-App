@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
 import { AvatarImage } from '../profile/Avatar.styles';
+import { stateToHTML } from 'draft-js-export-html';
+import { convertFromRaw} from 'draft-js';
 
+import enrichHTML from  '../../utils/enrichHTML';
 import { deleteMessage, changeVoteMessage } from '../../actions/messages/actionCreators';
+
 
 class Message extends Component {
     static propTypes = {
@@ -79,8 +83,7 @@ class Message extends Component {
                             </div>
                         </div>
                         <hr />
-                        <div style={{display: 'flex', flexWrap: 'wrap', wordWrap: 'break-word'}}>
-                            {`${this.props.message.value}`}
+                        <div dangerouslySetInnerHTML={{__html: enrichHTML(stateToHTML(convertFromRaw(this.props.message.value)), {inlineStyles: this.props.message.customData.inlineStyles})}} style={{display: 'flex', flexWrap: 'wrap', wordWrap: 'break-word'}}>
                         </div>
                     </div>
                 </div>
@@ -88,5 +91,11 @@ class Message extends Component {
         );
     }
 }
+
+// const a = (m, iS) => {
+//     const c = convertFromRaw(m);
+//     const b = stateToHTML(convertFromRaw(this.props.message.value), {inlineStyles: this.props.message.customData.inlineStyles});
+//     return b;
+// };
 
 export default connect((state) => ({user: state.users.user}), {deleteMessage, changeVoteMessage})(Message);

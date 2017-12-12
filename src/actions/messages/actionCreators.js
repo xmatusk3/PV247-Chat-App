@@ -13,8 +13,8 @@ export const sendChatMessage = (message) =>
         const { channels: { openedChannel: { channelId } }, users: { user: { email } } } = getState();
 
         const requestData = {
-            'value': message,
-            'customData': JSON.stringify({votedBy: Map([ [email, 1] ])})
+            'value': message.message,
+            'customData': JSON.stringify({votedBy: Map([ [email, 1] ]), inlineStyles: message.inlineStyles})
         };
 
         const request = fetchAuthToken(email).then((token) => {

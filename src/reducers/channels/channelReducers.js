@@ -30,6 +30,8 @@ const channelUiReducer = (state = defaultUiState, {type, payload}) => {
             return {...state, newChannelName: payload};
         case Actions.SHARED_API_ERROR:
             return {...state, error: payload};
+        case Actions.CHANNEL_OPEN_CHANNEL_CLOSE:
+            return {...state, isBeingOpened: false};
         default:
             return state;
     }
@@ -86,6 +88,8 @@ const openedChannelReducer = (state = {channelId: null, messages: Immutable.List
             return {...state, messages: state.messages.filter(m => m.id !== payload)};
         case Actions.CHANNEL_UPDATE_OPENED_CHANNEL:
             return {...payload};
+        case Actions.CHANNEL_OPEN_CHANNEL_CLOSE:
+            return {channelId: null, messages: Immutable.List()};
         default:
             return state;
     }
