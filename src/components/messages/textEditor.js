@@ -5,13 +5,14 @@ import Raw from 'draft-js-raw-content-state';
 import createStyles from 'draft-js-custom-styles';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { TextEditorDiv } from './__styles__/textEditor.styles';
 import Immutable from 'immutable';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import createMentionPlugin, { defaultSuggestionsFilter } from 'draft-js-mention-plugin';
 import {sendChatMessage} from '../../actions/messages/actionCreators';
-import mentionsStyles from './__styles__/mentionStyles.css';
+// import mentionsStyles from './__styles__/mentionStyles.css';
+import editorStyles from './__styles__/textEditor.css';
+import 'draft-js-mention-plugin/lib/plugin.css';
 
 const hashtagPlugin = createHashtagPlugin();
 const linkifyPlugin = createLinkifyPlugin();
@@ -52,7 +53,6 @@ class TextEditor extends React.Component {
         this.mentionPlugin = createMentionPlugin({
             mentions: this.mentions,
             entityMutability: 'IMMUTABLE',
-            theme: mentionsStyles,
             mentionPrefix: '@'
         });
         this.plugins = [
@@ -119,7 +119,7 @@ class TextEditor extends React.Component {
             return <option key={fontSize} value={fontSize}>{fontSize}</option>;
         });
         return (
-            <TextEditorDiv style={{ display: 'flex', flexDirection: 'column', padding: '15px' }}>
+            <div  style={{ border: 'solid 1px', display: 'flex', flexDirection: 'column', padding: '15px' }}>
                 <div style={{ flex: '1 0 25%' }}>
                     <select onChange={e => this.toggleFontSize(e.target.value)}>
                         {options(['12px', '24px', '36px', '50px', '72px'])}
@@ -131,10 +131,12 @@ class TextEditor extends React.Component {
                         {options(['uppercase', 'capitalize', 'lowercase'])}
                     </select>
                 </div>
-                <div style={{ flex: '1 0 25%' }} onClick={this.focus}>
+                <div >
                     <button onClick={() => this.toggleCommonStyle('BOLD')}>Bold</button>
                     <button onClick={() => this.toggleCommonStyle('ITALIC')}>Italic</button>
                     <button onClick={() => this.toggleCommonStyle('MARK')}>Mark</button>
+                </div>
+                <div className={editorStyles.editor} style={{ flex: '1 0 25%' }} onClick={this.focus}>
                     <Editor
                         customStyleFn={customStyleFn}
                         customStyleMap={customStyleMap}
@@ -153,7 +155,7 @@ class TextEditor extends React.Component {
                     />
                 </div>
                 <button type="submit" onClick={this.onSubmit}>Send!</button>
-            </TextEditorDiv>
+            </div>
         );
     }
 }

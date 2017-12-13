@@ -12,7 +12,8 @@ const babelLoader = {
             targets: {
                 browsers: ['last 2 versions', 'not ie <= 11']
             }
-        }], ['stage-2']]
+        }], ['stage-2']],
+        cacheDirectory: false
     }
 };
 
@@ -60,27 +61,31 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use: javascriptLoaders
             },
+            // {
+            //     test: /plugin\.css$/,
+            //     loaders: [
+            //         /*'style-loader', */'css-loader',
+            //     ],
+            // },
             {
                 test: /\.css$/,
-                use: [ 'style-loader', 'css-loader' ]
+                loader: [
+                    // {
+                    //     loader: 'file-loader',
+                    //     options: {
+                    //         name: 'styles/[name].[ext]',
+                    //     },
+                    // },
+                    // {
+                    //     loader: 'extract-loader',
+                    //     options: {
+                    //         publicPath: '../',
+                    //     }
+                    // },
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' }
+                ]
             },
-                // test: /\.css$/,
-                // loader: [
-                //     {
-                //         loader: 'file-loader',
-                //         options: {
-                //             name: 'styles/[name].[ext]',
-                //         },
-                //     },
-                //     {
-                //         loader: 'extract-loader',
-                //         options: {
-                //             publicPath: '../',
-                //         }
-                //     },
-                //     // { loader: 'postcss-loader' },
-                //     // { loader: 'css-loader' }
-                // ]
             {
                 test: /\.(eot|svg|ttf|woff|woff2)/,
                 use: {

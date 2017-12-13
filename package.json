@@ -38,7 +38,6 @@
     "file-loader": "^1.1.5",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
-    "postcss-loader": "^2.0.9",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
     "react-dnd": "^2.5.4",
