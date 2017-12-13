@@ -69,6 +69,8 @@ class TextEditor extends React.Component {
     }
 
     onSubmit = () => {
+        // eslint-disable-next-line
+        console.log(this.state.editorState);
         const inlineStyles = exporter(this.state.editorState);
         const parsedContent = {message: JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent())), inlineStyles: inlineStyles};
         this.props.sendChatMessage(parsedContent);
@@ -78,10 +80,6 @@ class TextEditor extends React.Component {
         this.setState({
             suggestions: defaultSuggestionsFilter(value, this.mentions),
         });
-    };
-
-    onAddMention = () => {
-        // get the mention object selected
     };
 
     focus = () => {
@@ -151,7 +149,7 @@ class TextEditor extends React.Component {
                     <MentionSuggestions
                         onSearchChange={this.onSearchChange}
                         suggestions={this.state.suggestions}
-                        onAddMention={this.onAddMention}
+                        onAddMention={() => {}}
                     />
                 </div>
                 <button type="submit" onClick={this.onSubmit}>Send!</button>

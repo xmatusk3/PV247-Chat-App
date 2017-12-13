@@ -39,7 +39,7 @@ class Message extends Component {
                                     className="img-rounded"
                                     alt="Profile picture"
                                     src={this.props.senderUser.avatarUri}
-                                    title={this.props.message.createdBy}
+                                    title={this.props.senderUser.email}
                                 />
                             </div>
                             <div>
@@ -83,7 +83,16 @@ class Message extends Component {
                             </div>
                         </div>
                         <hr />
-                        <div dangerouslySetInnerHTML={{__html: enrichHTML(stateToHTML(convertFromRaw(this.props.message.value)), {inlineStyles: this.props.message.customData.inlineStyles})}} style={{display: 'flex', flexWrap: 'wrap', wordWrap: 'break-word'}}>
+                        <div style={{display: 'flex', flexDirection: 'column'}}>
+                            <div>
+                                {this.props.senderUser.nickname || this.props.senderUser.email}:
+                            </div>
+                            <div dangerouslySetInnerHTML={{__html:
+                                    enrichHTML(stateToHTML(
+                                        convertFromRaw(this.props.message.value)),
+                                            {inlineStyles: this.props.message.customData.inlineStyles})
+                            }} style={{display: 'flex', flexWrap: 'wrap', wordWrap: 'break-word'}}>
+                        </div>
                         </div>
                     </div>
                 </div>

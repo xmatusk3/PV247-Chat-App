@@ -61,27 +61,9 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use: javascriptLoaders
             },
-            // {
-            //     test: /plugin\.css$/,
-            //     loaders: [
-            //         /*'style-loader', */'css-loader',
-            //     ],
-            // },
             {
                 test: /\.css$/,
                 loader: [
-                    // {
-                    //     loader: 'file-loader',
-                    //     options: {
-                    //         name: 'styles/[name].[ext]',
-                    //     },
-                    // },
-                    // {
-                    //     loader: 'extract-loader',
-                    //     options: {
-                    //         publicPath: '../',
-                    //     }
-                    // },
                     { loader: 'style-loader' },
                     { loader: 'css-loader' }
                 ]
