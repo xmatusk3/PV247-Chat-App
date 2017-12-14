@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
-import { AvatarImage } from '../profile/Avatar.styles';
 import { stateToHTML } from 'draft-js-export-html';
 import { convertFromRaw} from 'draft-js';
 
 import enrichHTML from  '../../utils/enrichHTML';
+import { AvatarImage } from '../profile/Avatar.styles';
 import { deleteMessage, changeVoteMessage } from '../../actions/messages/actionCreators';
+import TextEditor from './textEditor';
 
 
 class Message extends Component {
@@ -19,8 +20,17 @@ class Message extends Component {
         senderUser: PropTypes.object.isRequired
     };
 
+    constructor(props) {
+        super(props);
+        this.state = ({isBeingEditedMessage: false});
+    }
+
     onChangeVote = (newVote) => {
         this.props.changeVoteMessage(this.props.message, newVote);
+    };
+
+    changeBeingEdited = () => {
+        this.setState({isBeingEditedMessage: !this.state.isBeingEditedMessage});
     };
 
     render() {
@@ -77,6 +87,7 @@ class Message extends Component {
                                     size='lg'
                                     spin
                                     style={{marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                    onClick={this.changeBeingEdited}
                                 />}
                                 {isOwnMessage &&
                                 <FontAwesome
@@ -90,16 +101,19 @@ class Message extends Component {
                             </div>
                         </div>
                         <hr />
-                        <div style={{display: 'flex', flexDirection: 'column'}}>
-                            <div>
-                                {this.props.senderUser.nickname || this.props.senderUser.email}:
+                        {this.state.isBeingEditedMessage ? <TextEditor /> :
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'column'
+                            }}>
+                                <div>
+                                    {this.props.senderUser.nickname || this.props.senderUser.email}:
+                                </div>
+                                <div dangerouslySetInnerHTML={{
+                                    __html: convertMessageToHTML(this.props.message.value, this.props.message.customData.inlineStyles)
+                                }}/>
                             </div>
-                            <div dangerouslySetInnerHTML={{
-                                __html: convertMessageToHTML(this.props.message.value, this.props.message.customData.inlineStyles)}}
-                                 style={{display: 'flex', flexWrap: 'wrap', wordWrap: 'break-word'}}
-                            >
-                        </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>

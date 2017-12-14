@@ -69,8 +69,6 @@ class TextEditor extends React.Component {
     }
 
     onSubmit = () => {
-        // eslint-disable-next-line
-        console.log(this.state.editorState);
         const inlineStyles = exporter(this.state.editorState);
         const parsedContent = {message: JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent())), inlineStyles: inlineStyles};
         this.props.sendChatMessage(parsedContent);
@@ -132,6 +130,8 @@ class TextEditor extends React.Component {
                 <div >
                     <button onClick={() => this.toggleCommonStyle('BOLD')}>Bold</button>
                     <button onClick={() => this.toggleCommonStyle('ITALIC')}>Italic</button>
+                    <button onClick={() => this.toggleCommonStyle('UNDERLINE')}>Underline</button>
+                    <button onClick={() => this.toggleCommonStyle('CODE')}>Code</button>
                     <button onClick={() => this.toggleCommonStyle('MARK')}>Mark</button>
                 </div>
                 <div className={editorStyles.editor} style={{ flex: '1 0 25%' }} onClick={this.focus}>
