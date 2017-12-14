@@ -32,7 +32,7 @@ const saveLoggedUser = (prevState = defaultDetails, {type, payload}) => {
 const saveAllUsers = (state = List(), {type, payload}) => {
     switch(type) {
         case PROFILE_UPDATE_DETAILS:
-            return state.map(user => user.id === payload.id ? payload : user);
+            return state.map(user => user.id === payload.id ? {...user, ...payload} : user);
         case UPDATE_USERS:
             return payload;
         case ADD_USER:

@@ -32,7 +32,14 @@ class Message extends Component {
         return (
             <div style={{width: '1300px', display: 'flex auto'}}>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
-                    <div style={{flexWrap: 'wrap', margin: '2px', border: '1px solid black', display: 'flex', flexDirection: 'column', alignSelf: isOwnMessage ? 'flex-end' : 'flex-start', backgroundColor: isOwnMessage ? 'orange' : 'grey'}}>
+                    <div style={{flexWrap: 'wrap',
+                        margin: '2px',
+                        border: '1px solid black',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignSelf: isOwnMessage ? 'flex-end' : 'flex-start',
+                        backgroundColor: isOwnMessage ? 'orange' : 'grey'}}
+                    >
                         <div style={{display: 'flex', justifyContent: 'space-between' }}>
                             <div style={{display: 'flex', justifyContent: 'flex-start'}}>
                                 <AvatarImage
