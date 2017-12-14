@@ -10,6 +10,8 @@ import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import createMentionPlugin, { defaultSuggestionsFilter } from 'draft-js-mention-plugin';
 import { sendChatMessage, editChatMessage } from '../../actions/messages/actionCreators';
+import FileField from './FileField';
+import { reduxForm, Field } from 'redux-form';
 import editorStyles from './__styles__/textEditor.css';
 import 'draft-js-mention-plugin/lib/plugin.css';
 
@@ -22,6 +24,7 @@ const customStyleMap = {
         fontStyle: 'italic',
     },
 };
+/* eslint-disable */
 
 const { styles, customStyleFn, exporter } = createStyles(['font-size', 'color', 'text-transform'], 'CUSTOM_', customStyleMap);
 
@@ -29,6 +32,7 @@ class TextEditor extends React.Component {
     static propTypes = {
         sendChatMessage: PropTypes.func.isRequired,
         editChatMessage: PropTypes.func.isRequired,
+        handleSubmit: PropTypes.func.isRequired,
         userList: PropTypes.instanceOf(Immutable.Set),
         ownerList: PropTypes.instanceOf(Immutable.Set),
         allUsers: PropTypes.instanceOf(Immutable.List),
@@ -117,61 +121,71 @@ class TextEditor extends React.Component {
         return this.updateEditorState(newEditorState);
     };
 
+
     render() {
         const { MentionSuggestions } = this.mentionPlugin;
         const { editorState } = this.state;
         const options = x => x.map(fontSize => {
             return <option key={fontSize} value={fontSize}>{fontSize}</option>;
         });
+        const {handleSubmit} = this.props;
         return (
-            <div  style={{ border: 'solid 1px', display: 'flex', flexDirection: 'column', padding: '15px' }}>
-                <div style={{ flex: '1 0 25%' }}>
-                    <select onChange={e => this.toggleFontSize(e.target.value)}>
-                        {options(['12px', '24px', '36px', '50px', '72px'])}
-                    </select>
-                    <select onChange={e => this.toggleColor(e.target.value)}>
-                        {options(['black', 'green', 'blue', 'red', 'purple', 'orange'])}
-                    </select>
-                    <select onChange={e => this.toggleTextTransform(e.target.value)}>
-                        {options(['uppercase', 'capitalize', 'lowercase'])}
-                    </select>
+            <div style={{width:'30%', border: 'solid 1px', display:'flex', justifyContent:'space-between', minHeight: '80px', maxHeight: '150px'}}>
+                <div  style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                    <div>
+                        <select onChange={e => this.toggleFontSize(e.target.value)}>
+                            {options(['12px', '24px', '36px', '50px', '72px'])}
+                        </select>
+                        <select onChange={e => this.toggleColor(e.target.value)}>
+                            {options(['black', 'green', 'blue', 'red', 'purple', 'orange'])}
+                        </select>
+                        <select onChange={e => this.toggleTextTransform(e.target.value)}>
+                            {options(['uppercase', 'capitalize', 'lowercase'])}
+                        </select>
+                    </div>
+                    <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                        <button onClick={() => this.toggleCommonStyle('BOLD')}>Bold</button>
+                        <button onClick={() => this.toggleCommonStyle('ITALIC')}>Italic</button>
+                        <button onClick={() => this.toggleCommonStyle('UNDERLINE')}>Underline</button>
+                        <button onClick={() => this.toggleCommonStyle('CODE')}>Code</button>
+                        <button onClick={() => this.toggleCommonStyle('MARK')}>Mark</button>
+                    </div>
+                    <div className={editorStyles.editor} style={{width:'250px', wordWrap:'wrap', overflowY: 'auto', overflowX:'hidden', flex: '1 0 25%' }} onClick={this.focus}>
+                        <Editor
+                            customStyleFn={customStyleFn}
+                            customStyleMap={customStyleMap}
+                            editorState={editorState}
+                            onChange={this.updateEditorState}
+                            onTab={this.onTab}
+                            readOnly={this.state.readOnly}
+                            spellCheck
+                            plugins={this.plugins}
+                            ref={(element) => { this.editor = element; }}
+                        />
+                        <MentionSuggestions
+                            onSearchChange={this.onSearchChange}
+                            suggestions={this.state.suggestions}
+                            onAddMention={() => {}}
+                        />
+                        <form style={{borderTop: '1px solid'}} onSubmit={handleSubmit(({attachment}) => console.log(attachment))} >
+                            <Field component={ FileField } name='uploadfile' multiple={true}
+                            />
+                        </form>
+                    </div>
                 </div>
-                <div >
-                    <button onClick={() => this.toggleCommonStyle('BOLD')}>Bold</button>
-                    <button onClick={() => this.toggleCommonStyle('ITALIC')}>Italic</button>
-                    <button onClick={() => this.toggleCommonStyle('UNDERLINE')}>Underline</button>
-                    <button onClick={() => this.toggleCommonStyle('CODE')}>Code</button>
-                    <button onClick={() => this.toggleCommonStyle('MARK')}>Mark</button>
-                </div>
-                <div className={editorStyles.editor} style={{ flex: '1 0 25%' }} onClick={this.focus}>
-                    <Editor
-                        customStyleFn={customStyleFn}
-                        customStyleMap={customStyleMap}
-                        editorState={editorState}
-                        onChange={this.updateEditorState}
-                        onTab={this.onTab}
-                        readOnly={this.state.readOnly}
-                        spellCheck
-                        plugins={this.plugins}
-                        ref={(element) => { this.editor = element; }}
-                    />
-                    <MentionSuggestions
-                        onSearchChange={this.onSearchChange}
-                        suggestions={this.state.suggestions}
-                        onAddMention={() => {}}
-                    />
-                </div>
-                <button type="submit" onClick={this.onSubmit}>Send!</button>
+                <button style={{maxHeight: '50px', marginTop:'30px'}} type="submit" onClick={this.onSubmit}>Send!</button>
             </div>
         );
     }
 }
 
-export default connect(
+export default reduxForm({
+    form: 'UploadFileTextEditorForm'
+})(connect(
     (state) => ({
         userList: state.channels.openedChannel.channel.userIds,
         ownerList: state.channels.openedChannel.channel.ownerIds,
         allUsers: state.users.all
     }),
     { sendChatMessage, editChatMessage }
-)(TextEditor);
+)(TextEditor));

@@ -47,7 +47,7 @@ class Message extends Component {
         const alreadyDownvoted = votedBy.has(this.props.user.email) && votedBy.get(this.props.user.email) === -1;
 
         return (
-            <div style={{width: '1300px', display: 'flex auto'}}>
+            <div>
                 <div style={{display: 'flex', flexDirection: 'column'}}>
                     <div style={{flexWrap: 'wrap',
                         margin: '2px',

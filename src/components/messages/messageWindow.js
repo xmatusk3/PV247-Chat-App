@@ -34,7 +34,7 @@ class MessageWindow extends Component {
             ));
 
         return (
-            <div style={{border: '1px solid black', display: 'flex', flexDirection: 'column-reverse'}}>
+            <div style={{height: '75vh', overflowY:'auto', width: '100%', display: 'flex', border: '1px solid black', flexDirection: 'column-reverse'}}>
                 {messages}
             </div>
         );

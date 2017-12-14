@@ -5,7 +5,7 @@ import MessageWindow from './messageWindow';
 class ChannelLayout extends Component {
     render() {
         return (
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+            <div style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems:'flex-end'}}>
                 <MessageWindow />
                 <TextEditor />
             </div>

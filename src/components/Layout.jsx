@@ -49,7 +49,7 @@ class ChannelLayout extends React.PureComponent {
                     <TopBarHeader>{`Currently logged as ${this.props.user}`}</TopBarHeader>
                 </TopBarDiv>
                 <ChannelLayoutDiv>
-                    <ChannelList />
+                    <ChannelList/>
                     {this.props.isBeingAdded && <AddChannel />}
                     {this.props.isBeingEdited && <EditChannel />}
                     {this.props.isBeingInvited && <InviteUsers />}
