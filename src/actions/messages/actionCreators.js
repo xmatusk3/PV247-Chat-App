@@ -10,11 +10,11 @@ import parseMessageResponse from '../../utils/api/parseMessageResponse';
 
 export const sendChatMessage = (message) =>
     (dispatch, getState) => {
-        const { channels: { openedChannel: { channelId } }, users: { user: { email } } } = getState();
+        const { channels: { openedChannel: { channel: { id } } }, users: { user: { email } } } = getState();
 
         const requestData = {
-            'value': message,
-            'customData': JSON.stringify({votedBy: Map([ [email, 1] ])})
+            'value': message.message,
+            'customData': JSON.stringify({votedBy: Map([ [email, 1] ]), inlineStyles: message.inlineStyles})
         };
 
         const request = fetchAuthToken(email).then((token) => {
@@ -24,7 +24,7 @@ export const sendChatMessage = (message) =>
                 'Content-Type': 'application/json-patch+json'
             };
 
-            return axios.post(API_MESSAGE(channelId), requestData, { headers });
+            return axios.post(API_MESSAGE(id), requestData, { headers });
         });
 
         request
@@ -37,14 +37,14 @@ export const sendChatMessage = (message) =>
 
 export const deleteMessage = (messageId) =>
     (dispatch, getState) => {
-        const {users: {user: {email}}, channels: {openedChannel: {channelId}}} = getState();
+        const {users: {user: {email}}, channels: {openedChannel: {channel: { id } } } } = getState();
 
         const request = fetchAuthToken(email)
             .then(({data}) => {
                 const headers = {
                     'Authorization' : `Bearer ${data}`
                 };
-                return axios.delete(API_MESSAGE_CHANGE(channelId, messageId), {headers});
+                return axios.delete(API_MESSAGE_CHANGE(id, messageId), {headers});
             });
 
         return request
@@ -60,9 +60,9 @@ export const deleteMessage = (messageId) =>
 
 export const changeVoteMessage = (message, newVote) =>
     (dispatch, getState) => {
-        const {users: {user: {email}}, channels: {openedChannel}} = getState();
+        const {users: { user: { email } }, channels: { openedChannel } } = getState();
         const newMessageData = {
-            value: message.value,
+            value: JSON.stringify(message.value),
             customData: JSON.stringify({...message.customData, votedBy: message.customData.votedBy.set(email, newVote)})
         };
 
@@ -73,8 +73,7 @@ export const changeVoteMessage = (message, newVote) =>
                     'Authorization': `Bearer ${data}`,
                     'Content-Type': 'application/json-patch+json'
                 };
-
-                return axios.put(API_MESSAGE_CHANGE(openedChannel.channelId, message.id), newMessageData, {headers});
+                return axios.put(API_MESSAGE_CHANGE(openedChannel.channel.id, message.id), newMessageData, {headers});
             });
 
         return request

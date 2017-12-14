@@ -30,6 +30,8 @@ const channelUiReducer = (state = defaultUiState, {type, payload}) => {
             return {...state, newChannelName: payload};
         case Actions.SHARED_API_ERROR:
             return {...state, error: payload};
+        case Actions.CHANNEL_OPEN_CHANNEL_CLOSE:
+            return {...state, isBeingOpened: false};
         default:
             return state;
     }
@@ -70,10 +72,10 @@ const editedChannelReducer = (state = null, {type, payload}) => {
     }
 };
 
-const openedChannelReducer = (state = {channelId: null, messages: Immutable.List()}, {type, payload}) => {
+const openedChannelReducer = (state = {channel: null, messages: Immutable.List()}, {type, payload}) => {
     switch(type) {
         case Actions.CHANNEL_OPEN_CHANNEL:
-            return {...state, channelId: payload };
+            return {...state, channel: payload };
         case Actions.MESSAGE_ADD_MESSAGE:
             return {...state, messages: state.messages.insert(0, payload)};
         case Actions.CHANNEL_LOAD_MESSAGES:
@@ -81,11 +83,13 @@ const openedChannelReducer = (state = {channelId: null, messages: Immutable.List
         case Actions.CHANNEL_OPEN_EDITING_CHANNEL:
         case Actions.SET_ADD_CHANNEL_OPEN:
         case Actions.CHANNEL_OPEN_INVITING:
-            return { channelId: null, messages: Immutable.List() };
+            return { channel: null, messages: Immutable.List() };
         case Actions.MESSAGE_DELETE_MESSAGE:
             return {...state, messages: state.messages.filter(m => m.id !== payload)};
         case Actions.CHANNEL_UPDATE_OPENED_CHANNEL:
             return {...payload};
+        case Actions.CHANNEL_OPEN_CHANNEL_CLOSE:
+            return {channel: null, messages: Immutable.List()};
         default:
             return state;
     }

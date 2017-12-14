@@ -12,7 +12,8 @@ const babelLoader = {
             targets: {
                 browsers: ['last 2 versions', 'not ie <= 11']
             }
-        }], ['stage-2']]
+        }], ['stage-2']],
+        cacheDirectory: false
     }
 };
 
@@ -63,18 +64,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'styles/[name].[ext]',
-                        },
-                    },
-                    {
-                        loader: 'extract-loader',
-                        options: {
-                            publicPath: '../',
-                        }
-                    },
+                    { loader: 'style-loader' },
                     { loader: 'css-loader' }
                 ]
             },

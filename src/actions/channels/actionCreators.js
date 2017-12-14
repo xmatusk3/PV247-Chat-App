@@ -88,18 +88,31 @@ export const cancelEditing = (channel, usersToPromote, usersToKick) => {
     };
 };
 
-export const openChannel = (channelId) =>
-    (dispatch, getState) => {
-        const request =
-            fetchAuthToken(getState().users.user.email)
-            .then((token) => {
-                const headers = {
-                    'Accept': 'application/json',
-                    'Authorization': `Bearer ${token.data}`,
-                };
+export const openChannel = (channel) =>
+    (dispatch) => {
+        dispatch({
+            type: actionTypes.CHANNEL_OPEN_CHANNEL,
+            payload: channel
+        });
+        dispatch(fetchMessages(channel.id));
+    };
 
-                return axios.get(API_MESSAGE(channelId), { headers });
-            });
+export const fetchMessages = (channelId = null) =>
+    (dispatch, getState) => {
+        const state = getState();
+        const { users: {user} } = state;
+        const openedChannelId = channelId || state.channels.openedChannel.channel.id;
+
+        const request =
+            fetchAuthToken(user.email)
+                .then((token) => {
+                    const headers = {
+                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token.data}`,
+                    };
+
+                    return axios.get(API_MESSAGE(openedChannelId), { headers });
+                });
 
         return request
             .then(({data}) => {
@@ -107,13 +120,12 @@ export const openChannel = (channelId) =>
                     type: actionTypes.CHANNEL_LOAD_MESSAGES,
                     payload: data.map(message => (parseMessageResponse(message)))
                 });
-                dispatch({
-                    type: actionTypes.CHANNEL_OPEN_CHANNEL,
-                    payload: channelId
-                });
             })
             .catch(() => {
                 dispatch(serverError());
+                dispatch({
+                    type: actionTypes.CHANNEL_OPEN_CHANNEL_CLOSE,
+                });
             });
     };
 

@@ -23,7 +23,7 @@ class Channel extends React.Component {
     render() {
         return (
             <ChannelDiv id={this.props.channel.id}>
-                <div onClick={() => this.props.openChannel(this.props.channel.id)}>
+                <div onClick={() => this.props.openChannel(this.props.channel)}>
                     {this.props.channel.name}
                 </div>
                 {this.isAdmin() &&
