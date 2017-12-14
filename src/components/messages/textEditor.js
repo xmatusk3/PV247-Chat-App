@@ -9,8 +9,7 @@ import Immutable from 'immutable';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import createMentionPlugin, { defaultSuggestionsFilter } from 'draft-js-mention-plugin';
-import {sendChatMessage} from '../../actions/messages/actionCreators';
-// import mentionsStyles from './__styles__/mentionStyles.css';
+import { sendChatMessage, editChatMessage } from '../../actions/messages/actionCreators';
 import editorStyles from './__styles__/textEditor.css';
 import 'draft-js-mention-plugin/lib/plugin.css';
 
@@ -29,9 +28,12 @@ const { styles, customStyleFn, exporter } = createStyles(['font-size', 'color', 
 class TextEditor extends React.Component {
     static propTypes = {
         sendChatMessage: PropTypes.func.isRequired,
+        editChatMessage: PropTypes.func.isRequired,
         userList: PropTypes.instanceOf(Immutable.Set),
         ownerList: PropTypes.instanceOf(Immutable.Set),
-        allUsers: PropTypes.instanceOf(Immutable.List)
+        allUsers: PropTypes.instanceOf(Immutable.List),
+        messageId: PropTypes.string,
+        editorState: PropTypes.object
     };
 
     constructor(props) {
@@ -61,7 +63,7 @@ class TextEditor extends React.Component {
             this.mentionPlugin
         ];
         this.state = {
-            editorState: new Raw().addBlock('').toEditorState(),
+            editorState: this.props.editorState || new Raw().addBlock('').toEditorState(),
             suggestions: this.mentions,
             readOnly: false,
         };
@@ -71,7 +73,9 @@ class TextEditor extends React.Component {
     onSubmit = () => {
         const inlineStyles = exporter(this.state.editorState);
         const parsedContent = {message: JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent())), inlineStyles: inlineStyles};
-        this.props.sendChatMessage(parsedContent);
+        this.props.messageId ?
+            this.props.editChatMessage(parsedContent, this.props.messageId)
+            : this.props.sendChatMessage(parsedContent);
     };
 
     onSearchChange = ({ value }) => {
@@ -164,5 +168,5 @@ export default connect(
         ownerList: state.channels.openedChannel.channel.ownerIds,
         allUsers: state.users.all
     }),
-    { sendChatMessage }
+    { sendChatMessage, editChatMessage }
 )(TextEditor);

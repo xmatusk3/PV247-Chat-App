@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
 import { stateToHTML } from 'draft-js-export-html';
-import { convertFromRaw} from 'draft-js';
+import { convertFromRaw, EditorState } from 'draft-js';
 
 import enrichHTML from  '../../utils/enrichHTML';
 import { AvatarImage } from '../profile/Avatar.styles';
@@ -31,6 +31,13 @@ class Message extends Component {
 
     changeBeingEdited = () => {
         this.setState({isBeingEditedMessage: !this.state.isBeingEditedMessage});
+    };
+
+    convertMessageToHTML = (message, inlineStyles) => {
+        const contentState = convertFromRaw(message);
+        const html = stateToHTML(contentState, {inlineStyles: inlineStyles});
+        const enrichedHTML = enrichHTML(html);
+        return enrichedHTML;
     };
 
     render() {
@@ -101,7 +108,12 @@ class Message extends Component {
                             </div>
                         </div>
                         <hr />
-                        {this.state.isBeingEditedMessage ? <TextEditor /> :
+                        {this.state.isBeingEditedMessage ?
+                            <TextEditor
+                                editorState={EditorState.createWithContent(convertFromRaw(this.props.message.value))}
+                                messageId={this.props.message.id}
+                            />
+                            :
                             <div style={{
                                 display: 'flex',
                                 flexDirection: 'column'
@@ -110,7 +122,7 @@ class Message extends Component {
                                     {this.props.senderUser.nickname || this.props.senderUser.email}:
                                 </div>
                                 <div dangerouslySetInnerHTML={{
-                                    __html: convertMessageToHTML(this.props.message.value, this.props.message.customData.inlineStyles)
+                                    __html: this.convertMessageToHTML(this.props.message.value, this.props.message.customData.inlineStyles)
                                 }}/>
                             </div>
                         }
@@ -121,11 +133,6 @@ class Message extends Component {
     }
 }
 
-const convertMessageToHTML = (message, inlineStyles) => {
-    const contentState = convertFromRaw(message);
-    const html = stateToHTML(contentState, {inlineStyles: inlineStyles});
-    const enrichedHTML = enrichHTML(html);
-    return enrichedHTML;
-};
+
 
 export default connect((state) => ({user: state.users.user}), {deleteMessage, changeVoteMessage})(Message);

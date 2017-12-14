@@ -78,6 +78,8 @@ const openedChannelReducer = (state = {channel: null, messages: Immutable.List()
             return {...state, channel: payload };
         case Actions.MESSAGE_ADD_MESSAGE:
             return {...state, messages: state.messages.insert(0, payload)};
+        case Actions.MESSAGE_EDIT_MESSAGE:
+            return {...state, messages: state.messages.map(m => (m.id === payload.id) ? payload : m)};
         case Actions.CHANNEL_LOAD_MESSAGES:
             return {...state, messages: Immutable.List(payload)};
         case Actions.CHANNEL_OPEN_EDITING_CHANNEL:

@@ -35,6 +35,33 @@ export const sendChatMessage = (message) =>
             }));
     };
 
+export const editChatMessage = (newMessage, messageId) =>
+    (dispatch, getState) => {
+        const { channels: { openedChannel: { channel: { id } } }, users: { user: { email } } } = getState();
+
+        const requestData = {
+            'value': newMessage.message,
+            'customData': JSON.stringify({votedBy: Map([ [email, 1] ]), inlineStyles: newMessage.inlineStyles})
+        };
+
+        const request = fetchAuthToken(email).then((token) => {
+            const headers = {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${token.data}`,
+                'Content-Type': 'application/json-patch+json'
+            };
+
+            return axios.put(API_MESSAGE_CHANGE(id, messageId), requestData, { headers });
+        });
+
+        request
+            .then(({data}) => dispatch(editMessage(parseMessageResponse(data))))
+            .catch(() => ({
+                type: actionTypes.SHARED_API_ERROR,
+                payload: 'Server error, please try again later.'
+            }));
+    };
+
 export const deleteMessage = (messageId) =>
     (dispatch, getState) => {
         const {users: {user: {email}}, channels: {openedChannel: {channel: { id } } } } = getState();
@@ -90,6 +117,11 @@ export const changeVoteMessage = (message, newVote) =>
                 payload: 'Server error, please try again later.'
             }));
     };
+
+const editMessage = (data) => ({
+    type: actionTypes.MESSAGE_EDIT_MESSAGE,
+    payload: data
+});
 
 const addMessage = (data) => ({
     type: actionTypes.MESSAGE_ADD_MESSAGE,
