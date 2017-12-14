@@ -94,11 +94,10 @@ class Message extends Component {
                             <div>
                                 {this.props.senderUser.nickname || this.props.senderUser.email}:
                             </div>
-                            <div dangerouslySetInnerHTML={{__html:
-                                    enrichHTML(stateToHTML(
-                                        convertFromRaw(this.props.message.value)),
-                                            {inlineStyles: this.props.message.customData.inlineStyles})
-                            }} style={{display: 'flex', flexWrap: 'wrap', wordWrap: 'break-word'}}>
+                            <div dangerouslySetInnerHTML={{
+                                __html: convertMessageToHTML(this.props.message.value, this.props.message.customData.inlineStyles)}}
+                                 style={{display: 'flex', flexWrap: 'wrap', wordWrap: 'break-word'}}
+                            >
                         </div>
                         </div>
                     </div>
@@ -107,5 +106,12 @@ class Message extends Component {
         );
     }
 }
+
+const convertMessageToHTML = (message, inlineStyles) => {
+    const contentState = convertFromRaw(message);
+    const html = stateToHTML(contentState, {inlineStyles: inlineStyles});
+    const enrichedHTML = enrichHTML(html);
+    return enrichedHTML;
+};
 
 export default connect((state) => ({user: state.users.user}), {deleteMessage, changeVoteMessage})(Message);
