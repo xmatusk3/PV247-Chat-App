@@ -22,7 +22,7 @@ class ChannelList extends React.PureComponent {
                 .map(item => <Channel key={item.id} channel={item} user={this.props.user} />);
 
         return (
-            <ChannelListDiv>
+            <ChannelListDiv style={{maxHeight:'95vh'}}>
                 {channels}
                 <FontAwesome
                     className='super-crazy-colors'
