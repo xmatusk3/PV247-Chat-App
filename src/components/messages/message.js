@@ -112,6 +112,7 @@ class Message extends Component {
                             <TextEditor
                                 editorState={EditorState.createWithContent(convertFromRaw(this.props.message.value))}
                                 messageId={this.props.message.id}
+                                closeMessageCallback={this.changeBeingEdited}
                             />
                             :
                             <div style={{

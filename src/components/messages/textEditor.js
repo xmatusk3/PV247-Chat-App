@@ -33,7 +33,8 @@ class TextEditor extends React.Component {
         ownerList: PropTypes.instanceOf(Immutable.Set),
         allUsers: PropTypes.instanceOf(Immutable.List),
         messageId: PropTypes.string,
-        editorState: PropTypes.object
+        editorState: PropTypes.object,
+        closeMessageCallback: PropTypes.func
     };
 
     constructor(props) {
@@ -73,9 +74,13 @@ class TextEditor extends React.Component {
     onSubmit = () => {
         const inlineStyles = exporter(this.state.editorState);
         const parsedContent = {message: JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent())), inlineStyles: inlineStyles};
-        this.props.messageId ?
-            this.props.editChatMessage(parsedContent, this.props.messageId)
-            : this.props.sendChatMessage(parsedContent);
+
+        if (this.props.messageId) {
+            this.props.editChatMessage(parsedContent, this.props.messageId);
+            this.props.closeMessageCallback();
+        } else {
+            this.props.sendChatMessage(parsedContent);
+        }
     };
 
     onSearchChange = ({ value }) => {
