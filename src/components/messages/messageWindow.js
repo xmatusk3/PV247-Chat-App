@@ -15,12 +15,12 @@ class MessageWindow extends Component {
 
     constructor(props) {
         super(props);
-        this.intervalId = setInterval(this.props.fetchMessages, 3000);
+        //this.intervalId = setInterval(this.props.fetchMessages, 3000);
     }
 
-    componentWillUnmount() {
-        clearInterval(this.intervalId);
-    }
+    // componentWillUnmount() {
+    //     clearInterval(this.intervalId);
+    // }
 
     render() {
         const messages = this.props.messages.map(m =>
