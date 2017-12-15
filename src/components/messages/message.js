@@ -6,9 +6,9 @@ import { stateToHTML } from 'draft-js-export-html';
 import { convertFromRaw, EditorState } from 'draft-js';
 
 import enrichHTML from  '../../utils/enrichHTML';
-import { AvatarImage } from '../profile/Avatar.styles';
 import { deleteMessage, changeVoteMessage } from '../../actions/messages/actionCreators';
 import TextEditor from './textEditor';
+import isImage from '../../utils/isImage';
 
 
 class Message extends Component {
@@ -42,9 +42,12 @@ class Message extends Component {
 
     render() {
         const isOwnMessage = this.props.user.email === this.props.message.createdBy;
-        const {customData: {votedBy}} = this.props.message;
+        const {customData: {votedBy, attachment}} = this.props.message;
         const alreadyUpvoted = votedBy.has(this.props.user.email) && votedBy.get(this.props.user.email) === 1;
         const alreadyDownvoted = votedBy.has(this.props.user.email) && votedBy.get(this.props.user.email) === -1;
+        const votedByKeys = votedBy.keySeq();
+        const upvotedBy = votedByKeys.reduce((res, key) => (votedBy.get(key) === 1) ? `${res}\n${key}` : res, '');
+        const downvotedBy = votedByKeys.reduce((res, key) => (votedBy.get(key) === -1) ? `${res}\n${key}` : res, '');
 
         return (
             <div>
@@ -59,10 +62,17 @@ class Message extends Component {
                     >
                         <div style={{display: 'flex', justifyContent: 'space-between' }}>
                             <div style={{display: 'flex', justifyContent: 'flex-start'}}>
-                                <AvatarImage
+                                <img
+                                    style={{
+                                        backgroundSize: 'contain',
+                                        backgroundPosition: 'center',
+                                        height: '60px', width: '60px',
+                                        overflow: 'hidden'
+                                    }}
+
                                     className="img-rounded"
                                     alt="Profile picture"
-                                    src={this.props.senderUser.avatarUri}
+                                    src={this.props.senderUser.avatarUri || 'assets/no-profile.png'}
                                     title={this.props.senderUser.email}
                                 />
                             </div>
@@ -75,6 +85,7 @@ class Message extends Component {
                                     name='fa-arrow-up'
                                     size='lg'
                                     spin
+                                    title={upvotedBy}
                                     style={{color: alreadyUpvoted ? 'red' : 'black', marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                                     onClick={() => this.onChangeVote(alreadyUpvoted ? 0 : 1)}
 
@@ -84,6 +95,7 @@ class Message extends Component {
                                     name='fa-arrow-down'
                                     size='lg'
                                     spin
+                                    title={downvotedBy}
                                     style={{color: alreadyDownvoted ? 'red' : 'black', marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                                     onClick={() => this.onChangeVote(alreadyDownvoted ? 0 : -1)}
                                 />
@@ -112,6 +124,7 @@ class Message extends Component {
                             <TextEditor
                                 editorState={EditorState.createWithContent(convertFromRaw(this.props.message.value))}
                                 messageId={this.props.message.id}
+                                messageAttachment={this.props.message.customData.attachment}
                                 closeMessageCallback={this.changeBeingEdited}
                             />
                             :
@@ -125,6 +138,16 @@ class Message extends Component {
                                 <div dangerouslySetInnerHTML={{
                                     __html: this.convertMessageToHTML(this.props.message.value, this.props.message.customData.inlineStyles)
                                 }}/>
+                                <div style={{display: 'flex', alignItems: 'center'}}>
+                                    {attachment.attachmentUri
+                                    && isImage(attachment.attachmentUri) ?
+                                        <div>
+                                            <img style={{maxWidth: '100px', maxHeight: '75px'}} src={attachment.attachmentUri}/>
+                                            <span>{attachment.attachmentName}</span>
+                                        </div>
+                                        :
+                                        <a href={attachment.attachmentUri}>{attachment.attachmentName}</a>}
+                                </div>
                             </div>
                         }
                     </div>

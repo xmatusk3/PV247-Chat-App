@@ -9,10 +9,11 @@ import Immutable from 'immutable';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import createMentionPlugin, { defaultSuggestionsFilter } from 'draft-js-mention-plugin';
-import { sendChatMessage, editChatMessage } from '../../actions/messages/actionCreators';
+import { sendChatMessage, editChatMessage, attachFileToMessage } from '../../actions/messages/actionCreators';
 import FileField from './FileField';
 import { reduxForm, Field } from 'redux-form';
 import editorStyles from './__styles__/textEditor.css';
+import { uuid } from '../../utils/uuidGenerator';
 import 'draft-js-mention-plugin/lib/plugin.css';
 
 const hashtagPlugin = createHashtagPlugin();
@@ -24,7 +25,6 @@ const customStyleMap = {
         fontStyle: 'italic',
     },
 };
-/* eslint-disable */
 
 const { styles, customStyleFn, exporter } = createStyles(['font-size', 'color', 'text-transform'], 'CUSTOM_', customStyleMap);
 
@@ -33,10 +33,12 @@ class TextEditor extends React.Component {
         sendChatMessage: PropTypes.func.isRequired,
         editChatMessage: PropTypes.func.isRequired,
         handleSubmit: PropTypes.func.isRequired,
+        attachFileToMessage: PropTypes.func.isRequired,
         userList: PropTypes.instanceOf(Immutable.Set),
         ownerList: PropTypes.instanceOf(Immutable.Set),
         allUsers: PropTypes.instanceOf(Immutable.List),
         messageId: PropTypes.string,
+        messageAttachment: PropTypes.object,
         editorState: PropTypes.object,
         closeMessageCallback: PropTypes.func
     };
@@ -51,7 +53,7 @@ class TextEditor extends React.Component {
                 if (userIdList.includes(user.email)) {
                     reduceList = reduceList.push({
                         name: user.nickname || user.email,
-                        avatar: user.avatarUri
+                        avatar: user.avatarUri || 'assets/no-profile.png'
                     });
                 }
                 return reduceList;
@@ -75,15 +77,23 @@ class TextEditor extends React.Component {
         this.updateEditorState = editorState => this.setState({ editorState });
     }
 
-    onSubmit = () => {
+    onSubmit = ({uploadFile}) => {
         const inlineStyles = exporter(this.state.editorState);
         const parsedContent = {message: JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent())), inlineStyles: inlineStyles};
 
         if (this.props.messageId) {
-            this.props.editChatMessage(parsedContent, this.props.messageId);
+            this.props.editChatMessage(parsedContent, this.props.messageId, this.props.messageAttachment);
             this.props.closeMessageCallback();
         } else {
-            this.props.sendChatMessage(parsedContent);
+            this.sendMessage(uploadFile, parsedContent);
+        }
+    };
+
+    sendMessage = (file, content) => {
+        if (file) {
+            this.props.attachFileToMessage(file[0], content);
+        } else {
+            this.props.sendChatMessage(content);
         }
     };
 
@@ -167,25 +177,25 @@ class TextEditor extends React.Component {
                             suggestions={this.state.suggestions}
                             onAddMention={() => {}}
                         />
-                        <form style={{borderTop: '1px solid'}} onSubmit={handleSubmit(({attachment}) => console.log(attachment))} >
-                            <Field component={ FileField } name='uploadfile' multiple={true}
-                            />
-                        </form>
+                        {!this.props.messageId && <Field component={ FileField } name='uploadFile' multiple={true}/>}
                     </div>
+
                 </div>
-                <button style={{maxHeight: '50px', marginTop:'30px'}} type="submit" onClick={this.onSubmit}>Send!</button>
+                <form onSubmit={handleSubmit(this.onSubmit)}>
+                    <button style={{maxHeight: '50px', marginTop:'30px'}} type="submit">Send!</button>
+                </form>
             </div>
         );
     }
 }
 
 export default reduxForm({
-    form: 'UploadFileTextEditorForm'
+    form: uuid()
 })(connect(
     (state) => ({
         userList: state.channels.openedChannel.channel.userIds,
         ownerList: state.channels.openedChannel.channel.ownerIds,
         allUsers: state.users.all
     }),
-    { sendChatMessage, editChatMessage }
+    { sendChatMessage, editChatMessage, attachFileToMessage }
 )(TextEditor));
