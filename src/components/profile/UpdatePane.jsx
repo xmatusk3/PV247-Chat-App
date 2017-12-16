@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { Alert } from './UpdatePane.styles';
+import { Alert, AlertWarning } from './__styles__/UpdatePane.styles';
 import * as formStates from '../../constants/actionTypes';
 import { SavingSpinner } from '../shared/SavingSpinner.jsx';
+import { UpdateButton } from './__styles__/Input.styles';
 
 const NoChangedDetails = () => (
     <Alert
-        className="well-sm alert-info text-center"
         role="alert"
     >
         Details outdated? Make a change…
@@ -14,32 +14,29 @@ const NoChangedDetails = () => (
 );
 
 const InvalidDetails = () => (
-    <Alert
-        className="well-sm alert-warning text-center"
+    <AlertWarning
         role="alert"
     >
-        Fix red fields to allow update…
-    </Alert>
+        Type valid nickname to allow update…
+    </AlertWarning>
 );
 
 const SubmitDetails = () => (
-    <button
+    <UpdateButton
         type="submit"
-        className="btn btn-primary btn-block well-sm"
     >
         Update details
-    </button>
+    </UpdateButton>
 );
 
 const UploadingDetails = () => (
-    <Alert
-        className="well-sm alert-warning text-center"
+    <AlertWarning
         role="alert"
     >
         <SavingSpinner />
         &nbsp;
         Saving…
-    </Alert>
+    </AlertWarning>
 );
 
 const UpdatePane = ({ formState }) => {
