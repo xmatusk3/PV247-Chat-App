@@ -34,17 +34,15 @@ export const sendInvite = (newEmail, userEmail) =>
             return axios.post(API_USER_ALL, requestData, { headers });
         });
 
-        request
-            .then(( {data} ) => {
-                dispatch({
-                    type: actionTypes.ADD_USER,
-                    payload: parseUser(data)
-                });
-            })
-            .catch(() => {
-                dispatch(serverError);
-            });
+        return request
+            .then(({data}) => dispatch(addUser(parseUser(data))))
+            .catch(() => dispatch(serverError));
     };
+
+export const addUser = (user) => ({
+    type: actionTypes.ADD_USER,
+    payload: user
+});
 
 export const closeAddChannel = () => ({
     type: actionTypes.SET_ADD_CHANNEL_OPEN,
