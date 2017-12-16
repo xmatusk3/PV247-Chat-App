@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { Alert } from './UpdatePane.styles';
 import * as formStates from '../../constants/actionTypes';
-import { SavingSpinner } from '../shared/SavingSpinner.jsx';
+import { SavingSpinner } from '../login/SavingSpinner.jsx';
 
 const NoChangedDetails = () => (
     <Alert

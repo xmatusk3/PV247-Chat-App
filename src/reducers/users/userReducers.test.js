@@ -1,5 +1,5 @@
 import { saveLoggedUser, saveAllUsers } from './userReducers';
-import { updateUsers, saveLoggedUser as saveLoggedUserAction } from '../../actions/shared/actionCreators';
+import { updateUsers, saveLoggedUser as saveLoggedUserAction } from '../../actions/authentication/actionCreators';
 import { updateProfileDetails, updateProfileAvatar } from '../../actions/profile/actionCreators';
 import { addUser } from '../../actions/channels/actionCreators';
 import { getUserData } from '../../actions/profile/actionCreators';
@@ -61,5 +61,5 @@ describe('saveAllUsers reducer tests', () => {
     test('state persists when no relevant action type is sent to saveAllUsers reducer', () => {
         const newState = saveAllUsers(userList, nonExistentAction);
         expect(newState).toBe(userList);
-});
+    });
 });

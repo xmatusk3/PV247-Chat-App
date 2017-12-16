@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import { AvatarLoaderPane } from './AvatarLoader.styles';
-import { SavingSpinner } from '../shared/SavingSpinner.jsx';
+import { SavingSpinner } from '../login/SavingSpinner.jsx';
 
 class AvatarLoader extends React.PureComponent {
     static propTypes = {

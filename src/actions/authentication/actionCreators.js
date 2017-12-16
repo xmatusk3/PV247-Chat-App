@@ -112,10 +112,7 @@ const fetchAllChannels = ({data}) =>
                 for (const channel of channels) {
                     parsedChannels = parsedChannels.push(parseChannelResponse(channel));
                 }
-                return dispatch({
-                    type: actionTypes.UPDATE_CHANNELS,
-                    payload: parsedChannels
-                });
+                return dispatch(updateChannels(parsedChannels));
             })
             .catch((response) => {
                 dispatch(serverLoginError);
@@ -123,7 +120,12 @@ const fetchAllChannels = ({data}) =>
             });
     };
 
-const serverLoginError = () => ({
+export const updateChannels = (channels) => ({
+    type: actionTypes.UPDATE_CHANNELS,
+    payload: channels
+});
+
+export const serverLoginError = () => ({
     type: actionTypes.SHARED_LOGIN_FAILED,
     payload: 'Could not load all the data from server. Please try again later.'
 });

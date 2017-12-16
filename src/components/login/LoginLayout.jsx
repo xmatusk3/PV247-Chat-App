@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as routes from '../../constants/routes';
 import LoginForm from './LoginForm';
-import Loader from '../../components/shared/Loader.jsx';
+import Loader from './Loader.jsx';
 import { FormBox } from './LoginForm.styles';
 // import { LoginHeader } from './LoginForm.styles';
 import { CenterDiv } from './LoginForm.styles';

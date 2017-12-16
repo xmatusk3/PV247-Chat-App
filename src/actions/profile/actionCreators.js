@@ -6,7 +6,7 @@ import {
     createApiFileUri
 } from '../../constants/api';
 import { fetchAuthToken } from '../../utils/api/fetchAuthToken';
-import { serverError } from '../shared/actionCreators';
+import { serverError } from '../authentication/actionCreators';
 import {
     startSubmit,
     stopSubmit
