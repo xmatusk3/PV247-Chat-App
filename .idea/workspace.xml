@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44326bda-fc14-4cf4-8da2-3b0bc5c1090d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.babelrc" afterPath="$PROJECT_DIR$/.babelrc" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change beforePath="$PROJECT_DIR$/src/actions/shared/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/shared/actionCreators.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/app.js" afterPath="$PROJECT_DIR$/src/reducers/app.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/users/userReducers.js" afterPath="$PROJECT_DIR$/src/reducers/users/userReducers.js" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" afterPath="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,6 +17,26 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="userReducers.js" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="391">
+                    <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -48,8 +63,8 @@
       <file leaf-file-name="channelReducers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="87" column="44" lean-forward="false" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+            <state relative-caret-position="151">
+              <caret line="63" column="51" lean-forward="false" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -58,8 +73,8 @@
       <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/shared/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="69" column="18" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
+            <state relative-caret-position="329">
+              <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -70,31 +85,21 @@
       <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/profile/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2244">
-              <caret line="145" column="13" lean-forward="false" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
+            <state relative-caret-position="34">
+              <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userReducers.test.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="userReducers.test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="46" lean-forward="false" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+            <state relative-caret-position="401">
+              <caret line="48" column="40" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
               <folding>
-                <element signature="e#0#48#0" expanded="true" />
+                <element signature="e#0#62#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userReducers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -109,7 +114,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".babelrc" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".babelrc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.babelrc">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -140,8 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CANCEL</find>
-      <find>Add_user</find>
       <find>LOAD_MESS</find>
       <find>sendInvite</find>
       <find>userList</find>
@@ -153,8 +156,6 @@
       <find>parsePro</find>
       <find>UPDATE_AVATAR</find>
       <find>uploadUserDetails</find>
-      <find>PROFILE_UPDATE_AVATAR</find>
-      <find>PROFILE_UPDATE_DETAILS</find>
       <find>updateProfileDetails</find>
       <find>fetchAll</find>
       <find>stateToHTML</find>
@@ -170,6 +171,10 @@
       <find>postcss</find>
       <find>updateProfileAvatar</find>
       <find>over</find>
+      <find>PROFILE_UPDATE_DETAILS</find>
+      <find>PROFILE_UPDATE_AVATAR</find>
+      <find>PROFILE_UPDATE_DET</find>
+      <find>UPDATE_USERS</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -223,13 +228,13 @@
         <option value="$PROJECT_DIR$/src/components/profile/Profile.jsx" />
         <option value="$PROJECT_DIR$/src/reducers/users/userReducers.js" />
         <option value="$PROJECT_DIR$/src/reducers/app.js" />
-        <option value="$PROJECT_DIR$/src/actions/shared/actionCreators.js" />
         <option value="$PROJECT_DIR$/.eslintrc.json" />
         <option value="$PROJECT_DIR$/.babelrc.json" />
-        <option value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/src/actions/shared/actionCreators.js" />
+        <option value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
       </list>
     </option>
   </component>
@@ -301,6 +306,19 @@
               <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
@@ -410,8 +428,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.userReducers.test.js">
-    <configuration name="Run Tests" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true">
+  <component name="RunManager" selected="Jest.saveAllUsers reducer tests.updates user list to new user list">
+    <configuration name="saveAllUsers reducer tests.updates correct user from the list after his profile is updated" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
@@ -419,11 +437,34 @@
       <scope-kind value="TEST" />
       <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
       <test-names>
-        <test-name value="User test" />
-        <test-name value="" />
+        <test-name value="saveAllUsers reducer tests" />
+        <test-name value="updates correct user from the list after his profile is updated" />
       </test-names>
     </configuration>
-    <configuration name="user reducer tests.stores logged user data" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="saveAllUsers reducer tests.updates user list to new user list" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
+      <test-names>
+        <test-name value="saveAllUsers reducer tests" />
+        <test-name value="updates user list to new user list" />
+      </test-names>
+    </configuration>
+    <configuration name="saveLoggedUser reducer tests" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
+      <test-names>
+        <test-name value="saveLoggedUser reducer tests" />
+      </test-names>
+    </configuration>
+    <configuration name="user reducer tests.state persists when no relevant action type is sent to saveLoggedUser reducer" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
@@ -432,7 +473,7 @@
       <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
       <test-names>
         <test-name value="user reducer tests" />
-        <test-name value="stores logged user data" />
+        <test-name value="state persists when no relevant action type is sent to saveLoggedUser reducer" />
       </test-names>
     </configuration>
     <configuration name="userReducers.test.js" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
@@ -443,18 +484,22 @@
       <scope-kind value="TEST_FILE" />
       <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
     </configuration>
-    <list size="5">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Karma.Run Karma tests" />
       <item index="1" class="java.lang.String" itemvalue="Mocha.Run Mocha tests" />
-      <item index="2" class="java.lang.String" itemvalue="Jest.Run Tests" />
-      <item index="3" class="java.lang.String" itemvalue="Jest.user reducer tests.stores logged user data" />
-      <item index="4" class="java.lang.String" itemvalue="Jest.userReducers.test.js" />
+      <item index="2" class="java.lang.String" itemvalue="Jest.user reducer tests.state persists when no relevant action type is sent to saveLoggedUser reducer" />
+      <item index="3" class="java.lang.String" itemvalue="Jest.saveAllUsers reducer tests.updates correct user from the list after his profile is updated" />
+      <item index="4" class="java.lang.String" itemvalue="Jest.saveLoggedUser reducer tests" />
+      <item index="5" class="java.lang.String" itemvalue="Jest.userReducers.test.js" />
+      <item index="6" class="java.lang.String" itemvalue="Jest.saveAllUsers reducer tests.updates user list to new user list" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Jest.userReducers.test.js" />
-        <item index="1" class="java.lang.String" itemvalue="Jest.user reducer tests.stores logged user data" />
-        <item index="2" class="java.lang.String" itemvalue="Jest.Run Tests" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Jest.saveAllUsers reducer tests.updates user list to new user list" />
+        <item index="1" class="java.lang.String" itemvalue="Jest.userReducers.test.js" />
+        <item index="2" class="java.lang.String" itemvalue="Jest.saveLoggedUser reducer tests" />
+        <item index="3" class="java.lang.String" itemvalue="Jest.saveAllUsers reducer tests.updates correct user from the list after his profile is updated" />
+        <item index="4" class="java.lang.String" itemvalue="Jest.user reducer tests.state persists when no relevant action type is sent to saveLoggedUser reducer" />
       </list>
     </recent_temporary>
   </component>
@@ -514,7 +559,7 @@
       <workItem from="1513315077083" duration="14899000" />
       <workItem from="1513348732306" duration="2984000" />
       <workItem from="1513405899916" duration="5720000" />
-      <workItem from="1513419511719" duration="7503000" />
+      <workItem from="1513419511719" duration="11410000" />
     </task>
     <task id="LOCAL-00001" summary="add basic messaging functions">
       <created>1512926072371</created>
@@ -534,39 +579,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="userReducers_test_js - 2017.12.16 at 12h 01m 05s.xml">
+    <history-entry file="saveAllUsers_reducer_tests_updates_correct_user_from_the_list_after_his_profile_is_updated - 2017.12.16 at 14h 54m 59s.xml">
+      <configuration name="saveAllUsers reducer tests.updates correct user from the list after his profile is updated" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="saveAllUsers_reducer_tests_updates_correct_user_from_the_list_after_his_profile_is_updated - 2017.12.16 at 14h 55m 51s.xml">
+      <configuration name="saveAllUsers reducer tests.updates correct user from the list after his profile is updated" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="saveAllUsers_reducer_tests_updates_correct_user_from_the_list_after_his_profile_is_updated - 2017.12.16 at 14h 56m 00s.xml">
+      <configuration name="saveAllUsers reducer tests.updates correct user from the list after his profile is updated" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="saveAllUsers_reducer_tests_updates_user_list_to_new_user_list - 2017.12.16 at 15h 02m 13s.xml">
+      <configuration name="saveAllUsers reducer tests.updates user list to new user list" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="saveLoggedUser_reducer_tests - 2017.12.16 at 14h 56m 26s.xml">
+      <configuration name="saveLoggedUser reducer tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="userReducers_test_js - 2017.12.16 at 14h 56m 46s.xml">
       <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 12h 01m 55s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="user_reducer_tests_state_persists_when_no_relevant_action_type_is_sent_to_saveLoggedUser_reducer - 2017.12.16 at 14h 23m 35s.xml">
+      <configuration name="user reducer tests.state persists when no relevant action type is sent to saveLoggedUser reducer" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 12h 54m 03s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="user_reducer_tests_updates_current_logged_user_avatar - 2017.12.16 at 14h 21m 02s.xml">
+      <configuration name="user reducer tests.updates current logged user avatar" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 13h 00m 24s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="user_reducer_tests_updates_current_logged_user_avatar - 2017.12.16 at 14h 21m 25s.xml">
+      <configuration name="user reducer tests.updates current logged user avatar" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 13h 00m 42s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 13h 02m 02s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 13h 02m 12s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 13h 02m 39s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 13h 09m 15s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 13h 11m 24s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="user_reducer_tests_updates_current_logged_user_avatar - 2017.12.16 at 14h 21m 31s.xml">
+      <configuration name="user reducer tests.updates current logged user avatar" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="468638000" />
+    <option name="totallyTimeSpent" value="472545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -577,9 +622,9 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35163674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35163674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31995776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31995776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -612,16 +657,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js</url>
-          <line>10</line>
+          <line>13</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js</url>
-          <line>7</line>
+          <line>12</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js</url>
+          <line>11</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -839,6 +890,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -853,6 +905,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#132#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -882,6 +937,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
           <caret line="21" column="72" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#31#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -903,58 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/shared/actionCreators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="69" column="18" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="87" column="44" lean-forward="false" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/parseUserResponse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/profile/actionCreators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="145" column="13" lean-forward="false" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="46" lean-forward="false" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.eslintrc.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6">
@@ -963,10 +969,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+    <entry file="file://$PROJECT_DIR$/.babelrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="108" column="9" lean-forward="false" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+        <state relative-caret-position="105">
+          <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -979,11 +985,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.babelrc">
+    <entry file="file://$PROJECT_DIR$/src/utils/api/parseUserResponse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="108" column="9" lean-forward="false" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="63" column="51" lean-forward="false" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/profile/actionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/shared/actionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="48" column="40" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

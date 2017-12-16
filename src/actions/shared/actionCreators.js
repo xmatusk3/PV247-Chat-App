@@ -81,16 +81,20 @@ const fetchAllUsers = ({data}) =>
         const request = axios.get(API_USER_ALL, {headers});
 
         return request
-            .then((response) =>
-                dispatch({
-                    type: actionTypes.UPDATE_USERS,
-                    payload: List(response.data.map(user => ({...parseUser(user)})))
-                }))
+            .then((response) => {
+                const userList = List(response.data.map(user => ({...parseUser(user)})));
+                return dispatch(updateUsers(userList));
+            })
             .catch((response) => {
                 dispatch(serverLoginError);
                 throw new Error(response);
             });
     };
+
+export const updateUsers = (userList) => ({
+    type: actionTypes.UPDATE_USERS,
+    payload: userList
+});
 
 const fetchAllChannels = ({data}) =>
     (dispatch) => {
