@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as routes from '../../constants/routes';
-import LoginForm from './LoginForm';
-import Loader from './Loader.jsx';
-import { FormBox } from './LoginForm.styles';
+import LoginForm from './loginForm';
+import Loader from './loader.jsx';
+import { FormBox } from './loginForm.styles';
 // import { LoginHeader } from './LoginForm.styles';
-import { CenterDiv } from './LoginForm.styles';
+import { CenterDiv } from './loginForm.styles';
 
 const LoginLayout = ({ from }) => {
     const originalLocation = from || { pathname: routes.ROOT };

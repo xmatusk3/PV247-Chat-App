@@ -10,7 +10,7 @@ import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import createMentionPlugin, { defaultSuggestionsFilter } from 'draft-js-mention-plugin';
 import { sendChatMessage, editChatMessage, attachFileToMessage } from '../../actions/messages/actionCreators';
-import FileField from './FileField';
+import FileField from './fileField';
 import { reduxForm, Field } from 'redux-form';
 import editorStyles from './__styles__/textEditor.css';
 import { uuid } from '../../utils/uuidGenerator';

@@ -12,7 +12,7 @@ import { createHashHistory } from 'history';
 import { createStore } from './utils/createStore';
 
 import Layout from './components/Layout.jsx';
-import LoginLayout from './components/login/LoginLayout';
+import LoginLayout from './components/login/loginLayout';
 
 const history = createHashHistory();
 const store = createStore(history);

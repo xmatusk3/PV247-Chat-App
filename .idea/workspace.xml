@@ -5,10 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44326bda-fc14-4cf4-8da2-3b0bc5c1090d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/app.jsx" afterPath="$PROJECT_DIR$/src/app.jsx" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout.jsx" afterPath="$PROJECT_DIR$/src/components/Layout.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/channels/channel.jsx" afterPath="$PROJECT_DIR$/src/components/channels/channel.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/channels/channelList.jsx" afterPath="$PROJECT_DIR$/src/components/channels/channelList.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/components/messages/message.js" afterPath="$PROJECT_DIR$/src/components/messages/message.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/Loader.jsx" afterPath="$PROJECT_DIR$/src/components/login/loader.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" afterPath="$PROJECT_DIR$/src/components/login/loginForm.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/LoginForm.styles.js" afterPath="$PROJECT_DIR$/src/components/login/loginForm.styles.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/LoginLayout.jsx" afterPath="$PROJECT_DIR$/src/components/login/loginLayout.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/SavingSpinner.jsx" afterPath="$PROJECT_DIR$/src/components/login/savingSpinner.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/SavingSpinner.styles.js" afterPath="$PROJECT_DIR$/src/components/login/savingSpinner.styles.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/messages/FileField.js" afterPath="$PROJECT_DIR$/src/components/messages/fileField.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/messages/textEditor.js" afterPath="$PROJECT_DIR$/src/components/messages/textEditor.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/Avatar.jsx" afterPath="$PROJECT_DIR$/src/components/profile/avatar.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/AvatarLoader.jsx" afterPath="$PROJECT_DIR$/src/components/profile/avatarLoader.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/Details.jsx" afterPath="$PROJECT_DIR$/src/components/profile/details.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/Input.jsx" afterPath="$PROJECT_DIR$/src/components/profile/input.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/Profile.jsx" afterPath="$PROJECT_DIR$/src/components/profile/profile.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/UpdatePane.jsx" afterPath="$PROJECT_DIR$/src/components/profile/updatePane.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/__styles__/Avatar.styles.js" afterPath="$PROJECT_DIR$/src/components/profile/__styles__/avatar.styles.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/__styles__/AvatarLoader.styles.js" afterPath="$PROJECT_DIR$/src/components/profile/__styles__/avatarLoader.styles.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/__styles__/Input.styles.js" afterPath="$PROJECT_DIR$/src/components/profile/__styles__/input.styles.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/__styles__/Profile.styles.js" afterPath="$PROJECT_DIR$/src/components/profile/__styles__/profile.styles.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/__styles__/UpdatePane.styles.js" afterPath="$PROJECT_DIR$/src/components/profile/__styles__/updatePane.styles.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,8 +52,8 @@
       <file leaf-file-name="channelList.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/channels/channelList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="26" column="69" lean-forward="false" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
+            <state relative-caret-position="306">
+              <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -52,8 +69,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Avatar.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/profile/Avatar.jsx">
+      <file leaf-file-name="avatar.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/profile/avatar.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
@@ -62,8 +79,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Input.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/profile/Input.jsx">
+      <file leaf-file-name="input.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/profile/input.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="748">
               <caret line="53" column="31" lean-forward="false" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
@@ -74,8 +91,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Details.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/profile/Details.jsx">
+      <file leaf-file-name="details.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/profile/details.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-246">
               <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
@@ -86,8 +103,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AvatarLoader.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/profile/AvatarLoader.jsx">
+      <file leaf-file-name="avatarLoader.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/profile/avatarLoader.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-501">
               <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
@@ -108,8 +125,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Profile.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/profile/Profile.jsx">
+      <file leaf-file-name="profile.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/profile/profile.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -120,8 +137,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpdatePane.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/profile/UpdatePane.jsx">
+      <file leaf-file-name="updatePane.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/profile/updatePane.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
               <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
@@ -299,6 +316,13 @@
               <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
               <item name="channels" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -333,6 +357,14 @@
               <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="channels" type="462c0819:PsiDirectoryNode" />
+              <item name="__styles__" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -341,6 +373,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="messages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="messages" type="462c0819:PsiDirectoryNode" />
+              <item name="__styles__" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
@@ -414,6 +454,12 @@
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
               <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -648,11 +694,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="484946000" />
+    <option name="totallyTimeSpent" value="485139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33507308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -662,7 +707,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35074627" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32302773" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32302773" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39872068" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -895,7 +940,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/UpdatePane.styles.js">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/updatePane.styles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -923,7 +968,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login/Loader.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/login/loader.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-195">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -933,7 +978,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login/LoginForm.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/login/loginForm.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-42">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -943,7 +988,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login/LoginForm.styles.js">
+    <entry file="file://$PROJECT_DIR$/src/components/login/loginForm.styles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -953,7 +998,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login/LoginLayout.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/login/loginLayout.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -963,7 +1008,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login/SavingSpinner.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/login/savingSpinner.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -971,7 +1016,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/login/SavingSpinner.styles.js">
+    <entry file="file://$PROJECT_DIR$/src/components/login/savingSpinner.styles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -991,7 +1036,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/messages/FileField.js">
+    <entry file="file://$PROJECT_DIR$/src/components/messages/fileField.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-365">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1019,7 +1064,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/Avatar.styles.js">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/avatar.styles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1027,7 +1072,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/AvatarLoader.styles.js">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/avatarLoader.styles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1035,7 +1080,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/Input.styles.js">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/input.styles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1043,7 +1088,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/Profile.styles.js">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/__styles__/profile.styles.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1077,7 +1122,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/UpdatePane.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/updatePane.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
@@ -1087,7 +1132,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/Profile.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/profile.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1097,7 +1142,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/Input.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/input.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="53" column="31" lean-forward="false" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
@@ -1107,7 +1152,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/Details.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/details.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-246">
           <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
@@ -1117,7 +1162,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/Avatar.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/avatar.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
@@ -1125,7 +1170,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/AvatarLoader.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/profile/avatarLoader.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-501">
           <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
@@ -1161,8 +1206,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/channels/channelList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="69" lean-forward="false" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
+        <state relative-caret-position="306">
+          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
           <folding />
         </state>
       </provider>

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { AvatarImage } from './__styles__/Avatar.styles';
+import { AvatarImage } from './__styles__/avatar.styles';
 
-import { AvatarLoader } from './AvatarLoader.jsx';
+import { AvatarLoader } from './avatarLoader.jsx';
 import { withOverlay } from './withOverlay.jsx';
 import { uploadUserAvatar } from '../../actions/profile/actionCreators';
 

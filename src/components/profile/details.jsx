@@ -7,8 +7,8 @@ import {
     uploadUserDetails
 } from '../../actions/profile/actionCreators';
 
-import { Input } from './Input.jsx';
-import { UpdatePane } from './UpdatePane.jsx';
+import { Input } from './input.jsx';
+import { UpdatePane } from './updatePane.jsx';
 import { validateNonEmptyness } from '../../utils/validateNonEmpty';
 import * as formStates from '../../constants/actionTypes';
 

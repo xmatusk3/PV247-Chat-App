@@ -8,7 +8,7 @@ import AddChannel from 'components/channels/addChannel.jsx';
 import EditChannel from 'components/channels/editChannel.jsx';
 import InviteUsers from 'components/channels/inviteUsers';
 import { TopBarDiv, TopBarHeader } from './profile/__styles__/topBarProfile.styles';
-import Profile from './profile/Profile.jsx';
+import Profile from './profile/profile.jsx';
 import { setProfileIsOpened } from '../actions/channels/actionCreators';
 
 const FontAwesome = require('react-fontawesome');

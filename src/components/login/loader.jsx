@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import AdvancedLoader from 'react-loader-advanced';
-import { SavingSpinner } from './SavingSpinner.jsx';
+import { SavingSpinner } from './savingSpinner.jsx';
 import { connect } from 'react-redux';
 
 const LoadingMessage = ({ message }) => (

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Avatar from './Avatar.jsx';
-import Details from './Details.jsx';
-import Loader  from '../login/Loader.jsx';
+import Avatar from './avatar.jsx';
+import Details from './details.jsx';
+import Loader  from '../login/loader.jsx';
 import { fetchUserDetails } from '../../actions/profile/actionCreators';
-import { ProfileDetailsDiv, AvatarLoeaderDiv } from './__styles__/Profile.styles';
+import { ProfileDetailsDiv, AvatarLoeaderDiv } from './__styles__/profile.styles';
 
 
 class Profile extends React.PureComponent {

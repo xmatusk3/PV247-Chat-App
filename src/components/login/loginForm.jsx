@@ -5,7 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import { authenticateUser } from '../../actions/authentication/actionCreators';
 import validateEmail from '../../utils/validateEmail';
 
-import { StartChattingButton, FormGroup, Input, InputDiv, ButtonWrap, InputGroupAddon, MailIcon } from './LoginForm.styles';
+import { StartChattingButton, FormGroup, Input, InputDiv, ButtonWrap, InputGroupAddon, MailIcon } from './loginForm.styles';
 
 class LoginForm extends React.Component {
     static propTypes = {

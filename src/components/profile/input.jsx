@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { uuid } from '../../utils/uuidGenerator';
-import { FormGroup, InputGroupDiv, StyledLabel, StyledValidationMessage, Input as StyledInput } from './__styles__/Input.styles';
+import { FormGroup, InputGroupDiv, StyledLabel, StyledValidationMessage, Input as StyledInput } from './__styles__/input.styles';
 
 class Input extends React.Component {
     static propTypes = {
