@@ -24,15 +24,15 @@ class ChannelList extends React.PureComponent {
         return (
             <ChannelListDiv style={{maxHeight:'95vh'}}>
                 {channels}
-                <FontAwesome
-                    className='super-crazy-colors'
-                    name='plus'
-                    size='2x'
-                    spin
-                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                    onClick = {() => this.props.setIsBeingCreated(true)}
-                >
-                </FontAwesome>
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <FontAwesome
+                        className='super-crazy-colors'
+                        name='plus'
+                        size='2x'
+                        style={{cursor: 'pointer', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                        onClick = {() => this.props.setIsBeingCreated(true)}
+                    />
+                </div>
             </ChannelListDiv>
         );
     }

@@ -31,8 +31,7 @@ class Channel extends React.Component {
                     className='fa fa-pencil-square-o'
                     name='fa-pencil-square-o'
                     size='lg'
-                    spin
-                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                    style={{cursor: 'pointer',  textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                     onClick = {() => this.props.startEditChannel(this.props.channel)}
                 />}
                 {this.isAdmin() &&
@@ -40,8 +39,7 @@ class Channel extends React.Component {
                     className='fa fa-plus-square'
                     name='fa-plus-square'
                     size='lg'
-                    spin
-                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                    style={{cursor: 'pointer',  textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                     onClick = {() => this.props.startInviteUsers(this.props.channel)}
                     />}
                 {this.isAdmin() &&
@@ -49,8 +47,7 @@ class Channel extends React.Component {
                     className='fa fa-times'
                     name='fa-times'
                     size='lg'
-                    spin
-                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                    style={{cursor: 'pointer',  textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                     onClick = {() => this.props.deleteChannel(this.props.channel.id, this.props.user)}
                 />}
                 {!this.isOnlyAdmin() &&
@@ -59,8 +56,7 @@ class Channel extends React.Component {
                     name='fa-sign-out'
                     aria-hidden='false'
                     size='lg'
-                    spin
-                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                    style={{cursor: 'pointer',  textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                     onClick = {() => this.props.leaveChannel(this.props.channel, this.props.user)}
                 />}
             </ChannelDiv>

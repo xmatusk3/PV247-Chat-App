@@ -84,7 +84,6 @@ class Message extends Component {
                                     className='fa fa-arrow-up'
                                     name='fa-arrow-up'
                                     size='lg'
-                                    spin
                                     title={upvotedBy}
                                     style={{color: alreadyUpvoted ? 'red' : 'black', marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                                     onClick={() => this.onChangeVote(alreadyUpvoted ? 0 : 1)}
@@ -94,7 +93,6 @@ class Message extends Component {
                                     className='fa fa-arrow-down'
                                     name='fa-arrow-down'
                                     size='lg'
-                                    spin
                                     title={downvotedBy}
                                     style={{color: alreadyDownvoted ? 'red' : 'black', marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                                     onClick={() => this.onChangeVote(alreadyDownvoted ? 0 : -1)}
@@ -104,7 +102,6 @@ class Message extends Component {
                                     className='fa fa-pencil'
                                     name='fa-pencil'
                                     size='lg'
-                                    spin
                                     style={{marginRight: '3px', marginLeft: '3px', textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                                     onClick={this.changeBeingEdited}
                                 />}
@@ -113,7 +110,6 @@ class Message extends Component {
                                     className='fa fa-times'
                                     name='fa-times'
                                     size='lg'
-                                    spin
                                     style={{ marginRight: '3px', marginLeft: '3px',textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                                     onClick={() => this.props.deleteMessage(this.props.message.id)}
                                 />}

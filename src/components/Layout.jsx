@@ -42,8 +42,7 @@ class ChannelLayout extends React.PureComponent {
                         className='fa fa-user'
                         name='fa-user'
                         size='lg'
-                        spin
-                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                        style={{cursor: 'pointer',  textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                         onClick = {this.props.setProfileIsOpened}
                     />
                     <TopBarHeader>{`Currently logged as ${this.props.user}`}</TopBarHeader>
