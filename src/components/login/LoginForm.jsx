@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { authenticateUser } from '../../actions/shared/actionCreators';
+import { authenticateUser } from '../../actions/authentication/actionCreators';
 import validateEmail from '../../utils/validateEmail';
 
 import { StartChattingButton, FormGroup, Input, InputDiv, ButtonWrap, InputGroupAddon, MailIcon } from './LoginForm.styles';

@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44326bda-fc14-4cf4-8da2-3b0bc5c1090d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/actions/shared/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/shared/actionCreators.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/actions/channels/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/channels/actionCreators.js" />
+      <change beforePath="$PROJECT_DIR$/src/actions/messages/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/messages/actionCreators.js" />
+      <change beforePath="$PROJECT_DIR$/src/actions/profile/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/profile/actionCreators.js" />
+      <change beforePath="$PROJECT_DIR$/src/actions/shared/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/authentication/actionCreators.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" afterPath="$PROJECT_DIR$/src/components/login/LoginForm.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/LoginLayout.jsx" afterPath="$PROJECT_DIR$/src/components/login/LoginLayout.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/AvatarLoader.jsx" afterPath="$PROJECT_DIR$/src/components/profile/AvatarLoader.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/Profile.jsx" afterPath="$PROJECT_DIR$/src/components/profile/Profile.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/UpdatePane.jsx" afterPath="$PROJECT_DIR$/src/components/profile/UpdatePane.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/Loader.jsx" afterPath="$PROJECT_DIR$/src/components/login/Loader.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/SavingSpinner.jsx" afterPath="$PROJECT_DIR$/src/components/login/SavingSpinner.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/SavingSpinner.styles.js" afterPath="$PROJECT_DIR$/src/components/login/SavingSpinner.styles.js" />
+      <change beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" afterPath="$PROJECT_DIR$/src/constants/actionTypes.js" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/app.js" afterPath="$PROJECT_DIR$/src/reducers/app.js" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/channels/channelReducers.js" afterPath="$PROJECT_DIR$/src/reducers/channels/channelReducers.js" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/shared/authenticationReducers.js" afterPath="$PROJECT_DIR$/src/reducers/authentication/authenticationReducers.js" />
       <change beforePath="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" afterPath="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,16 +35,68 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="3">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="userReducers.js" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.js">
+            <file leaf-file-name="authenticationReducers.test.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/reducers/authentication/authenticationReducers.test.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="391">
-                    <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+                  <state relative-caret-position="374">
+                    <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+                    <folding>
+                      <element signature="e#0#83#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="513">
+                    <caret line="80" column="20" lean-forward="true" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
                     <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/actions/messages/actionCreators.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="445">
+                    <caret line="120" column="31" lean-forward="true" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="authenticationReducers.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/reducers/authentication/authenticationReducers.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="340">
+                    <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="channelReducers.js" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="520">
+                    <caret line="111" column="42" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="42" />
+                    <folding>
+                      <element signature="e#0#39#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -40,44 +108,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="channelReducers.test.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="82" column="3" lean-forward="false" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".eslintrc.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.eslintrc.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="channelReducers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="63" column="51" lean-forward="false" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/shared/actionCreators.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="24" />
+            <state relative-caret-position="250">
+              <caret line="218" column="36" lean-forward="true" selection-start-line="218" selection-start-column="36" selection-end-line="218" selection-end-column="36" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/jest-resolve/build/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="190" column="16" lean-forward="false" selection-start-line="190" selection-start-column="16" selection-end-line="190" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actionTypes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/constants/actionTypes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,33 +160,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userReducers.test.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js">
+      <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="48" column="40" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+            <state relative-caret-position="193">
+              <caret line="122" column="16" lean-forward="false" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
               <folding>
-                <element signature="e#0#62#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="108" column="9" lean-forward="false" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".babelrc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.babelrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+            <state relative-caret-position="57">
+              <caret line="120" column="39" lean-forward="false" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -134,6 +192,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userReducers.test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -145,22 +227,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>LOAD_MESS</find>
-      <find>sendInvite</find>
-      <find>userList</find>
-      <find>fetch</find>
-      <find>fetchallusers</find>
-      <find>channe</find>
-      <find>add</find>
-      <find>opened_channel</find>
-      <find>parsePro</find>
-      <find>UPDATE_AVATAR</find>
-      <find>uploadUserDetails</find>
-      <find>updateProfileDetails</find>
-      <find>fetchAll</find>
-      <find>stateToHTML</find>
-      <find>Hello World</find>
-      <find>OPEN_CHANNEL</find>
       <find>openChannel</find>
       <find>plugins</find>
       <find>sFocused</find>
@@ -175,20 +241,36 @@
       <find>PROFILE_UPDATE_AVATAR</find>
       <find>PROFILE_UPDATE_DET</find>
       <find>UPDATE_USERS</find>
+      <find>LOGIN</find>
+      <find>resolveAuthentication</find>
+      <find>RECEIVE_TOKEN</find>
+      <find>CHANNEL_CANCEL_INVITING</find>
+      <find>SET_ADD_CHANNEL_OPEN</find>
+      <find>SET_NEW_CHANNEL_NAME</find>
+      <find>receiveValidToken</find>
+      <find>CHANNEL_OPEN_CHANNEL_CLOSE</find>
+      <find>ADD_CHANNEL</find>
+      <find>UPDATE_CHANNELS</find>
+      <find>CHANNEL_CANCEL_EDITING_CHANNEL</find>
+      <find>CHANNEL_OPEN_INVITING</find>
+      <find>CHANNEL_OPEN_CHANNEL</find>
+      <find>CHANNEL_LOAD_MESSAGES</find>
+      <find>MESSAGE_DELETE_MESSAGE</find>
+      <find>CHANNEL_UPDATE_OPENED_CHANNEL</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/channels/ChannelLayout.jsx" />
-        <option value="$PROJECT_DIR$/src/components/channels/inviteUsers.js" />
-        <option value="$PROJECT_DIR$/src/components/messages/TextEditor.js" />
-        <option value="$PROJECT_DIR$/src/components/messages/ChatLayout.js" />
-        <option value="$PROJECT_DIR$/src/components/ChannelLayout.jsx" />
         <option value="$PROJECT_DIR$/src/constants/api.js" />
         <option value="$PROJECT_DIR$/src/components/profile/Avatar.jsx" />
         <option value="$PROJECT_DIR$/src/components/channels/addChannel.jsx" />
@@ -198,7 +280,6 @@
         <option value="$PROJECT_DIR$/src/utils/api/parseUserResponse.js" />
         <option value="$PROJECT_DIR$/src/app.jsx" />
         <option value="$PROJECT_DIR$/src/utils/api/enrichHTML.js" />
-        <option value="$PROJECT_DIR$/src/actions/channels/actionCreators.js" />
         <option value="$PROJECT_DIR$/src/components/messages/__styles__/mentionStyles.js" />
         <option value="$PROJECT_DIR$/build/app.html" />
         <option value="$PROJECT_DIR$/static/app.html" />
@@ -212,13 +293,10 @@
         <option value="$PROJECT_DIR$/src/components/channels/channelList.jsx" />
         <option value="$PROJECT_DIR$/src/actions/profile/actionCreators.js" />
         <option value="$PROJECT_DIR$/src/actions/uploadFile.js" />
-        <option value="$PROJECT_DIR$/src/constants/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/utils/isImage.js" />
         <option value="$PROJECT_DIR$/src/components/messages/FileField.js" />
         <option value="$PROJECT_DIR$/src/components/channels/channel.jsx" />
-        <option value="$PROJECT_DIR$/src/reducers/channels/channelReducers.js" />
         <option value="$PROJECT_DIR$/src/utils/api/parseMessageResponse.js" />
-        <option value="$PROJECT_DIR$/src/actions/messages/actionCreators.js" />
         <option value="$PROJECT_DIR$/src/components/messages/message.js" />
         <option value="$PROJECT_DIR$/src/components/messages/textEditor.js" />
         <option value="$PROJECT_DIR$/src/components/messages/messageWindow.js" />
@@ -227,7 +305,6 @@
         <option value="$PROJECT_DIR$/src/containers/shared/Loader.jsx" />
         <option value="$PROJECT_DIR$/src/components/profile/Profile.jsx" />
         <option value="$PROJECT_DIR$/src/reducers/users/userReducers.js" />
-        <option value="$PROJECT_DIR$/src/reducers/app.js" />
         <option value="$PROJECT_DIR$/.eslintrc.json" />
         <option value="$PROJECT_DIR$/.babelrc.json" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
@@ -235,6 +312,16 @@
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/src/actions/shared/actionCreators.js" />
         <option value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
+        <option value="$PROJECT_DIR$/src/reducers/shared/authenticationReducers.test.js" />
+        <option value="$PROJECT_DIR$/src/reducers/authentication/authenticationReducers.js" />
+        <option value="$PROJECT_DIR$/src/reducers/authentication/authenticationReducers.test.js" />
+        <option value="$PROJECT_DIR$/src/reducers/app.js" />
+        <option value="$PROJECT_DIR$/src/constants/actionTypes.js" />
+        <option value="$PROJECT_DIR$/src/reducers/channels/channelReducers.js" />
+        <option value="$PROJECT_DIR$/src/actions/authentication/actionCreators.js" />
+        <option value="$PROJECT_DIR$/src/actions/channels/actionCreators.js" />
+        <option value="$PROJECT_DIR$/src/reducers/channels/channelReducers.test.js" />
+        <option value="$PROJECT_DIR$/src/actions/messages/actionCreators.js" />
       </list>
     </option>
   </component>
@@ -247,11 +334,10 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -292,14 +378,28 @@
               <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="actions" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
               <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="actions" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="channels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="messages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
@@ -312,7 +412,7 @@
               <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
@@ -331,6 +431,13 @@
               <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
               <item name="channels" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -339,13 +446,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
               <item name="profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PV247-Chat-App" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PV247-Chat-App" type="b2602c69:ProjectViewProjectNode" />
@@ -402,18 +502,18 @@
     <property name="javascript.nodejs.core.library.configured.version" value="6.11.4" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\src\components\login" />
+      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\static\assets" />
+      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\static\assets\fonts" />
+      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\src\utils" />
+      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\src\components" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\src\components\messages\__styles__" />
       <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static" />
       <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static\assets" />
       <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static\assets\fonts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\static\assets" />
-      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\static\assets\fonts" />
-      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\src\utils" />
-      <recent name="C:\programovanie\JS\Chat App\PV247-Chat-App\src\components" />
-      <recent name="C:\Users\tom29\pv247\PV247-Chat-App\static\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -428,78 +528,82 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.saveAllUsers reducer tests.updates user list to new user list">
-    <configuration name="saveAllUsers reducer tests.updates correct user from the list after his profile is updated" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
-      <test-names>
-        <test-name value="saveAllUsers reducer tests" />
-        <test-name value="updates correct user from the list after his profile is updated" />
-      </test-names>
-    </configuration>
-    <configuration name="saveAllUsers reducer tests.updates user list to new user list" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
-      <test-names>
-        <test-name value="saveAllUsers reducer tests" />
-        <test-name value="updates user list to new user list" />
-      </test-names>
-    </configuration>
-    <configuration name="saveLoggedUser reducer tests" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.openedChannelReducer channel reducer tests">
+    <configuration name="openedChannelReducer channel reducer tests" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
+      <test-file value="$PROJECT_DIR$/src/reducers/channels/channelReducers.test.js" />
       <test-names>
-        <test-name value="saveLoggedUser reducer tests" />
+        <test-name value="openedChannelReducer channel reducer tests" />
       </test-names>
     </configuration>
-    <configuration name="user reducer tests.state persists when no relevant action type is sent to saveLoggedUser reducer" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="openedChannelReducer channel reducer tests.message is added after adding a message" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
+      <test-file value="$PROJECT_DIR$/src/reducers/channels/channelReducers.test.js" />
       <test-names>
-        <test-name value="user reducer tests" />
-        <test-name value="state persists when no relevant action type is sent to saveLoggedUser reducer" />
+        <test-name value="openedChannelReducer channel reducer tests" />
+        <test-name value="message is added after adding a message" />
       </test-names>
     </configuration>
-    <configuration name="userReducers.test.js" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="openedChannelReducer channel reducer tests.message is deleted after deleting a message" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST_FILE" />
-      <test-file value="$PROJECT_DIR$/src/reducers/users/userReducers.test.js" />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/reducers/channels/channelReducers.test.js" />
+      <test-names>
+        <test-name value="openedChannelReducer channel reducer tests" />
+        <test-name value="message is deleted after deleting a message" />
+      </test-names>
+    </configuration>
+    <configuration name="openedChannelReducer channel reducer tests.message is edited after editing a message" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/reducers/channels/channelReducers.test.js" />
+      <test-names>
+        <test-name value="openedChannelReducer channel reducer tests" />
+        <test-name value="message is edited after editing a message" />
+      </test-names>
+    </configuration>
+    <configuration name="openedChannelReducer channel reducer tests.messages are loaded after loading the messages" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/reducers/channels/channelReducers.test.js" />
+      <test-names>
+        <test-name value="openedChannelReducer channel reducer tests" />
+        <test-name value="messages are loaded after loading the messages" />
+      </test-names>
     </configuration>
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Karma.Run Karma tests" />
       <item index="1" class="java.lang.String" itemvalue="Mocha.Run Mocha tests" />
-      <item index="2" class="java.lang.String" itemvalue="Jest.user reducer tests.state persists when no relevant action type is sent to saveLoggedUser reducer" />
-      <item index="3" class="java.lang.String" itemvalue="Jest.saveAllUsers reducer tests.updates correct user from the list after his profile is updated" />
-      <item index="4" class="java.lang.String" itemvalue="Jest.saveLoggedUser reducer tests" />
-      <item index="5" class="java.lang.String" itemvalue="Jest.userReducers.test.js" />
-      <item index="6" class="java.lang.String" itemvalue="Jest.saveAllUsers reducer tests.updates user list to new user list" />
+      <item index="2" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests.message is added after adding a message" />
+      <item index="3" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests.message is edited after editing a message" />
+      <item index="4" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests.messages are loaded after loading the messages" />
+      <item index="5" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests.message is deleted after deleting a message" />
+      <item index="6" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Jest.saveAllUsers reducer tests.updates user list to new user list" />
-        <item index="1" class="java.lang.String" itemvalue="Jest.userReducers.test.js" />
-        <item index="2" class="java.lang.String" itemvalue="Jest.saveLoggedUser reducer tests" />
-        <item index="3" class="java.lang.String" itemvalue="Jest.saveAllUsers reducer tests.updates correct user from the list after his profile is updated" />
-        <item index="4" class="java.lang.String" itemvalue="Jest.user reducer tests.state persists when no relevant action type is sent to saveLoggedUser reducer" />
+        <item index="0" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests" />
+        <item index="1" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests.message is deleted after deleting a message" />
+        <item index="2" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests.messages are loaded after loading the messages" />
+        <item index="3" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests.message is edited after editing a message" />
+        <item index="4" class="java.lang.String" itemvalue="Jest.openedChannelReducer channel reducer tests.message is added after adding a message" />
       </list>
     </recent_temporary>
   </component>
@@ -579,62 +683,72 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="saveAllUsers_reducer_tests_updates_correct_user_from_the_list_after_his_profile_is_updated - 2017.12.16 at 14h 54m 59s.xml">
-      <configuration name="saveAllUsers reducer tests.updates correct user from the list after his profile is updated" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests - 2017.12.16 at 20h 33m 34s.xml">
+      <configuration name="openedChannelReducer channel reducer tests" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="saveAllUsers_reducer_tests_updates_correct_user_from_the_list_after_his_profile_is_updated - 2017.12.16 at 14h 55m 51s.xml">
-      <configuration name="saveAllUsers reducer tests.updates correct user from the list after his profile is updated" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests_message_is_added_after_adding_a_message - 2017.12.16 at 20h 21m 53s.xml">
+      <configuration name="openedChannelReducer channel reducer tests.message is added after adding a message" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="saveAllUsers_reducer_tests_updates_correct_user_from_the_list_after_his_profile_is_updated - 2017.12.16 at 14h 56m 00s.xml">
-      <configuration name="saveAllUsers reducer tests.updates correct user from the list after his profile is updated" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests_message_is_added_after_adding_a_message - 2017.12.16 at 20h 22m 23s.xml">
+      <configuration name="openedChannelReducer channel reducer tests.message is added after adding a message" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="saveAllUsers_reducer_tests_updates_user_list_to_new_user_list - 2017.12.16 at 15h 02m 13s.xml">
-      <configuration name="saveAllUsers reducer tests.updates user list to new user list" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests_message_is_added_after_adding_a_message - 2017.12.16 at 20h 22m 39s.xml">
+      <configuration name="openedChannelReducer channel reducer tests.message is added after adding a message" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="saveLoggedUser_reducer_tests - 2017.12.16 at 14h 56m 26s.xml">
-      <configuration name="saveLoggedUser reducer tests" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests_message_is_deleted_after_deleting_a_message - 2017.12.16 at 20h 31m 30s.xml">
+      <configuration name="openedChannelReducer channel reducer tests.message is deleted after deleting a message" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="userReducers_test_js - 2017.12.16 at 14h 56m 46s.xml">
-      <configuration name="userReducers.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests_message_is_edited_after_editing_a_message - 2017.12.16 at 20h 25m 27s.xml">
+      <configuration name="openedChannelReducer channel reducer tests.message is edited after editing a message" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="user_reducer_tests_state_persists_when_no_relevant_action_type_is_sent_to_saveLoggedUser_reducer - 2017.12.16 at 14h 23m 35s.xml">
-      <configuration name="user reducer tests.state persists when no relevant action type is sent to saveLoggedUser reducer" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests_message_is_edited_after_editing_a_message - 2017.12.16 at 20h 26m 09s.xml">
+      <configuration name="openedChannelReducer channel reducer tests.message is edited after editing a message" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="user_reducer_tests_updates_current_logged_user_avatar - 2017.12.16 at 14h 21m 02s.xml">
-      <configuration name="user reducer tests.updates current logged user avatar" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests_message_is_edited_after_editing_a_message - 2017.12.16 at 20h 26m 15s.xml">
+      <configuration name="openedChannelReducer channel reducer tests.message is edited after editing a message" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="user_reducer_tests_updates_current_logged_user_avatar - 2017.12.16 at 14h 21m 25s.xml">
-      <configuration name="user reducer tests.updates current logged user avatar" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests_messages_are_loaded_after_loading_the_messages - 2017.12.16 at 20h 29m 30s.xml">
+      <configuration name="openedChannelReducer channel reducer tests.messages are loaded after loading the messages" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="user_reducer_tests_updates_current_logged_user_avatar - 2017.12.16 at 14h 21m 31s.xml">
-      <configuration name="user reducer tests.updates current logged user avatar" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="openedChannelReducer_channel_reducer_tests_opened_channel_is_set_correctly_after_opening_channel - 2017.12.16 at 20h 19m 31s.xml">
+      <configuration name="openedChannelReducer channel reducer tests.opened channel is set correctly after opening channel" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="472545000" />
+    <option name="totallyTimeSpent" value="481963000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.184375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19728601" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272921" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35163674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35074627" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31995776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32302773" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39872068" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35163674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31995776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273495" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.184375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,27 +782,20 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js</url>
           <line>11</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/reducers/authentication/authenticationReducers.test.js</url>
+          <line>25</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/channels/__styles__/channelList.styles.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/assets/mentionStyles.css" />
-    <entry file="file://$PROJECT_DIR$/build/app.html" />
     <entry file="file://$PROJECT_DIR$/node_modules/draft-js-mention-plugin/lib/plugin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -731,13 +838,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/UpdatePane.styles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/profile/UpdatePane.styles.js" />
     <entry file="file://$PROJECT_DIR$/src/components/profile/UpdatePane.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -787,13 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/actionTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/profile/Input.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -815,24 +909,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/api/parseMessageResponse.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/messages/actionCreators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
-          <caret line="167" column="32" lean-forward="false" selection-start-line="167" selection-start-column="32" selection-end-line="167" selection-end-column="32" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -840,34 +921,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="16" column="47" lean-forward="false" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/AvatarLoader.styles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/profile/Avatar.styles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/profile/AvatarLoader.styles.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/profile/Avatar.styles.js" />
     <entry file="file://$PROJECT_DIR$/src/components/messages/message.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="132" column="55" lean-forward="false" selection-start-line="132" selection-start-column="55" selection-end-line="132" selection-end-column="55" />
+        <state relative-caret-position="918">
+          <caret line="64" column="36" lean-forward="false" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/messages/textEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="646">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -894,23 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/shared/authenticationReducers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#132#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Layout.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -926,7 +985,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/shared/Loader.jsx">
+    <entry file="file://$PROJECT_DIR$/src/components/login/Loader.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
@@ -943,21 +1002,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/messages/messageWindow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding>
-            <marker date="1513334138004" expanded="true" signature="717:718" ph="{...}" />
-          </folding>
+        <state relative-caret-position="527">
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -969,18 +1018,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.babelrc">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        <state relative-caret-position="1394">
+          <caret line="82" column="3" lean-forward="false" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="82" column="3" lean-forward="false" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
+        <state relative-caret-position="1836">
+          <caret line="108" column="9" lean-forward="false" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -993,27 +1050,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="108" column="9" lean-forward="false" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+        <state relative-caret-position="170">
+          <caret line="18" column="80" lean-forward="true" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="63" column="51" lean-forward="false" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+        <state relative-caret-position="314">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jest-resolve/build/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="190" column="16" lean-forward="false" selection-start-line="190" selection-start-column="16" selection-end-line="190" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/authentication/authenticationReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/actionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/authentication/authenticationReducers.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1025,23 +1128,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/shared/actionCreators.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="24" />
+        <state relative-caret-position="193">
+          <caret line="122" column="16" lean-forward="false" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/users/userReducers.test.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="48" column="40" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+        <state relative-caret-position="250">
+          <caret line="218" column="36" lean-forward="true" selection-start-line="218" selection-start-column="36" selection-end-line="218" selection-end-column="36" />
           <folding>
-            <element signature="e#0#62#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="111" column="42" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="80" column="20" lean-forward="true" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/messages/actionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="120" column="31" lean-forward="true" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

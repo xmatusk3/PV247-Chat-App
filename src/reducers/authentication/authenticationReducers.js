@@ -5,7 +5,7 @@ import {
 } from '../../constants/actionTypes';
 import { combineReducers } from 'redux';
 
-const isAuthenticating = (prevState = false, action) => {
+export const isAuthenticating = (prevState = false, action) => {
     switch (action.type) {
         case SHARED_AUTHENTICATION_STARTED:
             return true;
@@ -19,7 +19,7 @@ const isAuthenticating = (prevState = false, action) => {
     }
 };
 
-const resolveAuthentication = (state = {token: '', error: ''}, action) => {
+export const resolveAuthentication = (state = {token: '', error: ''}, action) => {
     switch (action.type) {
         case SHARED_RECEIVE_TOKEN:
             return {
@@ -36,7 +36,7 @@ const resolveAuthentication = (state = {token: '', error: ''}, action) => {
     }
 };
 
-export default combineReducers({
+export const AuthReducers = combineReducers({
     isAuthenticating,
     authResult: resolveAuthentication,
 });

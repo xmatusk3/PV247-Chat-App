@@ -7,7 +7,7 @@ import {
 } from '../../constants/api';
 import { fetchAuthToken } from '../../utils/api/fetchAuthToken';
 import parseChannelResponse from '../../utils/api/parseChannelResponse';
-import { serverError } from '../shared/actionCreators';
+import { serverError } from '../authentication/actionCreators';
 import { uuid } from '../../utils/uuidGenerator';
 import parseMessageResponse from '../../utils/api/parseMessageResponse';
 import { parseUser }  from '../../utils/api/parseUserResponse';
@@ -77,21 +77,25 @@ export const removeUserUI = (channel) => ({
 export const cancelEditing = (channel, usersToPromote, usersToKick) => {
     channel.userIds = channel.userIds.union(usersToPromote).union(usersToKick);
 
-    return {
-        type: actionTypes.CHANNEL_CANCEL_EDITING_CHANNEL,
-        payload: {
-            open: false,
-            channel
-        }
-    };
+    return cancelEditingUi({
+        open: false,
+        channel
+    });
 };
+
+export const cancelEditingUi = (payload) => ({
+    type: actionTypes.CHANNEL_CANCEL_EDITING_CHANNEL,
+    payload
+});
+
+export const openChannelUi = (channel) => ({
+    type: actionTypes.CHANNEL_OPEN_CHANNEL,
+    payload: channel
+});
 
 export const openChannel = (channel) =>
     (dispatch) => {
-        dispatch({
-            type: actionTypes.CHANNEL_OPEN_CHANNEL,
-            payload: channel
-        });
+        dispatch(openChannelUi(channel));
         dispatch(fetchMessages(channel.id));
     };
 
@@ -114,18 +118,22 @@ export const fetchMessages = (channelId = null) =>
 
         return request
             .then(({data}) => {
-                dispatch({
-                    type: actionTypes.CHANNEL_LOAD_MESSAGES,
-                    payload: data.map(message => (parseMessageResponse(message)))
-                });
+                dispatch(loadMessagesUi(data.map(message => (parseMessageResponse(message)))));
             })
             .catch(() => {
                 dispatch(serverError());
-                dispatch({
-                    type: actionTypes.CHANNEL_OPEN_CHANNEL_CLOSE,
-                });
+                dispatch(closeChannelUi());
             });
     };
+
+export const loadMessagesUi = (payload) => ({
+    type: actionTypes.CHANNEL_LOAD_MESSAGES,
+    payload
+});
+
+export const closeChannelUi = () => ({
+    type: actionTypes.CHANNEL_OPEN_CHANNEL_CLOSE,
+});
 
 export const cancelInviting = () => ({
     type: actionTypes.CHANNEL_CANCEL_INVITING,
@@ -161,17 +169,21 @@ export const editChannel = (channel, userEmail) =>
 
         return request
             .then(() => {
-                dispatch({
-                    type: actionTypes.CHANNEL_UPDATE_CHANNEL,
-                    payload: channel
-                });
-                dispatch({
-                    type: actionTypes.CHANNEL_UPDATE_EDITED_CHANNEL,
-                    payload: channel
-                });
+                dispatch(updateChannel(channel));
+                dispatch(updateEditedChannel(channel));
             })
             .catch(() => dispatch(serverError));
     };
+
+export const updateEditedChannel = (channel) => ({
+    type: actionTypes.CHANNEL_UPDATE_EDITED_CHANNEL,
+    payload: channel
+});
+
+export const updateChannel = (channel) => ({
+    type: actionTypes.CHANNEL_UPDATE_CHANNEL,
+    payload: channel
+});
 
 
 
@@ -209,20 +221,25 @@ export const addNewChannel = (data, userEmail) =>
 
         return request
             .then((response) => {
-                dispatch({
-                    type: actionTypes.ADD_CHANNEL,
-                    payload: parseChannelResponse(response.data['channels'][response.data['channels'].length - 1])
-                });
-                dispatch({
-                    type: actionTypes.SET_ADD_CHANNEL_OPEN,
-                    payload: false
-                });
+                dispatch(
+                    addChannelUi(parseChannelResponse(response.data['channels'][response.data['channels'].length - 1])));
+                dispatch(openAddChannelUi(false));
             })
             .catch(() => {
                 dispatch(serverError);
             });
 
     };
+
+export const openAddChannelUi = (payload) => ({
+    type: actionTypes.SET_ADD_CHANNEL_OPEN,
+    payload
+});
+
+export const addChannelUi = (channel) => ({
+    type: actionTypes.ADD_CHANNEL,
+    payload: channel
+});
 
 export const deleteChannel = (channelId, userEmail) =>
     (dispatch) => {
@@ -284,12 +301,14 @@ export const leaveChannel = ({id, name, ownerIds, userIds}, userEmail) =>
 
         return request
             .then(() => {
-                dispatch({
-                    type: actionTypes.CHANNEL_LEAVE_CHANNEL,
-                    payload: id
-                });
+                dispatch(leaveChannelUi(id));
             })
             .catch(() => {
                 dispatch(serverError);
             });
     };
+
+export const leaveChannelUi = (id) => ({
+    type: actionTypes.CHANNEL_LEAVE_CHANNEL,
+    payload: id
+});

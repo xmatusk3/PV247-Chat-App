@@ -9,7 +9,7 @@ import {
 import { Map } from 'immutable';
 import { fetchAuthToken } from '../../utils/api/fetchAuthToken';
 import parseMessageResponse from '../../utils/api/parseMessageResponse';
-import { serverError } from '../shared/actionCreators';
+import { serverError } from '../authentication/actionCreators';
 
 export const sendChatMessage = (message, attachmentCustomData = {attachmentName: '', attachmentUri: '', attachmentId: ''}) =>
     (dispatch, getState) => {
@@ -90,6 +90,11 @@ export const deleteMessage = (messageId) =>
             .catch(() => dispatch(serverError()));
     };
 
+export const deleteMessageUi = (messageId) => ({
+    type: actionTypes.MESSAGE_DELETE_MESSAGE,
+    payload: messageId
+});
+
 export const changeVoteMessage = (message, newVote) =>
     (dispatch, getState) => {
         const {users: { user: { email } }, channels: { openedChannel } } = getState();
@@ -109,16 +114,19 @@ export const changeVoteMessage = (message, newVote) =>
             });
 
         return request
-            .then(({data}) => dispatch({
-                type: actionTypes.CHANNEL_UPDATE_OPENED_CHANNEL,
-                payload: { ...openedChannel,
-                    messages: openedChannel.messages
-                        .map(m => m.id === data.id ?
-                            parseMessageResponse(data)
-                            : m)}
-            }))
+            .then(({data}) => dispatch(updateOpenedChannel({ ...openedChannel,
+                messages: openedChannel.messages
+                    .map(m => m.id === data.id ?
+                        parseMessageResponse(data)
+                        : m)}))
+            )
             .catch(() => dispatch(serverError()));
     };
+
+export const updateOpenedChannel = (channel) => ({
+    type: actionTypes.CHANNEL_UPDATE_OPENED_CHANNEL,
+    payload: channel
+});
 
 export const attachFileToMessage = (file, content) =>
     (dispatch, getState) => {
@@ -165,12 +173,12 @@ const fetchAttachmentUri = (attachmentId, attachmentName, content) =>
             .catch(() => dispatch(serverError()));
     };
 
-const editMessage = (data) => ({
+export const editMessage = (data) => ({
     type: actionTypes.MESSAGE_EDIT_MESSAGE,
     payload: data
 });
 
-const addMessage = (data) => ({
+export const addMessage = (data) => ({
     type: actionTypes.MESSAGE_ADD_MESSAGE,
     payload: data
 });

@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Avatar from './Avatar.jsx';
 import Details from './Details.jsx';
-import Loader  from '../../components/shared/Loader.jsx';
+import Loader  from '../login/Loader.jsx';
 import { fetchUserDetails } from '../../actions/profile/actionCreators';
 import { ProfileDetailsDiv, AvatarLoeaderDiv } from './__styles__/Profile.styles';
 

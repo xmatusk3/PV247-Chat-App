@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
-import { AvatarLoaderPane } from './__styles__/AvatarLoader.styles';
-import { SavingSpinner } from '../shared/SavingSpinner.jsx';
+import { AvatarLoaderPane } from './AvatarLoader.styles';
+import { SavingSpinner } from '../login/SavingSpinner.jsx';
 
 const FontAwesome = require('react-fontawesome');
 
