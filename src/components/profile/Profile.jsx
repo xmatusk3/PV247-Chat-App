@@ -5,6 +5,7 @@ import Avatar from './Avatar.jsx';
 import Details from './Details.jsx';
 import { Loader } from '../../containers/shared/Loader.jsx';
 import { fetchUserDetails } from '../../actions/profile/actionCreators';
+import { ProfileDetailsDiv, AvatarLoeaderDiv } from './__styles__/Profile.styles';
 
 
 class Profile extends React.PureComponent {
@@ -18,16 +19,16 @@ class Profile extends React.PureComponent {
 
     render() {
         return [
-            <div className="col-xs-12 col-md-4" key="picture">
+            <AvatarLoeaderDiv key="picture">
                 <Loader stateLoadingSelector={state => state.profile.isFetchingAvatar}>
                     <Avatar />
                 </Loader>
-            </div>,
-            <div className="col-xs-12 col-md-8" key="details">
+            </AvatarLoeaderDiv>,
+            <ProfileDetailsDiv key="details">
                 <Loader stateLoadingSelector={state => state.profile.isFetchingDetails}>
                     <Details />
                 </Loader>
-            </div>
+            </ProfileDetailsDiv>
         ];
     }
 }

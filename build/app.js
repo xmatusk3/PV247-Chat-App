@@ -392,366 +392,6 @@ module.exports = g;
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var SHARED_RECEIVE_TOKEN = exports.SHARED_RECEIVE_TOKEN = 'SHARED_RECEIVE_TOKEN';
-var SHARED_INVALIDATE_TOKEN = exports.SHARED_INVALIDATE_TOKEN = 'SHARED_INVALIDATE_TOKEN';
-var SHARED_AUTHENTICATION_STARTED = exports.SHARED_AUTHENTICATION_STARTED = 'SHARED_AUTHENTICATION_STARTED';
-var SHARED_LOGIN_FAILED = exports.SHARED_LOGIN_FAILED = 'SHARED_LOGIN_FAILED';
-var SHARED_LOGIN_SUCCESS = exports.SHARED_LOGIN_SUCCESS = 'SHARED_LOGIN_SUCCES';
-var SHARED_DISMISS_ERROR = exports.SHARED_DISMISS_ERROR = 'SHARED_DISMISS_ERROR';
-var SHARED_API_ERROR = exports.SHARED_API_ERROR = 'SHARED_API_ERROR';
-var UPDATE_USERS = exports.UPDATE_USERS = 'UPDATE_USERS';
-var ADD_USER = exports.ADD_USER = 'ADD_USER';
-
-var CHANNEL_UPDATE_CHANNEL = exports.CHANNEL_UPDATE_CHANNEL = 'CHANNEL_UPDATE_CHANNEL';
-var CHANNEL_DELETE_CHANNEL = exports.CHANNEL_DELETE_CHANNEL = 'CHANNEL_DELETE_CHANNEL';
-var CHANNEL_LEAVE_CHANNEL = exports.CHANNEL_LEAVE_CHANNEL = 'CHANNEL_LEAVE_CHANNEL';
-var CHANNEL_OPEN_INVITING = exports.CHANNEL_OPEN_INVITING = 'CHANNEL_OPEN_INVITING';
-var CHANNEL_CANCEL_INVITING = exports.CHANNEL_CANCEL_INVITING = 'CHANNEL_CANCEL_INVITING';
-var CHANNEL_UPDATE_EDITED_CHANNEL = exports.CHANNEL_UPDATE_EDITED_CHANNEL = 'CHANNEL_UPDATE_EDITED_CHANNEL';
-var CHANNEL_CANCEL_EDITING_CHANNEL = exports.CHANNEL_CANCEL_EDITING_CHANNEL = 'CHANNEL_CANCEL_EDITING_CHANNEL';
-var CHANNEL_CANCEL_ADD_CHANNEL = exports.CHANNEL_CANCEL_ADD_CHANNEL = 'CHANNEL_CANCEL_ADD_CHANNEL';
-var CHANNEL_OPEN_EDITING_CHANNEL = exports.CHANNEL_OPEN_EDITING_CHANNEL = 'CHANNEL_OPEN_EDITING_CHANNEL';
-
-var SET_ADD_CHANNEL_OPEN = exports.SET_ADD_CHANNEL_OPEN = 'SET_ADD_CHANNEL_OPEN';
-
-var UPDATE_CHANNELS = exports.UPDATE_CHANNELS = 'UPDATE_CHANNELS';
-var ADD_CHANNEL = exports.ADD_CHANNEL = 'ADD_CHANNEL';
-var SET_NEW_CHANNEL_NAME = exports.SET_NEW_CHANNEL_NAME = 'SET_NEW_CHANNEL_NAME';
-
-var OPEN_EDIT_PROFILE = exports.OPEN_EDIT_PROFILE = 'OPEN_EDIT_PROFILE';
-
-var PROFILE_UPDATE_DETAILS = exports.PROFILE_UPDATE_DETAILS = 'PROFILE_UPDATE_DETAILS';
-var NOT_CHANGED = exports.NOT_CHANGED = 'NOT_CHANGED';
-var INVALID = exports.INVALID = 'INVALID';
-var SAVEAVBLE = exports.SAVEAVBLE = 'SAVEAVBLE';
-var SAVING_NOW = exports.SAVING_NOW = 'SAVING_NOW';
-
-var PROFILE_AVATAR_UPLOADING_STARTED = exports.PROFILE_AVATAR_UPLOADING_STARTED = 'PROFILE_AVATAR_UPLOADING_STARTED';
-var PROFILE_AVATAR_UPLOADING_FAILED = exports.PROFILE_AVATAR_UPLOADING_FAILED = 'PROFILE_AVATAR_UPLOADING_FAILED';
-var PROFILE_UPDATE_AVATAR = exports.PROFILE_UPDATE_AVATAR = 'PROFILE_UPDATE_AVATAR';
-var PROFILE_AVATAR_FETCHING_STARTED = exports.PROFILE_AVATAR_FETCHING_STARTED = 'PROFILE_AVATAR_FETCHING_STARTED';
-var PROFILE_FETCHING_STARTED = exports.PROFILE_FETCHING_STARTED = 'PROFILE_FETCHING_STARTED';
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var bind = __webpack_require__(181);
-var isBuffer = __webpack_require__(501);
-
-/*global toString:true*/
-
-// utils is a library of generic helper functions non-specific to axios
-
-var toString = Object.prototype.toString;
-
-/**
- * Determine if a value is an Array
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Array, otherwise false
- */
-function isArray(val) {
-  return toString.call(val) === '[object Array]';
-}
-
-/**
- * Determine if a value is an ArrayBuffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an ArrayBuffer, otherwise false
- */
-function isArrayBuffer(val) {
-  return toString.call(val) === '[object ArrayBuffer]';
-}
-
-/**
- * Determine if a value is a FormData
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an FormData, otherwise false
- */
-function isFormData(val) {
-  return (typeof FormData !== 'undefined') && (val instanceof FormData);
-}
-
-/**
- * Determine if a value is a view on an ArrayBuffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
- */
-function isArrayBufferView(val) {
-  var result;
-  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
-    result = ArrayBuffer.isView(val);
-  } else {
-    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
-  }
-  return result;
-}
-
-/**
- * Determine if a value is a String
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a String, otherwise false
- */
-function isString(val) {
-  return typeof val === 'string';
-}
-
-/**
- * Determine if a value is a Number
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Number, otherwise false
- */
-function isNumber(val) {
-  return typeof val === 'number';
-}
-
-/**
- * Determine if a value is undefined
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if the value is undefined, otherwise false
- */
-function isUndefined(val) {
-  return typeof val === 'undefined';
-}
-
-/**
- * Determine if a value is an Object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Object, otherwise false
- */
-function isObject(val) {
-  return val !== null && typeof val === 'object';
-}
-
-/**
- * Determine if a value is a Date
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Date, otherwise false
- */
-function isDate(val) {
-  return toString.call(val) === '[object Date]';
-}
-
-/**
- * Determine if a value is a File
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a File, otherwise false
- */
-function isFile(val) {
-  return toString.call(val) === '[object File]';
-}
-
-/**
- * Determine if a value is a Blob
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Blob, otherwise false
- */
-function isBlob(val) {
-  return toString.call(val) === '[object Blob]';
-}
-
-/**
- * Determine if a value is a Function
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Function, otherwise false
- */
-function isFunction(val) {
-  return toString.call(val) === '[object Function]';
-}
-
-/**
- * Determine if a value is a Stream
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Stream, otherwise false
- */
-function isStream(val) {
-  return isObject(val) && isFunction(val.pipe);
-}
-
-/**
- * Determine if a value is a URLSearchParams object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a URLSearchParams object, otherwise false
- */
-function isURLSearchParams(val) {
-  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
-}
-
-/**
- * Trim excess whitespace off the beginning and end of a string
- *
- * @param {String} str The String to trim
- * @returns {String} The String freed of excess whitespace
- */
-function trim(str) {
-  return str.replace(/^\s*/, '').replace(/\s*$/, '');
-}
-
-/**
- * Determine if we're running in a standard browser environment
- *
- * This allows axios to run in a web worker, and react-native.
- * Both environments support XMLHttpRequest, but not fully standard globals.
- *
- * web workers:
- *  typeof window -> undefined
- *  typeof document -> undefined
- *
- * react-native:
- *  navigator.product -> 'ReactNative'
- */
-function isStandardBrowserEnv() {
-  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
-    return false;
-  }
-  return (
-    typeof window !== 'undefined' &&
-    typeof document !== 'undefined'
-  );
-}
-
-/**
- * Iterate over an Array or an Object invoking a function for each item.
- *
- * If `obj` is an Array callback will be called passing
- * the value, index, and complete array for each item.
- *
- * If 'obj' is an Object callback will be called passing
- * the value, key, and complete object for each property.
- *
- * @param {Object|Array} obj The object to iterate
- * @param {Function} fn The callback to invoke for each item
- */
-function forEach(obj, fn) {
-  // Don't bother if no value provided
-  if (obj === null || typeof obj === 'undefined') {
-    return;
-  }
-
-  // Force an array if not already something iterable
-  if (typeof obj !== 'object') {
-    /*eslint no-param-reassign:0*/
-    obj = [obj];
-  }
-
-  if (isArray(obj)) {
-    // Iterate over array values
-    for (var i = 0, l = obj.length; i < l; i++) {
-      fn.call(null, obj[i], i, obj);
-    }
-  } else {
-    // Iterate over object keys
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        fn.call(null, obj[key], key, obj);
-      }
-    }
-  }
-}
-
-/**
- * Accepts varargs expecting each argument to be an object, then
- * immutably merges the properties of each object and returns result.
- *
- * When multiple objects contain the same key the later object in
- * the arguments list will take precedence.
- *
- * Example:
- *
- * ```js
- * var result = merge({foo: 123}, {foo: 456});
- * console.log(result.foo); // outputs 456
- * ```
- *
- * @param {Object} obj1 Object to merge
- * @returns {Object} Result of all merge properties
- */
-function merge(/* obj1, obj2, obj3, ... */) {
-  var result = {};
-  function assignValue(val, key) {
-    if (typeof result[key] === 'object' && typeof val === 'object') {
-      result[key] = merge(result[key], val);
-    } else {
-      result[key] = val;
-    }
-  }
-
-  for (var i = 0, l = arguments.length; i < l; i++) {
-    forEach(arguments[i], assignValue);
-  }
-  return result;
-}
-
-/**
- * Extends object a by mutably adding to it the properties of object b.
- *
- * @param {Object} a The object to be extended
- * @param {Object} b The object to copy properties from
- * @param {Object} thisArg The object to bind function to
- * @return {Object} The resulting value of object a
- */
-function extend(a, b, thisArg) {
-  forEach(b, function assignValue(val, key) {
-    if (thisArg && typeof val === 'function') {
-      a[key] = bind(val, thisArg);
-    } else {
-      a[key] = val;
-    }
-  });
-  return a;
-}
-
-module.exports = {
-  isArray: isArray,
-  isArrayBuffer: isArrayBuffer,
-  isBuffer: isBuffer,
-  isFormData: isFormData,
-  isArrayBufferView: isArrayBufferView,
-  isString: isString,
-  isNumber: isNumber,
-  isObject: isObject,
-  isUndefined: isUndefined,
-  isDate: isDate,
-  isFile: isFile,
-  isBlob: isBlob,
-  isFunction: isFunction,
-  isStream: isStream,
-  isURLSearchParams: isURLSearchParams,
-  isStandardBrowserEnv: isStandardBrowserEnv,
-  forEach: forEach,
-  merge: merge,
-  extend: extend,
-  trim: trim
-};
-
-
-/***/ }),
-/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3002,6 +2642,366 @@ var styled = _styled(StyledComponent, constructWithOptions);
 /* harmony default export */ __webpack_exports__["default"] = (styled);
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(42)(module)))
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var SHARED_RECEIVE_TOKEN = exports.SHARED_RECEIVE_TOKEN = 'SHARED_RECEIVE_TOKEN';
+var SHARED_INVALIDATE_TOKEN = exports.SHARED_INVALIDATE_TOKEN = 'SHARED_INVALIDATE_TOKEN';
+var SHARED_AUTHENTICATION_STARTED = exports.SHARED_AUTHENTICATION_STARTED = 'SHARED_AUTHENTICATION_STARTED';
+var SHARED_LOGIN_FAILED = exports.SHARED_LOGIN_FAILED = 'SHARED_LOGIN_FAILED';
+var SHARED_LOGIN_SUCCESS = exports.SHARED_LOGIN_SUCCESS = 'SHARED_LOGIN_SUCCES';
+var SHARED_DISMISS_ERROR = exports.SHARED_DISMISS_ERROR = 'SHARED_DISMISS_ERROR';
+var SHARED_API_ERROR = exports.SHARED_API_ERROR = 'SHARED_API_ERROR';
+var UPDATE_USERS = exports.UPDATE_USERS = 'UPDATE_USERS';
+var ADD_USER = exports.ADD_USER = 'ADD_USER';
+
+var CHANNEL_UPDATE_CHANNEL = exports.CHANNEL_UPDATE_CHANNEL = 'CHANNEL_UPDATE_CHANNEL';
+var CHANNEL_DELETE_CHANNEL = exports.CHANNEL_DELETE_CHANNEL = 'CHANNEL_DELETE_CHANNEL';
+var CHANNEL_LEAVE_CHANNEL = exports.CHANNEL_LEAVE_CHANNEL = 'CHANNEL_LEAVE_CHANNEL';
+var CHANNEL_OPEN_INVITING = exports.CHANNEL_OPEN_INVITING = 'CHANNEL_OPEN_INVITING';
+var CHANNEL_CANCEL_INVITING = exports.CHANNEL_CANCEL_INVITING = 'CHANNEL_CANCEL_INVITING';
+var CHANNEL_UPDATE_EDITED_CHANNEL = exports.CHANNEL_UPDATE_EDITED_CHANNEL = 'CHANNEL_UPDATE_EDITED_CHANNEL';
+var CHANNEL_CANCEL_EDITING_CHANNEL = exports.CHANNEL_CANCEL_EDITING_CHANNEL = 'CHANNEL_CANCEL_EDITING_CHANNEL';
+var CHANNEL_CANCEL_ADD_CHANNEL = exports.CHANNEL_CANCEL_ADD_CHANNEL = 'CHANNEL_CANCEL_ADD_CHANNEL';
+var CHANNEL_OPEN_EDITING_CHANNEL = exports.CHANNEL_OPEN_EDITING_CHANNEL = 'CHANNEL_OPEN_EDITING_CHANNEL';
+
+var SET_ADD_CHANNEL_OPEN = exports.SET_ADD_CHANNEL_OPEN = 'SET_ADD_CHANNEL_OPEN';
+
+var UPDATE_CHANNELS = exports.UPDATE_CHANNELS = 'UPDATE_CHANNELS';
+var ADD_CHANNEL = exports.ADD_CHANNEL = 'ADD_CHANNEL';
+var SET_NEW_CHANNEL_NAME = exports.SET_NEW_CHANNEL_NAME = 'SET_NEW_CHANNEL_NAME';
+
+var OPEN_EDIT_PROFILE = exports.OPEN_EDIT_PROFILE = 'OPEN_EDIT_PROFILE';
+
+var PROFILE_UPDATE_DETAILS = exports.PROFILE_UPDATE_DETAILS = 'PROFILE_UPDATE_DETAILS';
+var NOT_CHANGED = exports.NOT_CHANGED = 'NOT_CHANGED';
+var INVALID = exports.INVALID = 'INVALID';
+var SAVEAVBLE = exports.SAVEAVBLE = 'SAVEAVBLE';
+var SAVING_NOW = exports.SAVING_NOW = 'SAVING_NOW';
+
+var PROFILE_AVATAR_UPLOADING_STARTED = exports.PROFILE_AVATAR_UPLOADING_STARTED = 'PROFILE_AVATAR_UPLOADING_STARTED';
+var PROFILE_AVATAR_UPLOADING_FAILED = exports.PROFILE_AVATAR_UPLOADING_FAILED = 'PROFILE_AVATAR_UPLOADING_FAILED';
+var PROFILE_UPDATE_AVATAR = exports.PROFILE_UPDATE_AVATAR = 'PROFILE_UPDATE_AVATAR';
+var PROFILE_AVATAR_FETCHING_STARTED = exports.PROFILE_AVATAR_FETCHING_STARTED = 'PROFILE_AVATAR_FETCHING_STARTED';
+var PROFILE_FETCHING_STARTED = exports.PROFILE_FETCHING_STARTED = 'PROFILE_FETCHING_STARTED';
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bind = __webpack_require__(181);
+var isBuffer = __webpack_require__(501);
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
+
 
 /***/ }),
 /* 9 */
@@ -8906,7 +8906,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.leaveChannel = exports.deleteChannel = exports.addNewChannel = exports.editChannel = exports.cancelInviting = exports.cancelEditing = exports.removeUserUI = exports.startInviteUsers = exports.startEditChannel = exports.setProfileIsOpened = exports.setIsBeingCreated = exports.closeAddChannel = exports.sendInvite = undefined;
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var actionTypes = _interopRequireWildcard(_actionTypes);
 
@@ -10343,7 +10343,7 @@ exports.startUploadingProfileAvatar = exports.startFetchingProfileAvatar = expor
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var actionTypes = _interopRequireWildcard(_actionTypes);
 
@@ -12623,7 +12623,7 @@ var LIGHT_BLUE_HEADER_BACKGROUND = exports.LIGHT_BLUE_HEADER_BACKGROUND = '#dde0
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 var normalizeHeaderName = __webpack_require__(503);
 
 var DEFAULT_CONTENT_TYPE = {
@@ -12734,7 +12734,7 @@ var _axios = __webpack_require__(57);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var actionTypes = _interopRequireWildcard(_actionTypes);
 
@@ -17191,7 +17191,7 @@ module.exports = function bind(fn, thisArg) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 var settle = __webpack_require__(504);
 var buildURL = __webpack_require__(506);
 var parseHeaders = __webpack_require__(507);
@@ -18230,7 +18230,7 @@ var _templateObject = _taggedTemplateLiteral(['\n    margin-left: 10px;\n    mar
     _templateObject5 = _taggedTemplateLiteral(['\n    display: inline-block;\n    align-items: center;\n    padding: 6px 12px;\n    margin-bottom: 0;\n    font-size: 14px;\n    font-weight: normal;\n    line-height: 1.42857143;\n    text-align: center;\n    white-space: nowrap;\n    vertical-align: middle;\n    -ms-touch-action: manipulation;\n        touch-action: manipulation;\n    cursor: pointer;\n    -webkit-user-select: none;\n        -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    background-image: none;\n    border: 1px solid transparent;\n    border-radius: 4px;\n    &:focus {\n        color: #333;\n        text-decoration: none;\n    };\n    &:active {\n        background-image: none;\n        outline: 0;\n        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);\n                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);\n    }\n'], ['\n    display: inline-block;\n    align-items: center;\n    padding: 6px 12px;\n    margin-bottom: 0;\n    font-size: 14px;\n    font-weight: normal;\n    line-height: 1.42857143;\n    text-align: center;\n    white-space: nowrap;\n    vertical-align: middle;\n    -ms-touch-action: manipulation;\n        touch-action: manipulation;\n    cursor: pointer;\n    -webkit-user-select: none;\n        -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    background-image: none;\n    border: 1px solid transparent;\n    border-radius: 4px;\n    &:focus {\n        color: #333;\n        text-decoration: none;\n    };\n    &:active {\n        background-image: none;\n        outline: 0;\n        -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);\n                box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);\n    }\n']),
     _templateObject6 = _taggedTemplateLiteral(['\n    color: #fff;\n    background-color: #ffa500;\n    border-color: #b27300;\n    margin: auto;\n    display: center;\n    &:hover {\n        color: #fff;\n        background-color: #e59400;\n        border-color: #ffb732;\n    }\n'], ['\n    color: #fff;\n    background-color: #ffa500;\n    border-color: #b27300;\n    margin: auto;\n    display: center;\n    &:hover {\n        color: #fff;\n        background-color: #e59400;\n        border-color: #ffb732;\n    }\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -18251,14 +18251,6 @@ var Button = exports.Button = _styledComponents2.default.button(_templateObject5
 var UpdateButton = exports.UpdateButton = Button.extend(_templateObject6);
 
 var StyledLabel = exports.StyledLabel = _styledComponents2.default.label(_templateObject2);
-
-// position: relative;
-// display: table;
-// bor  der-collapse: separate;
-// vertical-align: middle;
-// width: auto;
-// float: left;
-// margin-left: 5px;
 
 /***/ }),
 /* 208 */
@@ -18323,7 +18315,7 @@ var _templateObject = _taggedTemplateLiteral(['\n    background-image: url(', ')
     _templateObject11 = _taggedTemplateLiteral(['\n    color: #fff;\n    background-color: #ffa500;\n    border-color: #b27300;\n    margin: auto;\n    &:hover {\n        color: #fff;\n        background-color: #e59400;\n        border-color: #ffb732;\n    }\n'], ['\n    color: #fff;\n    background-color: #ffa500;\n    border-color: #b27300;\n    margin: auto;\n    &:hover {\n        color: #fff;\n        background-color: #e59400;\n        border-color: #ffb732;\n    }\n']),
     _templateObject12 = _taggedTemplateLiteral(['\n    margin-bottom: 15px;\n'], ['\n    margin-bottom: 15px;\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -18400,13 +18392,13 @@ var _ChannelLayout = __webpack_require__(495);
 
 var _ChannelLayout2 = _interopRequireDefault(_ChannelLayout);
 
-var _LoginLayout = __webpack_require__(606);
+var _LoginLayout = __webpack_require__(607);
 
 var _LoginLayout2 = _interopRequireDefault(_LoginLayout);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-__webpack_require__(609); //import { DemoComponent } from './containers-redux/demo/demoComponent.jsx';
+__webpack_require__(610); //import { DemoComponent } from './containers-redux/demo/demoComponent.jsx';
 
 
 var history = (0, _history.createHashHistory)();
@@ -18436,7 +18428,7 @@ _reactDom2.default.render(_react2.default.createElement(
 
 var _templateObject = _taggedTemplateLiteral(['\n  @font-face {\n    font-family: \'Geektastic\';\n    src: url(\'../static/assets/fonts/geektastic.ttf\');\n  }\n\n  body {\n    margin: 0;\n  }\n  \n    @font-face {\n      font-family: \'Open Sans\';\n      font-style: normal;\n      font-weight: 400;\n      src: local(\'Open Sans Regular\'), local(\'OpenSans-Regular\'), url(https://fonts.gstatic.com/s/opensans/v15/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format(\'woff2\');\n      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\n    }\n'], ['\n  @font-face {\n    font-family: \'Geektastic\';\n    src: url(\'../static/assets/fonts/geektastic.ttf\');\n  }\n\n  body {\n    margin: 0;\n  }\n  \n    @font-face {\n      font-family: \'Open Sans\';\n      font-style: normal;\n      font-weight: 400;\n      src: local(\'Open Sans Regular\'), local(\'OpenSans-Regular\'), url(https://fonts.gstatic.com/s/opensans/v15/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format(\'woff2\');\n      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\n    }\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -46469,7 +46461,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var _redux = __webpack_require__(12);
 
@@ -46534,7 +46526,7 @@ var Immutable = _interopRequireWildcard(_immutable);
 
 var _redux = __webpack_require__(12);
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var Actions = _interopRequireWildcard(_actionTypes);
 
@@ -46643,7 +46635,7 @@ exports.defaultDetails = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var _redux = __webpack_require__(12);
 
@@ -46739,7 +46731,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.avatarUri = undefined;
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var avatarUri = exports.avatarUri = function avatarUri() {
     var prevState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
@@ -46766,7 +46758,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.isFetchingDetails = undefined;
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var isFetchingDetails = exports.isFetchingDetails = function isFetchingDetails() {
     var prevState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
@@ -46796,7 +46788,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.isFetchingAvatar = undefined;
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var isFetchingAvatar = exports.isFetchingAvatar = function isFetchingAvatar() {
     var prevState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
@@ -46826,7 +46818,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.isUploadingAvatar = undefined;
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var isUploadingAvatar = exports.isUploadingAvatar = function isUploadingAvatar() {
     var prevState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
@@ -55855,7 +55847,7 @@ exports.ChannelListDiv = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n    background-color: ', ';\n    width: 20vw;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    color: ', ';\n'], ['\n    background-color: ', ';\n    width: 20vw;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    color: ', ';\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -56010,7 +56002,7 @@ exports.ChannelDiv = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n    background-color: ', ';\n    height: 35px;\n    width: 100%;\n    color: ', ';\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n'], ['\n    background-color: ', ';\n    height: 35px;\n    width: 100%;\n    color: ', ';\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -56029,7 +56021,7 @@ var ChannelDiv = exports.ChannelDiv = _styledComponents2.default.div(_templateOb
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 var bind = __webpack_require__(181);
 var Axios = __webpack_require__(502);
 var defaults = __webpack_require__(99);
@@ -56116,7 +56108,7 @@ function isSlowBuffer (obj) {
 
 
 var defaults = __webpack_require__(99);
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 var InterceptorManager = __webpack_require__(511);
 var dispatchRequest = __webpack_require__(512);
 
@@ -56201,7 +56193,7 @@ module.exports = Axios;
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -56281,7 +56273,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -56356,7 +56348,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -56416,7 +56408,7 @@ module.exports = function parseHeaders(headers) {
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -56534,7 +56526,7 @@ module.exports = btoa;
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -56594,7 +56586,7 @@ module.exports = (
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -56653,7 +56645,7 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 var transformData = __webpack_require__(513);
 var isCancel = __webpack_require__(184);
 var defaults = __webpack_require__(99);
@@ -56746,7 +56738,7 @@ module.exports = function dispatchRequest(config) {
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(8);
 
 /**
  * Transform the data for a request or a response
@@ -57644,7 +57636,7 @@ exports.ChannelLayoutDiv = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n    display: flex;\n    justify-content: flex-start;    \n'], ['\n    display: flex;\n    justify-content: flex-start;    \n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -57669,7 +57661,7 @@ exports.TopBarHeader = exports.TopBarDiv = undefined;
 var _templateObject = _taggedTemplateLiteral(['\n    width: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: ', '\n'], ['\n    width: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    font-size: 1em;\n\ttext-align: center;\n\tcolor: ', ';;\n\ttext-shadow: 1px 1px #c1c0aa;\n\tfont-weight: bold;\n\tfont-family: "Open Sans";\n\tpadding: 0px 10px;\n'], ['\n    font-size: 1em;\n\ttext-align: center;\n\tcolor: ', ';;\n\ttext-shadow: 1px 1px #c1c0aa;\n\tfont-weight: bold;\n\tfont-family: "Open Sans";\n\tpadding: 0px 10px;\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -57718,6 +57710,8 @@ var _Loader = __webpack_require__(208);
 
 var _actionCreators = __webpack_require__(59);
 
+var _Profile = __webpack_require__(606);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
@@ -57746,8 +57740,8 @@ var Profile = function (_React$PureComponent) {
         key: 'render',
         value: function render() {
             return [React.createElement(
-                'div',
-                { className: 'col-xs-12 col-md-4', key: 'picture' },
+                _Profile.AvatarLoeaderDiv,
+                { key: 'picture' },
                 React.createElement(
                     _Loader.Loader,
                     { stateLoadingSelector: function stateLoadingSelector(state) {
@@ -57756,8 +57750,8 @@ var Profile = function (_React$PureComponent) {
                     React.createElement(_Avatar2.default, null)
                 )
             ), React.createElement(
-                'div',
-                { className: 'col-xs-12 col-md-8', key: 'details' },
+                _Profile.ProfileDetailsDiv,
+                { key: 'details' },
                 React.createElement(
                     _Loader.Loader,
                     { stateLoadingSelector: function stateLoadingSelector(state) {
@@ -57866,7 +57860,7 @@ exports.AvatarImage = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n    background-image: url(', '); \n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: center; \n    height: 197px;\n    width: 120px;\n    overflow: hidden;\n    margin: 10px 5px;\n    border-radius: 6px;\n'], ['\n    background-image: url(', '); \n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: center; \n    height: 197px;\n    width: 120px;\n    overflow: hidden;\n    margin: 10px 5px;\n    border-radius: 6px;\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -57960,7 +57954,6 @@ var AvatarLoader = function (_React$PureComponent) {
                 className: 'fa fa-upload',
                 name: 'fa-upload',
                 size: '3x',
-                spin: true,
                 style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
                     transform: 'translate(-50%, -50%)', top: '50%', left: '50%', position: 'absolute' }
             });
@@ -58726,7 +58719,7 @@ exports.AvatarLoaderPane = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n    position: relative;\n    height: 100%;\n    min-height: 100%;\n    cursor: ', ';\n    \n    & > .dropzone {\n        width: 100%;\n        height: 100%;\n    }\n     \n    & > .dropzone > i {\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%);\n        font-size: 5em;\n        color: #ccc; \n    }\n'], ['\n    position: relative;\n    height: 100%;\n    min-height: 100%;\n    cursor: ', ';\n    \n    & > .dropzone {\n        width: 100%;\n        height: 100%;\n    }\n     \n    & > .dropzone > i {\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%);\n        font-size: 5em;\n        color: #ccc; \n    }\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -58753,7 +58746,7 @@ exports.SavingIcon = undefined;
 var _templateObject = _taggedTemplateLiteral(['\n    0% {\n\t\ttransform: rotate(0deg);\n\t}\n\n\t100% {\n\t\ttransform: rotate(359deg);\n\t}\n'], ['\n    0% {\n\t\ttransform: rotate(0deg);\n\t}\n\n\t100% {\n\t\ttransform: rotate(359deg);\n\t}\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    display: inline-block;\n\tanimation: ', ' 0.4s linear infinite;\n'], ['\n    display: inline-block;\n\tanimation: ', ' 0.4s linear infinite;\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -61405,7 +61398,7 @@ var _UpdatePane = __webpack_require__(602);
 
 var _validateNonEmpty = __webpack_require__(604);
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var formStates = _interopRequireWildcard(_actionTypes);
 
@@ -61528,8 +61521,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import classNames from 'classnames';
-
 
 var Input = function (_React$Component) {
     _inherits(Input, _React$Component);
@@ -61554,24 +61545,11 @@ var Input = function (_React$Component) {
                 touched = _props$meta.touched,
                 errorMessage = _props$meta.error;
 
-            //const isValid = valid && touched;
 
             var isInvalid = invalid && touched;
 
-            // const groupClasses = classNames({
-            //     'form-group': true,
-            //     'has-success has-feedback': isValid,
-            //     'has-error has-feedback': isInvalid,
-            // });
-            // const feedbackClasses = classNames({
-            //     'glyphicon form-control-feedback': true,
-            //     'glyphicon-star text-danger': !isValid && !isInvalid && this.props.required,
-            //     'glyphicon-ok': isValid,
-            //     'glyphicon-remove': isInvalid,
-            // });
-
             return React.createElement(
-                _Input.FormGroup /*className={groupClasses}*/,
+                _Input.FormGroup,
                 null,
                 React.createElement(
                     _Input.StyledLabel,
@@ -61585,7 +61563,7 @@ var Input = function (_React$Component) {
                     {
                         title: isInvalid ? errorMessage : undefined
                     },
-                    React.createElement('div', { className: 'input-group-addon' }),
+                    React.createElement('div', null),
                     React.createElement(_Input.Input, _extends({}, this.props.input, {
                         type: this.props.type,
                         className: 'form-control',
@@ -61594,7 +61572,6 @@ var Input = function (_React$Component) {
                         readOnly: this.props.readOnly
                     })),
                     React.createElement('span', {
-                        /*className={feedbackClasses}*/
                         'aria-hidden': 'true',
                         title: errorMessage
                     })
@@ -61613,7 +61590,6 @@ var Input = function (_React$Component) {
 
 Input.propTypes = {
     screenReaderName: PropTypes.string.isRequired,
-    // glyphiconClassName: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
     readOnly: PropTypes.bool,
@@ -61652,7 +61628,7 @@ var PropTypes = _interopRequireWildcard(_propTypes);
 
 var _UpdatePane = __webpack_require__(603);
 
-var _actionTypes = __webpack_require__(6);
+var _actionTypes = __webpack_require__(7);
 
 var formStates = _interopRequireWildcard(_actionTypes);
 
@@ -61666,7 +61642,6 @@ var NoChangedDetails = function NoChangedDetails() {
     return React.createElement(
         _UpdatePane.Alert,
         {
-            className: 'well-sm alert-info text-center',
             role: 'alert'
         },
         'Details outdated? Make a change\u2026'
@@ -61677,7 +61652,6 @@ var InvalidDetails = function InvalidDetails() {
     return React.createElement(
         _UpdatePane.AlertWarning,
         {
-            className: 'well-sm alert-warning text-center',
             role: 'alert'
         },
         'Type valid nickname to allow update\u2026'
@@ -61688,8 +61662,7 @@ var SubmitDetails = function SubmitDetails() {
     return React.createElement(
         _Input.UpdateButton,
         {
-            type: 'submit',
-            className: 'btn btn-primary btn-block well-sm'
+            type: 'submit'
         },
         'Update details'
     );
@@ -61699,7 +61672,6 @@ var UploadingDetails = function UploadingDetails() {
     return React.createElement(
         _UpdatePane.AlertWarning,
         {
-            className: 'well-sm alert-warning text-center',
             role: 'alert'
         },
         React.createElement(_SavingSpinner.SavingSpinner, null),
@@ -61749,7 +61721,7 @@ exports.AlertWarning = exports.Alert = undefined;
 var _templateObject = _taggedTemplateLiteral(['\n    margin-bottom: 2px;\n    color: #31708f;\n    background-color: #d9edf7;\n    border-color: #bce8f1;\n    border-top-color: #a6e1ec;\n'], ['\n    margin-bottom: 2px;\n    color: #31708f;\n    background-color: #d9edf7;\n    border-color: #bce8f1;\n    border-top-color: #a6e1ec;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    color: #8a6d3b;\n    background-color: #fcf8e3;\n    border-color: #faebcc;\n    border-top-color: #f7e1b5;\n'], ['\n    color: #8a6d3b;\n    background-color: #fcf8e3;\n    border-color: #faebcc;\n    border-top-color: #f7e1b5;\n']);
 
-var _styledComponents = __webpack_require__(8);
+var _styledComponents = __webpack_require__(6);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
@@ -61859,16 +61831,43 @@ exports.Loader = Loader;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.AvatarLoeaderDiv = exports.ProfileDetailsDiv = undefined;
+
+var _templateObject = _taggedTemplateLiteral(['\n    position: relative;\n    min-height: 1px;\n    padding-right: 15px;\n    padding-left: 15px;\n    width: 66.66666667%;\n    float: left;\n'], ['\n    position: relative;\n    min-height: 1px;\n    padding-right: 15px;\n    padding-left: 15px;\n    width: 66.66666667%;\n    float: left;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n    min-height: 1px;\n    padding-right: 15px;\n    padding-left: 15px;\n'], ['\n    min-height: 1px;\n    padding-right: 15px;\n    padding-left: 15px;\n']);
+
+var _styledComponents = __webpack_require__(6);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ProfileDetailsDiv = exports.ProfileDetailsDiv = _styledComponents2.default.div(_templateObject);
+
+var AvatarLoeaderDiv = exports.AvatarLoeaderDiv = _styledComponents2.default.div(_templateObject2);
+
+/***/ }),
+/* 607 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
 var _react = __webpack_require__(0);
 
 var React = _interopRequireWildcard(_react);
 
-var _routes = __webpack_require__(607);
+var _routes = __webpack_require__(608);
 
 var routes = _interopRequireWildcard(_routes);
 
-var _LoginForm = __webpack_require__(608);
+var _LoginForm = __webpack_require__(609);
 
 var _LoginForm2 = _interopRequireDefault(_LoginForm);
 
@@ -61926,7 +61925,7 @@ var LoginLayout = function LoginLayout(_ref) {
 exports.default = LoginLayout;
 
 /***/ }),
-/* 607 */
+/* 608 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61942,7 +61941,7 @@ var LOGIN = exports.LOGIN = '/login';
 var CHANNELSELECTION = exports.CHANNELSELECTION = 'channels';
 
 /***/ }),
-/* 608 */
+/* 609 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62094,24 +62093,24 @@ exports.default = (0, _reduxForm.reduxForm)({
 }, { authenticateUser: _actionCreators.authenticateUser })(LoginForm));
 
 /***/ }),
-/* 609 */
+/* 610 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./app.html": 610,
-	"./assets/chat_logo_only.png": 611,
+	"./app.html": 611,
+	"./assets/chat_logo_only.png": 612,
 	"./assets/chat_logo_only_smallest.png": 115,
-	"./assets/chat_logo_small.png": 612,
+	"./assets/chat_logo_small.png": 613,
 	"./assets/email.svg": 210,
-	"./assets/fonts/Prototype.ttf": 613,
-	"./assets/fonts/geektastic.ttf": 614,
-	"./assets/glyphicons-halflings-regular.eot": 615,
-	"./assets/glyphicons-halflings-regular.svg": 616,
-	"./assets/glyphicons-halflings-regular.ttf": 617,
-	"./assets/glyphicons-halflings-regular.woff": 618,
-	"./assets/glyphicons-halflings-regular.woff2": 619,
-	"./assets/no-profile.png": 620,
-	"./favicon.ico": 621
+	"./assets/fonts/Prototype.ttf": 614,
+	"./assets/fonts/geektastic.ttf": 615,
+	"./assets/glyphicons-halflings-regular.eot": 616,
+	"./assets/glyphicons-halflings-regular.svg": 617,
+	"./assets/glyphicons-halflings-regular.ttf": 618,
+	"./assets/glyphicons-halflings-regular.woff": 619,
+	"./assets/glyphicons-halflings-regular.woff2": 620,
+	"./assets/no-profile.png": 621,
+	"./favicon.ico": 622
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -62127,76 +62126,76 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 609;
-
-/***/ }),
-/* 610 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "app.html";
+webpackContext.id = 610;
 
 /***/ }),
 /* 611 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/chat_logo_only.png";
+module.exports = __webpack_require__.p + "app.html";
 
 /***/ }),
 /* 612 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/chat_logo_small.png";
+module.exports = __webpack_require__.p + "assets/chat_logo_only.png";
 
 /***/ }),
 /* 613 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/Prototype.ttf";
+module.exports = __webpack_require__.p + "assets/chat_logo_small.png";
 
 /***/ }),
 /* 614 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/geektastic.ttf";
+module.exports = __webpack_require__.p + "assets/Prototype.ttf";
 
 /***/ }),
 /* 615 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.eot";
+module.exports = __webpack_require__.p + "assets/geektastic.ttf";
 
 /***/ }),
 /* 616 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.svg";
+module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.eot";
 
 /***/ }),
 /* 617 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.ttf";
+module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.svg";
 
 /***/ }),
 /* 618 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.woff";
+module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.ttf";
 
 /***/ }),
 /* 619 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.woff2";
+module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.woff";
 
 /***/ }),
 /* 620 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/no-profile.png";
+module.exports = __webpack_require__.p + "assets/glyphicons-halflings-regular.woff2";
 
 /***/ }),
 /* 621 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/no-profile.png";
+
+/***/ }),
+/* 622 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "favicon.ico";

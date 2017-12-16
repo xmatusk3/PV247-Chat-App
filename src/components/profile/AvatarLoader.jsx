@@ -34,7 +34,6 @@ class AvatarLoader extends React.PureComponent {
                 className='fa fa-upload'
                 name='fa-upload'
                 size='3x'
-                spin
                 style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
                     transform: 'translate(-50%, -50%)', top: '50%', left: '50%', position: 'absolute' }}
             />;

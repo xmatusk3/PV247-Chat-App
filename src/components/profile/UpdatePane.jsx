@@ -7,7 +7,6 @@ import { UpdateButton } from './__styles__/Input.styles';
 
 const NoChangedDetails = () => (
     <Alert
-        className="well-sm alert-info text-center"
         role="alert"
     >
         Details outdated? Make a change…
@@ -16,7 +15,6 @@ const NoChangedDetails = () => (
 
 const InvalidDetails = () => (
     <AlertWarning
-        className="well-sm alert-warning text-center"
         role="alert"
     >
         Type valid nickname to allow update…
@@ -26,7 +24,6 @@ const InvalidDetails = () => (
 const SubmitDetails = () => (
     <UpdateButton
         type="submit"
-        className="btn btn-primary btn-block well-sm"
     >
         Update details
     </UpdateButton>
@@ -34,7 +31,6 @@ const SubmitDetails = () => (
 
 const UploadingDetails = () => (
     <AlertWarning
-        className="well-sm alert-warning text-center"
         role="alert"
     >
         <SavingSpinner />

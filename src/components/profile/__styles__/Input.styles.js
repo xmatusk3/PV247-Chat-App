@@ -77,11 +77,3 @@ export const StyledLabel = styled.label`
     font-family: "Open Sans";
     font-color: #ffb732;
 `;
-
-// position: relative;
-// display: table;
-// bor  der-collapse: separate;
-// vertical-align: middle;
-// width: auto;
-// float: left;
-// margin-left: 5px;
