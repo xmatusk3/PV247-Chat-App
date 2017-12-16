@@ -59,10 +59,7 @@ const fetchLoggedUser = (email, {data}) =>
         return request
             .then(({data}) => {
                 const details = getUserData(data).customData;
-                dispatch({
-                    type: actionTypes.SHARED_LOGIN_SUCCESS,
-                    payload: {...details, email: email}
-                });
+                dispatch(saveLoggedUser(details, email));
                 dispatch(push('/chat'));
             })
             .catch(() => {
@@ -70,6 +67,10 @@ const fetchLoggedUser = (email, {data}) =>
             });
     };
 
+export const saveLoggedUser = (details, email) => ({
+    type: actionTypes.SHARED_LOGIN_SUCCESS,
+    payload: {...details, email: email}
+});
 
 const fetchAllUsers = ({data}) =>
     (dispatch) => {
