@@ -12,7 +12,8 @@ const babelLoader = {
             targets: {
                 browsers: ['last 2 versions', 'not ie <= 11']
             }
-        }], ['stage-2']]
+        }], ['stage-2']],
+        cacheDirectory: false
     }
 };
 
@@ -30,7 +31,7 @@ if (env === productionEnv) {
 }
 
 module.exports = {
-    entry: './src/app.jsx',
+    entry: ['babel-polyfill', './src/app.jsx'],
     output: {
         path: __dirname + '/build',
         filename: 'app.js'
@@ -61,7 +62,14 @@ module.exports = {
                 use: javascriptLoaders
             },
             {
+                test: /plugin\.css$/,
+                loaders: [
+                    'style-loader', 'css-loader',
+                ],
+            },
+            {
                 test: /\.css$/,
+                exclude: /plugin\.css$/,
                 loader: [
                     {
                         loader: 'file-loader',

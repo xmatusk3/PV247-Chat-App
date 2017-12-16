@@ -57,7 +57,7 @@ class AddChannel extends React.PureComponent{
                 <Field
                     label={user.email}
                     key={user.email}
-                    name={user.customData}
+                    name={user.id}
                     value={user.email}
                     type="checkbox"
                     component={this.renderField}

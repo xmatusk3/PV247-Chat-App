@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import AdvancedLoader from 'react-loader-advanced';
 import { SavingSpinner } from './SavingSpinner.jsx';
+import { connect } from 'react-redux';
 
 const LoadingMessage = ({ message }) => (
     <div>
@@ -30,7 +31,9 @@ const Loader = ({ children, isLoading, message }) => (
 Loader.propTypes = {
     children: PropTypes.node.isRequired,
     isLoading: PropTypes.bool.isRequired,
+    stateLoadingSelector: PropTypes.func.isRequired,
     message: PropTypes.string,
 };
 
-export { Loader };
+
+export default connect((state, ownProps) => ({isLoading: ownProps.stateLoadingSelector(state)}), null) (Loader);

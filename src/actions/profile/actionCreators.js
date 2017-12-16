@@ -11,7 +11,7 @@ import {
     startSubmit,
     stopSubmit
 } from 'redux-form';
-import parseUserResponse from '../../utils/api/parseUserResponse';
+import { parseProfile } from '../../utils/api/parseUserResponse';
 
 export const updateProfileDetails = (details) => ({
     type: actionTypes.PROFILE_UPDATE_DETAILS,
@@ -45,12 +45,7 @@ export const uploadUserAvatar = (file) =>
                      throw new Error('Avatar uploaded to the server, however, server did not store the file.');
                  }
 
-                 const updatedDetails = {
-                     ...getState().users.user,
-                     avatarId: data[0].id,
-                 };
-                 dispatch(uploadUserDetails(updatedDetails));
-                 dispatch(fetchUserAvatar(updatedDetails.avatarId));
+                 dispatch(fetchUserAvatar(data[0].id)).then(() => dispatch(uploadUserDetails({avatarId: data[0].id})));
              })
              .catch(() => {
                  dispatch(serverError);
@@ -149,7 +144,7 @@ export const fetchUserDetails = () =>
     };
 
 export const getUserData = (data) => ({
-    customData: parseUserResponse(data.customData),
+    customData: parseProfile(data.customData),
     email: data.email,
 });
 

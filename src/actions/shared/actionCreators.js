@@ -9,6 +9,7 @@ import {
 } from '../../constants/api';
 import { push } from 'connected-react-router';
 import parseChannelResponse from '../../utils/api/parseChannelResponse';
+import { parseUser } from '../../utils/api/parseUserResponse';
 import { getUserData } from '../profile/actionCreators';
 
 export const authenticateUser = (email) =>
@@ -58,10 +59,7 @@ const fetchLoggedUser = (email, {data}) =>
         return request
             .then(({data}) => {
                 const details = getUserData(data).customData;
-                dispatch({
-                    type: actionTypes.SHARED_LOGIN_SUCCESS,
-                    payload: {...details, email: email}
-                });
+                dispatch(saveLoggedUser(details, email));
                 dispatch(push('/chat'));
             })
             .catch(() => {
@@ -69,6 +67,10 @@ const fetchLoggedUser = (email, {data}) =>
             });
     };
 
+export const saveLoggedUser = (details, email) => ({
+    type: actionTypes.SHARED_LOGIN_SUCCESS,
+    payload: {...details, email: email}
+});
 
 const fetchAllUsers = ({data}) =>
     (dispatch) => {
@@ -79,10 +81,10 @@ const fetchAllUsers = ({data}) =>
         const request = axios.get(API_USER_ALL, {headers});
 
         return request
-            .then(({data}) =>
+            .then((response) =>
                 dispatch({
                     type: actionTypes.UPDATE_USERS,
-                    payload: List(data)
+                    payload: List(response.data.map(user => ({...parseUser(user)})))
                 }))
             .catch((response) => {
                 dispatch(serverLoginError);

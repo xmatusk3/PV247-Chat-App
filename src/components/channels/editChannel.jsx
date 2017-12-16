@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field} from 'redux-form';
 import PropTypes from 'prop-types';
-import { List, Set } from 'immutable';
+import { Set } from 'immutable';
 
 import { editChannel, cancelEditing, removeUserUI } from '../../actions/channels/actionCreators';
 
@@ -10,7 +10,6 @@ class EditChannel extends React.Component {
     static propTypes = {
         channel: PropTypes.object.isRequired,
         user: PropTypes.string.isRequired,
-        userList: PropTypes.instanceOf(List),
         handleSubmit: PropTypes.func.isRequired,
         editChannel: PropTypes.func.isRequired,
         cancelEditing: PropTypes.func.isRequired,
@@ -107,7 +106,6 @@ export default reduxForm({
 })(connect( (state) => ({
     user: state.users.user.email,
     channel: state.channels.editedChannel,
-    userList: state.users.all,
 }),
     { editChannel, cancelEditing, removeUserUI }
 )(EditChannel));
