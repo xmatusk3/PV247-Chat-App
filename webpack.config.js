@@ -31,7 +31,7 @@ if (env === productionEnv) {
 }
 
 module.exports = {
-    entry: './src/app.jsx',
+    entry: ['babel-polyfill', './src/app.jsx'],
     output: {
         path: __dirname + '/build',
         filename: 'app.js'
@@ -62,9 +62,27 @@ module.exports = {
                 use: javascriptLoaders
             },
             {
+                test: /plugin\.css$/,
+                loaders: [
+                    'style-loader', 'css-loader',
+                ],
+            },
+            {
                 test: /\.css$/,
+                exclude: /plugin\.css$/,
                 loader: [
-                    { loader: 'style-loader' },
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'styles/[name].[ext]',
+                        },
+                    },
+                    {
+                        loader: 'extract-loader',
+                        options: {
+                            publicPath: '../',
+                        }
+                    },
                     { loader: 'css-loader' }
                 ]
             },
