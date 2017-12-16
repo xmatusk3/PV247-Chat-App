@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import { Alert, AlertWarning } from './__styles__/UpdatePane.styles';
 import * as formStates from '../../constants/actionTypes';
 import { SavingSpinner } from '../login/SavingSpinner.jsx';
+import { UpdateButton } from './__styles__/Input.styles';
 
 const NoChangedDetails = () => (
     <Alert
