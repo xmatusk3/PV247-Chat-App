@@ -6,19 +6,20 @@ import { List } from 'immutable';
 
 describe('kokotiny', () => {
     test('dispatches actions in correct order', async done => {
-        const makeGetRequest = jest.fn(() => Promise.resolve());
-        const getState = () => ({
-            shared: {
-                token: 'pretty please'
-            }
-        });
+        const dispatch = jest.fn();
+        const makeGetRequest = jest.fn(() => Promise.resolve({data: List()}));
+        // const getState = () => ({
+        //     shared: {
+        //         token: 'pretty please'
+        //     }
+        // });
 
         const expectedList = List();
-        const fetchAllUsers = fetchAllUsersFactory({ makeGetRequest });
+        const fetchAllUsers = fetchAllUsersFactory({makeGetRequest});
         const dispatchable = fetchAllUsers({data: ''});
-        await dispatchable(makeGetRequest, getState);
+        await dispatchable(dispatch);
 
-        expect(makeGetRequest).toHaveBeenLastCalledWith(updateUsers(expectedList));
+        expect(dispatch).toHaveBeenLastCalledWith(updateUsers(expectedList));
         done();
     });
 });

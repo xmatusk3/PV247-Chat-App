@@ -25,6 +25,13 @@ export default class FileField extends React.Component {
         onChange(eventOrValue);
     };
 
+    a = () => {
+        this.props.input.value = [];
+        this.forceUpdate();
+        // eslint-disable-next-line
+        console.log(this.props.input.value);
+    };
+
     render() {
         const {input} = this.props;
         const {accept, multiple} = this.props;
@@ -36,8 +43,8 @@ export default class FileField extends React.Component {
         };
         return (
             <div>
-                <input type='hidden' disabled {...input} />
-                <Dropzone {...dropzoneProps} style={{cursor: 'pointer', maxWidth:'75px', maxHeight:'20px', backgroundColor: 'grey'}} >Attachment</Dropzone>
+                {/*<input ref={(input) => {this.input = input;}}type='hidden' disabled {...input} />*/}
+                <Dropzone ref={(zone) => {this.dropzone = zone;}} {...dropzoneProps} style={{cursor: 'pointer', maxWidth:'75px', maxHeight:'20px', backgroundColor: 'grey'}} >Attachment</Dropzone>
                 {selectedFile &&
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     {isImage(selectedFile.name) && <img style={{maxWidth: '100px', maxHeight: '75px'}} src={selectedFile.preview}/>}
