@@ -12,27 +12,28 @@ import parseChannelResponse from '../../utils/api/parseChannelResponse';
 import { parseUser } from '../../utils/api/parseUserResponse';
 import { getUserData } from '../profile/actionCreators';
 
-export const authenticateUser = (email) =>
-    (dispatch) => {
-        dispatch(startAuthentication());
+export const authenticateUserFactory = (dependencies) =>
+    (email) =>
+        (dispatch) => {
+            dispatch(startAuthentication());
 
-        const headers = {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            const headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            };
+            const request = dependencies.makePostRequest(API_AUTH_URI, `"${email}"`, {headers});
+
+            return request
+                .then((token) => {
+                    dispatch(receiveValidToken(token));
+                    dispatch(dependencies.fetchLoggedUser(email, token));
+                    dispatch(dependencies.fetchAllUsers(token));
+                    dispatch(dependencies.fetchAllChannels(token));
+                })
+                .catch(() => {
+                    dispatch(failAuthentication());
+                });
         };
-        const request = axios.post(API_AUTH_URI, `"${email}"`, {headers});
-
-        return request
-            .then((token) => {
-                dispatch(receiveValidToken(token));
-                dispatch(fetchLoggedUser(email, token));
-                dispatch(fetchAllUsers(token));
-                dispatch(fetchAllChannels(token));
-            })
-            .catch(() => {
-                dispatch(failAuthentication());
-            });
-    };
 
 export const startAuthentication = () => ({
     type: actionTypes.SHARED_AUTHENTICATION_STARTED
@@ -48,24 +49,25 @@ export const failAuthentication = () => ({
     payload: 'No user is registered under submitted email.'
 });
 
-const fetchLoggedUser = (email, {data}) =>
-    (dispatch) => {
-        const headers = {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${data}`
-        };
-        const request = axios.get(fetchApiUserUri(email), {headers});
+export const fetchLoggedUserFactory = (dependencies) =>
+    (email, token) =>
+        (dispatch) => {
+            const headers = {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${token.data}`
+            };
+            const request = dependencies.makeGetRequest(fetchApiUserUri(email), {headers});
 
-        return request
-            .then(({data}) => {
-                const details = getUserData(data).customData;
-                dispatch(saveLoggedUser(details, email));
-                dispatch(push('/chat'));
-            })
-            .catch(() => {
-                dispatch(serverLoginError);
-            });
-    };
+            return request
+                .then(({data}) => {
+                    const details = getUserData(data).customData;
+                    dispatch(saveLoggedUser(details, email));
+                    dispatch(push('/chat'));
+                })
+                .catch(() => {
+                    dispatch(serverLoginError);
+                });
+        };
 
 export const saveLoggedUser = (details, email) => ({
     type: actionTypes.SHARED_LOGIN_SUCCESS,
@@ -76,30 +78,6 @@ export const updateUsers = (userList) => ({
     type: actionTypes.UPDATE_USERS,
     payload: userList
 });
-
-const fetchAllChannels = ({data}) =>
-    (dispatch) => {
-        const headers = {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${data}`
-        };
-
-        const request = axios.get(API_APP_URI, {headers});
-
-        return request
-            .then(({data: {channels}}) => {
-                let parsedChannels = List();
-
-                for (const channel of channels) {
-                    parsedChannels = parsedChannels.push(parseChannelResponse(channel));
-                }
-                return dispatch(updateChannels(parsedChannels));
-            })
-            .catch((response) => {
-                dispatch(serverLoginError);
-                throw new Error(response);
-            });
-    };
 
 export const updateChannels = (channels) => ({
     type: actionTypes.UPDATE_CHANNELS,
@@ -115,6 +93,31 @@ export const serverError = () => ({
     type: actionTypes.SHARED_API_ERROR,
     payload: 'Server error, please try again later.'
 });
+
+export const fetchAllChannelsFactory = (dependencies) =>
+    ({data}) =>
+        (dispatch) => {
+            const headers = {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${data}`
+            };
+
+            const request = dependencies.makeGetRequest(API_APP_URI, {headers});
+
+            return request
+                .then(({data: {channels}}) => {
+                    let parsedChannels = List();
+
+                    for (const channel of channels) {
+                        parsedChannels = parsedChannels.push(parseChannelResponse(channel));
+                    }
+                    return dispatch(updateChannels(parsedChannels));
+                })
+                .catch((response) => {
+                    dispatch(serverLoginError);
+                    throw new Error(response);
+                });
+        };
 
 export const fetchAllUsersFactory = (dependencies) =>
     ({data}) =>
@@ -133,5 +136,13 @@ export const fetchAllUsersFactory = (dependencies) =>
                     throw new Error(response);
                 });
         };
-
+export const fetchLoggedUser = fetchLoggedUserFactory({ makeGetRequest: axios.get });
+export const fetchAllChannels = fetchAllChannelsFactory({ makeGetRequest: axios.get });
 export const fetchAllUsers = fetchAllUsersFactory({ makeGetRequest: axios.get });
+export const authenticateUser = authenticateUserFactory({
+    makePostRequest: axios.post,
+    fetchLoggedUser: fetchLoggedUser,
+    fetchAllUsers: fetchAllUsers,
+    fetchAllChannels: fetchAllChannels
+});
+
