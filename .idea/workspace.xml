@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44326bda-fc14-4cf4-8da2-3b0bc5c1090d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/actions/authentication/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/authentication/actionCreators.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" afterPath="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
+      <change beforePath="$PROJECT_DIR$/src/actions/channels/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/channels/actionCreators.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,25 +20,45 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="actionCreators.test.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js">
+        <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="733">
-              <caret line="44" column="82" lean-forward="false" selection-start-line="44" selection-start-column="82" selection-end-line="44" selection-end-column="82" />
+            <state relative-caret-position="357">
+              <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
               <folding>
-                <element signature="e#0#229#0" expanded="true" />
+                <element signature="e#0#346#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
+        <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-491">
-              <caret line="62" column="43" lean-forward="true" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+            <state relative-caret-position="533">
+              <caret line="310" column="45" lean-forward="false" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="45" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#59#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parseChannelResponse.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/api/parseChannelResponse.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fetchAuthToken.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/api/fetchAuthToken.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -48,7 +66,7 @@
       <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/profile/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="340">
               <caret line="146" column="35" lean-forward="false" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
@@ -60,8 +78,8 @@
       <file leaf-file-name="parseUserResponse.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/api/parseUserResponse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+            <state relative-caret-position="204">
+              <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -78,11 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>co</find>
-      <find>babel-loader</find>
-      <find>postcss</find>
-      <find>updateProfileAvatar</find>
-      <find>over</find>
       <find>PROFILE_UPDATE_DETAILS</find>
       <find>PROFILE_UPDATE_AVATAR</find>
       <find>PROFILE_UPDATE_DET</find>
@@ -108,6 +121,11 @@
       <find>FileField</find>
       <find>input</find>
       <find>uploadFile</find>
+      <find>fetchMessagesFactory</find>
+      <find>addNewChannelFactory</find>
+      <find>deleteChannelFactory</find>
+      <find>leaveChannelFactory</find>
+      <find>sendInviteFactory</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,8 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/utils/api/enrichHTML.js" />
-        <option value="$PROJECT_DIR$/src/components/messages/__styles__/mentionStyles.js" />
         <option value="$PROJECT_DIR$/build/app.html" />
         <option value="$PROJECT_DIR$/static/app.html" />
         <option value="$PROJECT_DIR$/src/components/messages/__styles__/textEditor.styles.js" />
@@ -155,7 +171,6 @@
         <option value="$PROJECT_DIR$/src/reducers/app.js" />
         <option value="$PROJECT_DIR$/src/constants/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/reducers/channels/channelReducers.js" />
-        <option value="$PROJECT_DIR$/src/actions/channels/actionCreators.js" />
         <option value="$PROJECT_DIR$/src/reducers/channels/channelReducers.test.js" />
         <option value="$PROJECT_DIR$/src/actions/messages/actionCreators.js" />
         <option value="$PROJECT_DIR$/src/utils/api/utilApiFunctions.test.js" />
@@ -173,6 +188,9 @@
         <option value="$PROJECT_DIR$/src/components/messages/fileField.js" />
         <option value="$PROJECT_DIR$/src/actions/authentication/actionCreators.js" />
         <option value="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
+        <option value="$PROJECT_DIR$/src/actions/channels/actionCreateors.test.js" />
+        <option value="$PROJECT_DIR$/src/actions/channels/actionCreators.js" />
+        <option value="$PROJECT_DIR$/src/actions/channels/actionCreators.test.js" />
       </list>
     </option>
   </component>
@@ -421,7 +439,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.authentication thunk tests">
+  <component name="RunManager" selected="Jest.channels thunk tests">
     <configuration name="Tests" type="JavaScriptTestRunnerJest" factoryName="Jest">
       <config-file value="Tests" />
       <node-interpreter value="project" />
@@ -430,82 +448,82 @@
       <envs />
       <scope-kind value="ALL" />
     </configuration>
-    <configuration name="authentication thunk tests" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="channels thunk tests" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
+      <test-file value="$PROJECT_DIR$/src/actions/channels/actionCreators.test.js" />
       <test-names>
-        <test-name value="authentication thunk tests" />
+        <test-name value="channels thunk tests" />
       </test-names>
     </configuration>
-    <configuration name="authentication thunk tests.authenticateUser dispatches actions in correct order" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="channels thunk tests.addNewChannel dispatches actions in correct order" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
+      <test-file value="$PROJECT_DIR$/src/actions/channels/actionCreators.test.js" />
       <test-names>
-        <test-name value="authentication thunk tests" />
-        <test-name value="authenticateUser dispatches actions in correct order" />
+        <test-name value="channels thunk tests" />
+        <test-name value="addNewChannel dispatches actions in correct order" />
       </test-names>
     </configuration>
-    <configuration name="authentication thunk tests.fetchAllChannels dispatches correct action" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="channels thunk tests.deleteChannel dispatches actions in correct order" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
+      <test-file value="$PROJECT_DIR$/src/actions/channels/actionCreators.test.js" />
       <test-names>
-        <test-name value="authentication thunk tests" />
-        <test-name value="fetchAllChannels dispatches correct action" />
+        <test-name value="channels thunk tests" />
+        <test-name value="deleteChannel dispatches actions in correct order" />
       </test-names>
     </configuration>
-    <configuration name="authentication thunk tests.fetchAllUsers dispatches actions in correct order" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="channels thunk tests.editChannel dispatches actions in correct order" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
+      <test-file value="$PROJECT_DIR$/src/actions/channels/actionCreators.test.js" />
       <test-names>
-        <test-name value="authentication thunk tests" />
-        <test-name value="fetchAllUsers dispatches actions in correct order" />
+        <test-name value="channels thunk tests" />
+        <test-name value="editChannel dispatches actions in correct order" />
       </test-names>
     </configuration>
-    <configuration name="authentication thunk tests.fetchLoggedUserFactory dispatches actions in correct order" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="channels thunk tests.leaveChannel dispatches actions in correct order" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
+      <test-file value="$PROJECT_DIR$/src/actions/channels/actionCreators.test.js" />
       <test-names>
-        <test-name value="authentication thunk tests" />
-        <test-name value="fetchLoggedUserFactory dispatches actions in correct order" />
+        <test-name value="channels thunk tests" />
+        <test-name value="leaveChannel dispatches actions in correct order" />
       </test-names>
     </configuration>
     <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Jest.Tests" />
       <item index="1" class="java.lang.String" itemvalue="Karma.Run Karma tests" />
       <item index="2" class="java.lang.String" itemvalue="Mocha.Run Mocha tests" />
-      <item index="3" class="java.lang.String" itemvalue="Jest.authentication thunk tests.fetchAllUsers dispatches actions in correct order" />
-      <item index="4" class="java.lang.String" itemvalue="Jest.authentication thunk tests.authenticateUser dispatches actions in correct order" />
-      <item index="5" class="java.lang.String" itemvalue="Jest.authentication thunk tests.fetchLoggedUserFactory dispatches actions in correct order" />
-      <item index="6" class="java.lang.String" itemvalue="Jest.authentication thunk tests.fetchAllChannels dispatches correct action" />
-      <item index="7" class="java.lang.String" itemvalue="Jest.authentication thunk tests" />
+      <item index="3" class="java.lang.String" itemvalue="Jest.channels thunk tests.editChannel dispatches actions in correct order" />
+      <item index="4" class="java.lang.String" itemvalue="Jest.channels thunk tests.addNewChannel dispatches actions in correct order" />
+      <item index="5" class="java.lang.String" itemvalue="Jest.channels thunk tests.deleteChannel dispatches actions in correct order" />
+      <item index="6" class="java.lang.String" itemvalue="Jest.channels thunk tests.leaveChannel dispatches actions in correct order" />
+      <item index="7" class="java.lang.String" itemvalue="Jest.channels thunk tests" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Jest.authentication thunk tests" />
-        <item index="1" class="java.lang.String" itemvalue="Jest.authentication thunk tests.fetchAllChannels dispatches correct action" />
-        <item index="2" class="java.lang.String" itemvalue="Jest.authentication thunk tests.fetchLoggedUserFactory dispatches actions in correct order" />
-        <item index="3" class="java.lang.String" itemvalue="Jest.authentication thunk tests.authenticateUser dispatches actions in correct order" />
-        <item index="4" class="java.lang.String" itemvalue="Jest.authentication thunk tests.fetchAllUsers dispatches actions in correct order" />
+        <item index="0" class="java.lang.String" itemvalue="Jest.channels thunk tests" />
+        <item index="1" class="java.lang.String" itemvalue="Jest.channels thunk tests.leaveChannel dispatches actions in correct order" />
+        <item index="2" class="java.lang.String" itemvalue="Jest.channels thunk tests.deleteChannel dispatches actions in correct order" />
+        <item index="3" class="java.lang.String" itemvalue="Jest.channels thunk tests.addNewChannel dispatches actions in correct order" />
+        <item index="4" class="java.lang.String" itemvalue="Jest.channels thunk tests.editChannel dispatches actions in correct order" />
       </list>
     </recent_temporary>
   </component>
@@ -592,39 +610,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="authentication_thunk_tests - 2018.01.27 at 14h 35m 48s.xml">
-      <configuration name="authentication thunk tests" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests - 2018.01.27 at 17h 55m 42s.xml">
+      <configuration name="channels thunk tests" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="authentication_thunk_tests_authenticateUser_dispatches_actions_in_correct_order - 2018.01.27 at 14h 12m 01s.xml">
-      <configuration name="authentication thunk tests.authenticateUser dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests_deleteChannel_dispatches_actions_in_correct_order - 2018.01.27 at 17h 46m 26s.xml">
+      <configuration name="channels thunk tests.deleteChannel dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="authentication_thunk_tests_fetchAllChannels_dispatches_correct_action - 2018.01.27 at 14h 34m 35s.xml">
-      <configuration name="authentication thunk tests.fetchAllChannels dispatches correct action" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests_deleteChannel_dispatches_actions_in_correct_order - 2018.01.27 at 17h 46m 41s.xml">
+      <configuration name="channels thunk tests.deleteChannel dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="authentication_thunk_tests_fetchAllChannels_dispatches_correct_action - 2018.01.27 at 14h 34m 59s.xml">
-      <configuration name="authentication thunk tests.fetchAllChannels dispatches correct action" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests_deleteChannel_dispatches_actions_in_correct_order - 2018.01.27 at 17h 46m 53s.xml">
+      <configuration name="channels thunk tests.deleteChannel dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="authentication_thunk_tests_fetchAllChannels_dispatches_correct_action - 2018.01.27 at 14h 35m 14s.xml">
-      <configuration name="authentication thunk tests.fetchAllChannels dispatches correct action" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests_deleteChannel_dispatches_actions_in_correct_order - 2018.01.27 at 17h 47m 05s.xml">
+      <configuration name="channels thunk tests.deleteChannel dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="authentication_thunk_tests_fetchAllChannels_dispatches_correct_action - 2018.01.27 at 14h 35m 38s.xml">
-      <configuration name="authentication thunk tests.fetchAllChannels dispatches correct action" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests_deleteChannel_dispatches_actions_in_correct_order - 2018.01.27 at 17h 48m 33s.xml">
+      <configuration name="channels thunk tests.deleteChannel dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="authentication_thunk_tests_fetchLoggedUserFactory_dispatches_actions_in_correct_order - 2018.01.27 at 14h 14m 29s.xml">
-      <configuration name="authentication thunk tests.fetchLoggedUserFactory dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests_deleteChannel_dispatches_actions_in_correct_order - 2018.01.27 at 17h 49m 44s.xml">
+      <configuration name="channels thunk tests.deleteChannel dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="authentication_thunk_tests_fetchLoggedUserFactory_dispatches_actions_in_correct_order - 2018.01.27 at 14h 22m 56s.xml">
-      <configuration name="authentication thunk tests.fetchLoggedUserFactory dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests_deleteChannel_dispatches_actions_in_correct_order - 2018.01.27 at 17h 49m 58s.xml">
+      <configuration name="channels thunk tests.deleteChannel dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="authentication_thunk_tests_fetchLoggedUserFactory_dispatches_actions_in_correct_order - 2018.01.27 at 14h 27m 48s.xml">
-      <configuration name="authentication thunk tests.fetchLoggedUserFactory dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests_leaveChannel_dispatches_actions_in_correct_order - 2018.01.27 at 17h 54m 42s.xml">
+      <configuration name="channels thunk tests.leaveChannel dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="authentication_thunk_tests_fetchLoggedUserFactory_dispatches_actions_in_correct_order - 2018.01.27 at 14h 28m 42s.xml">
-      <configuration name="authentication thunk tests.fetchLoggedUserFactory dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="channels_thunk_tests_leaveChannel_dispatches_actions_in_correct_order - 2018.01.27 at 17h 55m 32s.xml">
+      <configuration name="channels thunk tests.leaveChannel dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="516013000" />
+    <option name="totallyTimeSpent" value="523108000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -709,48 +727,31 @@
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/actions/channels/actionCreators.test.js</url>
+          <line>21</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/actions/channels/actionCreators.test.js</url>
+          <line>95</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/actions/channels/actionCreators.js</url>
+          <line>267</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/utils/createStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/parseChannelResponse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="63" lean-forward="false" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/parseMessageResponse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/validateNonEmpty.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/fetchAuthToken.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -963,6 +964,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,17 +1015,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/parseUserResponse.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        <state relative-caret-position="389">
+          <caret line="142" column="32" lean-forward="true" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1103">
+          <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="79" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#229#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/channels/channelReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/api/fetchAuthToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/profile/actionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="340">
           <caret line="146" column="35" lean-forward="false" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
@@ -1031,22 +1063,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
+    <entry file="file://$PROJECT_DIR$/src/utils/api/parseUserResponse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-491">
-          <caret line="62" column="43" lean-forward="true" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+        <state relative-caret-position="204">
+          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/api/parseChannelResponse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="310" column="45" lean-forward="false" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="45" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreators.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="44" column="82" lean-forward="false" selection-start-line="44" selection-start-column="82" selection-end-line="44" selection-end-column="82" />
+        <state relative-caret-position="357">
+          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding>
-            <element signature="e#0#229#0" expanded="true" />
+            <element signature="e#0#346#0" expanded="true" />
           </folding>
         </state>
       </provider>
