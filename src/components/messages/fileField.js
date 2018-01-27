@@ -36,7 +36,6 @@ export default class FileField extends React.Component {
         };
         return (
             <div>
-                <input type='hidden' disabled {...input} />
                 <Dropzone {...dropzoneProps} style={{cursor: 'pointer', maxWidth:'75px', maxHeight:'20px', backgroundColor: 'grey'}} >Attachment</Dropzone>
                 {selectedFile &&
                 <div style={{display: 'flex', alignItems: 'center'}}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertToRaw, RichUtils } from 'draft-js';
+import { convertToRaw, RichUtils, EditorState, ContentState } from 'draft-js';
 import Editor from 'draft-js-plugins-editor';
 import Raw from 'draft-js-raw-content-state';
 import createStyles from 'draft-js-custom-styles';
@@ -13,9 +13,8 @@ import { sendChatMessage, editChatMessage, attachFileToMessage } from '../../act
 import FileField from './fileField';
 import { reduxForm, Field } from 'redux-form';
 import editorStyles from './__styles__/textEditor.css';
-import { uuid } from '../../utils/uuidGenerator';
 import 'draft-js-mention-plugin/lib/plugin.css';
-
+import { uuid } from '../../utils/uuidGenerator';
 const hashtagPlugin = createHashtagPlugin();
 const linkifyPlugin = createLinkifyPlugin();
 
@@ -40,7 +39,8 @@ class TextEditor extends React.Component {
         messageId: PropTypes.string,
         messageAttachment: PropTypes.object,
         editorState: PropTypes.object,
-        closeMessageCallback: PropTypes.func
+        closeMessageCallback: PropTypes.func,
+        reset: PropTypes.func
     };
 
     constructor(props) {
@@ -86,7 +86,15 @@ class TextEditor extends React.Component {
             this.props.closeMessageCallback();
         } else {
             this.sendMessage(uploadFile, parsedContent);
+            this.clearEditor();
         }
+    };
+
+    clearEditor = () => {
+        const editorState = EditorState.push(this.state.editorState, ContentState.createFromText(''));
+        this.setState({ editorState });
+        this.props.reset();
+
     };
 
     sendMessage = (file, content) => {

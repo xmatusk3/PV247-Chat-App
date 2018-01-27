@@ -72,25 +72,6 @@ export const saveLoggedUser = (details, email) => ({
     payload: {...details, email: email}
 });
 
-const fetchAllUsers = ({data}) =>
-    (dispatch) => {
-        const headers = {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${data}`
-        };
-        const request = axios.get(API_USER_ALL, {headers});
-
-        return request
-            .then((response) => {
-                const userList = List(response.data.map(user => ({...parseUser(user)})));
-                return dispatch(updateUsers(userList));
-            })
-            .catch((response) => {
-                dispatch(serverLoginError);
-                throw new Error(response);
-            });
-    };
-
 export const updateUsers = (userList) => ({
     type: actionTypes.UPDATE_USERS,
     payload: userList
@@ -134,3 +115,23 @@ export const serverError = () => ({
     type: actionTypes.SHARED_API_ERROR,
     payload: 'Server error, please try again later.'
 });
+
+export const fetchAllUsersFactory = (dependencies) =>
+    ({data}) =>
+        (dispatch) => {
+            const headers = {
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${data}`
+            };
+            dependencies.makeGetRequest(API_USER_ALL, {headers})
+                .then((response) => {
+                    const userList = List(response.data.map(user => ({...parseUser(user)})));
+                    return dispatch(updateUsers(userList));
+                })
+                .catch((response) => {
+                    dispatch(serverLoginError);
+                    throw new Error(response);
+                });
+        };
+
+export const fetchAllUsers = fetchAllUsersFactory({ makeGetRequest: axios.get });
