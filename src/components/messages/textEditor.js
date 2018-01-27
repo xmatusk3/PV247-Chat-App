@@ -77,7 +77,7 @@ class TextEditor extends React.Component {
         this.updateEditorState = editorState => this.setState({ editorState });
     }
 
-    onSubmit = (state) => {
+    onSubmit = ({uploadFile}) => {
         const inlineStyles = exporter(this.state.editorState);
         const parsedContent = {message: JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent())), inlineStyles: inlineStyles};
 
@@ -85,7 +85,7 @@ class TextEditor extends React.Component {
             this.props.editChatMessage(parsedContent, this.props.messageId, this.props.messageAttachment);
             this.props.closeMessageCallback();
         } else {
-            this.sendMessage(state.uploadFile, parsedContent);
+            this.sendMessage(uploadFile, parsedContent);
             this.clearEditor();
         }
     };
@@ -185,7 +185,7 @@ class TextEditor extends React.Component {
                             suggestions={this.state.suggestions}
                             onAddMention={() => {}}
                         />
-                        {!this.props.messageId && <Field withRef={true} ref = {(input) => {this.fileInput = input; }} component={ FileField } name='uploadFile' multiple={true}/>}
+                        {!this.props.messageId && <Field component={ FileField } name='uploadFile' multiple={true}/>}
                     </div>
 
                 </div>

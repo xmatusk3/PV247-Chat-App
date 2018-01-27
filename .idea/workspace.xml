@@ -10,8 +10,6 @@
       <change beforePath="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" afterPath="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
       <change beforePath="$PROJECT_DIR$/src/components/messages/fileField.js" afterPath="$PROJECT_DIR$/src/components/messages/fileField.js" />
       <change beforePath="$PROJECT_DIR$/src/components/messages/textEditor.js" afterPath="$PROJECT_DIR$/src/components/messages/textEditor.js" />
-      <change beforePath="$PROJECT_DIR$/src/utils/utilFunctions.test.js" afterPath="$PROJECT_DIR$/src/utils/utilFunctions.test.js" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="actionCreators.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2278">
-              <caret line="146" column="55" lean-forward="false" selection-start-line="146" selection-start-column="55" selection-end-line="146" selection-end-column="55" />
+            <state relative-caret-position="410">
+              <caret line="133" column="19" lean-forward="true" selection-start-line="132" selection-start-column="46" selection-end-line="133" selection-end-column="19" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -40,21 +38,9 @@
       <file leaf-file-name="actionCreators.test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="9" column="78" lean-forward="false" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="messageFormNameGenerator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/messageFormNameGenerator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -62,8 +48,8 @@
       <file leaf-file-name="utilFunctions.test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/utilFunctions.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="355">
+              <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -93,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="textEditor.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="textEditor.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/messages/textEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="198" column="0" lean-forward="true" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+            <state relative-caret-position="389">
+              <caret line="83" column="35" lean-forward="true" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -118,8 +104,8 @@
       <file leaf-file-name="fileField.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/messages/fileField.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+            <state relative-caret-position="321">
+              <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -236,13 +222,13 @@
         <option value="$PROJECT_DIR$/src/components/Layout.jsx" />
         <option value="$PROJECT_DIR$/src/components/channels/channelList.jsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/src/components/messages/fileField.js" />
         <option value="$PROJECT_DIR$/src/actions/authentication/actionCreatorsTests.js" />
-        <option value="$PROJECT_DIR$/src/actions/authentication/actionCreators.js" />
-        <option value="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
-        <option value="$PROJECT_DIR$/src/utils/utilFunctions.test.js" />
         <option value="$PROJECT_DIR$/src/utils/messageFormNameGenerator.js" />
+        <option value="$PROJECT_DIR$/src/utils/utilFunctions.test.js" />
         <option value="$PROJECT_DIR$/src/components/messages/textEditor.js" />
+        <option value="$PROJECT_DIR$/src/components/messages/fileField.js" />
+        <option value="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
+        <option value="$PROJECT_DIR$/src/actions/authentication/actionCreators.js" />
       </list>
     </option>
   </component>
@@ -491,7 +477,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.Util function tests.messageFormNameGenerator util function test">
+  <component name="RunManager" selected="Jest.authentication thunk tests.dispatches actions in correct order">
     <configuration name="Tests" type="JavaScriptTestRunnerJest" factoryName="Jest">
       <config-file value="Tests" />
       <node-interpreter value="project" />
@@ -524,15 +510,16 @@
         <test-name value="messageFormNameGenerator util function test" />
       </test-names>
     </configuration>
-    <configuration name="kokotiny" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="authentication thunk tests.dispatches actions in correct order" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/actions/authentication/actionCreatorsTests.js" />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
       <test-names>
-        <test-name value="kokotiny" />
+        <test-name value="authentication thunk tests" />
+        <test-name value="dispatches actions in correct order" />
       </test-names>
     </configuration>
     <configuration name="kokotiny.dispatches actions in correct order (1)" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
@@ -561,21 +548,21 @@
     </configuration>
     <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Jest.Tests" />
-      <item index="1" class="java.lang.String" itemvalue="Jest.kokotiny" />
-      <item index="2" class="java.lang.String" itemvalue="Jest.kokotiny.dispatches actions in correct order" />
-      <item index="3" class="java.lang.String" itemvalue="Jest.Util function tests.enrichHTML util function test" />
-      <item index="4" class="java.lang.String" itemvalue="Jest.kokotiny.dispatches actions in correct order (1)" />
-      <item index="5" class="java.lang.String" itemvalue="Karma.Run Karma tests" />
-      <item index="6" class="java.lang.String" itemvalue="Mocha.Run Mocha tests" />
-      <item index="7" class="java.lang.String" itemvalue="Jest.Util function tests.messageFormNameGenerator util function test" />
+      <item index="1" class="java.lang.String" itemvalue="Jest.kokotiny.dispatches actions in correct order" />
+      <item index="2" class="java.lang.String" itemvalue="Jest.Util function tests.enrichHTML util function test" />
+      <item index="3" class="java.lang.String" itemvalue="Jest.kokotiny.dispatches actions in correct order (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Karma.Run Karma tests" />
+      <item index="5" class="java.lang.String" itemvalue="Mocha.Run Mocha tests" />
+      <item index="6" class="java.lang.String" itemvalue="Jest.Util function tests.messageFormNameGenerator util function test" />
+      <item index="7" class="java.lang.String" itemvalue="Jest.authentication thunk tests.dispatches actions in correct order" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Jest.Util function tests.messageFormNameGenerator util function test" />
-        <item index="1" class="java.lang.String" itemvalue="Jest.kokotiny.dispatches actions in correct order (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Jest.kokotiny.dispatches actions in correct order" />
-        <item index="3" class="java.lang.String" itemvalue="Jest.Util function tests.enrichHTML util function test" />
-        <item index="4" class="java.lang.String" itemvalue="Jest.kokotiny" />
+        <item index="0" class="java.lang.String" itemvalue="Jest.authentication thunk tests.dispatches actions in correct order" />
+        <item index="1" class="java.lang.String" itemvalue="Jest.Util function tests.messageFormNameGenerator util function test" />
+        <item index="2" class="java.lang.String" itemvalue="Jest.kokotiny.dispatches actions in correct order (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Jest.kokotiny.dispatches actions in correct order" />
+        <item index="4" class="java.lang.String" itemvalue="Jest.Util function tests.enrichHTML util function test" />
       </list>
     </recent_temporary>
   </component>
@@ -642,7 +629,7 @@
       <workItem from="1516810863213" duration="9688000" />
       <workItem from="1516827428801" duration="583000" />
       <workItem from="1516900387309" duration="963000" />
-      <workItem from="1517038965340" duration="3177000" />
+      <workItem from="1517038965340" duration="3601000" />
     </task>
     <task id="LOCAL-00001" summary="add basic messaging functions">
       <created>1512926072371</created>
@@ -689,24 +676,25 @@
     <history-entry file="Util_function_tests_messageFormNameGenerator_util_function_test - 2018.01.27 at 09h 39m 22s.xml">
       <configuration name="Util function tests.messageFormNameGenerator util function test" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="kokotiny_dispatches_actions_in_correct_order_(1) - 2018.01.24 at 22h 06m 41s.xml">
-      <configuration name="kokotiny.dispatches actions in correct order (1)" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="authentication_thunk_tests_dispatches_actions_in_correct_order - 2018.01.27 at 10h 03m 25s.xml">
+      <configuration name="authentication thunk tests.dispatches actions in correct order" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="506185000" />
+    <option name="totallyTimeSpent" value="506609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30104166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30104166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35163674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35163674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31995776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31995776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -759,14 +747,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js</url>
-          <line>147</line>
+          <line>128</line>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/utils/messageFormNameGenerator.js</url>
-          <line>10</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="29" />
@@ -1040,35 +1022,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/messages/fileField.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/channels/actionCreatorsTests.js" />
-    <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2278">
-          <caret line="146" column="55" lean-forward="false" selection-start-line="146" selection-start-column="55" selection-end-line="146" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1087,23 +1041,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/utilFunctions.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/messageFormNameGenerator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1115,10 +1057,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/utilFunctions.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/messages/textEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="198" column="0" lean-forward="true" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+        <state relative-caret-position="389">
+          <caret line="83" column="35" lean-forward="true" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/messages/fileField.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="78" lean-forward="false" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="133" column="19" lean-forward="true" selection-start-line="132" selection-start-column="46" selection-end-line="133" selection-end-column="19" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

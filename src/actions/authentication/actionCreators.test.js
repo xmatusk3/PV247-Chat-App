@@ -4,15 +4,10 @@ import {
 } from './actionCreators';
 import { List } from 'immutable';
 
-describe('kokotiny', () => {
+describe('authentication thunk tests', () => {
     test('dispatches actions in correct order', async done => {
         const dispatch = jest.fn();
         const makeGetRequest = jest.fn(() => Promise.resolve({data: List()}));
-        // const getState = () => ({
-        //     shared: {
-        //         token: 'pretty please'
-        //     }
-        // });
 
         const expectedList = List();
         const fetchAllUsers = fetchAllUsersFactory({makeGetRequest});

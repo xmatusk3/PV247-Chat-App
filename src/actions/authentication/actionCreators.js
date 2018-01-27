@@ -72,25 +72,6 @@ export const saveLoggedUser = (details, email) => ({
     payload: {...details, email: email}
 });
 
-/*const fetchAllUsers = ({data}) =>
-    (dispatch) => {
-        const headers = {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${data}`
-        };
-        const request = axios.get(API_USER_ALL, {headers});
-
-        return request
-            .then((response) => {
-                const userList = List(response.data.map(user => ({...parseUser(user)})));
-                return dispatch(updateUsers(userList));
-            })
-            .catch((response) => {
-                dispatch(serverLoginError);
-                throw new Error(response);
-            });
-    };*/
-
 export const updateUsers = (userList) => ({
     type: actionTypes.UPDATE_USERS,
     payload: userList
