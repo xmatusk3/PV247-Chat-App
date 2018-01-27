@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="44326bda-fc14-4cf4-8da2-3b0bc5c1090d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/actions/authentication/actionCreators.js" afterPath="$PROJECT_DIR$/src/actions/authentication/actionCreators.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" afterPath="$PROJECT_DIR$/src/actions/authentication/actionCreators.test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-491">
-              <caret line="62" column="43" lean-forward="true" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+              <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -624,7 +622,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="516013000" />
+    <option name="totallyTimeSpent" value="516326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1034,7 +1032,7 @@
     <entry file="file://$PROJECT_DIR$/src/actions/authentication/actionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-491">
-          <caret line="62" column="43" lean-forward="true" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+          <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
