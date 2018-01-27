@@ -5,7 +5,7 @@ import {
 import { List } from 'immutable';
 
 describe('authentication thunk tests', () => {
-    test('dispatches actions in correct order', async done => {
+    test('fetchAllUsers dispatches actions in correct order', async done => {
         const dispatch = jest.fn();
         const makeGetRequest = jest.fn(() => Promise.resolve({data: List()}));
 
