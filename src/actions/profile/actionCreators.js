@@ -18,104 +18,108 @@ export const updateProfileDetails = (details) => ({
     payload: details,
 });
 
-export const uploadUserAvatar = (file) =>
-     (dispatch, getState) => {
-         if(!file){
-             throw new Error('Avatar type is not supported or the system could not load the file.');
-         }
+export const uploadUserAvatarFactory = (dependencies) =>
+    (file) =>
+         (dispatch, getState) => {
+             if(!file){
+                 throw new Error('Avatar type is not supported or the system could not load the file.');
+             }
 
-         dispatch(startUploadingProfileAvatar());
+             dispatch(startUploadingProfileAvatar());
 
-         let formData = new FormData();
-         formData.append('Files', file);
+             let formData = new FormData();
+             formData.append('Files', file);
 
-         const request = fetchAuthToken(getState().users.user.email).then((token) => {
-             const headers = {
-                 'Accept': 'application/json',
-                 'Authorization': `Bearer ${token.data}`,
-                 'Content-Type': 'multipart/form-data'
-             };
+             const request = fetchAuthToken(getState().users.user.email).then((token) => {
+                 const headers = {
+                     'Accept': 'application/json',
+                     'Authorization': `Bearer ${token.data}`,
+                     'Content-Type': 'multipart/form-data'
+                 };
 
-             return axios.post(API_FILE_URI, formData, { headers });
-         });
-
-         return request
-             .then(({data}) => {
-                 if(!data || !data[0] || !data[0].id){
-                     throw new Error('Avatar uploaded to the server, however, server did not store the file.');
-                 }
-
-                 dispatch(fetchUserAvatar(data[0].id)).then(() => dispatch(uploadUserDetails({avatarId: data[0].id})));
-             })
-             .catch(() => {
-                 dispatch(serverError);
+                 return dependencies.makePostRequest(API_FILE_URI, formData, { headers });
              });
-     };
 
-export const uploadUserDetails = (details) =>
-    (dispatch, getState) => {
-        dispatch(startSubmit('DetailsForm'));
+             return request
+                 .then(({data}) => {
+                     if(!data || !data[0] || !data[0].id){
+                         throw new Error('Avatar uploaded to the server, however, server did not store the file.');
+                     }
 
-        const newCustomData = JSON.stringify({
-            ...getState().users.user,
-            ...details,
-            email: undefined,
-        });
+                     dispatch(dependencies.fetchUserAvatar(data[0].id))
+                         .then(() => dispatch(dependencies.uploadUserDetails({avatarId: data[0].id})));
+                 })
+                 .catch(() => {
+                     dispatch(serverError);
+                 });
+         };
 
-        const stringified = JSON.stringify(newCustomData);
+export const uploadUserDetailsFactory = (dependencies) =>
+    (details) =>
+        (dispatch, getState) => {
+            dispatch(startSubmit('DetailsForm'));
 
-        const userEmail = getState().users.user.email;
-        const requestUri = createApiUserUri(userEmail);
-        const request = fetchAuthToken(userEmail).then((token) => {
-            const headers = {
-                'Accept': 'application/json',
-                'Authorization': `Bearer ${token.data}`,
-                'Content-Type': 'application/json'
-            };
+            const newCustomData = JSON.stringify({
+                ...getState().users.user,
+                ...details,
+                email: undefined,
+            });
 
-            return axios.put(requestUri, stringified, { headers });
-        });
+            const stringified = JSON.stringify(newCustomData);
 
-        return request
-            .then(({data}) => {
-                const receivedDetails = {
-                    ...JSON.parse(data.customData || '{}'),
-                    email: data.email,
+            const userEmail = getState().users.user.email;
+            const requestUri = createApiUserUri(userEmail);
+            const request = fetchAuthToken(userEmail).then((token) => {
+                const headers = {
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token.data}`,
+                    'Content-Type': 'application/json'
                 };
-                dispatch(updateProfileDetails(receivedDetails));
-                dispatch(stopSubmit('DetailsForm'));
-            })
-            .catch(() => {
-                dispatch(serverError);
-                dispatch(stopSubmit('DetailsForm'));
+
+                return dependencies.makePutRequest(requestUri, stringified, { headers });
             });
-    };
 
-export const fetchUserAvatar = (avatarId) =>
-    (dispatch, getState) => {
-        dispatch(startFetchingProfileAvatar());
+            return request
+                .then(({data}) => {
+                    const receivedDetails = {
+                        ...JSON.parse(data.customData || '{}'),
+                        email: data.email,
+                    };
+                    dispatch(updateProfileDetails(receivedDetails));
+                    dispatch(stopSubmit('DetailsForm'));
+                })
+                .catch(() => {
+                    dispatch(serverError);
+                    dispatch(stopSubmit('DetailsForm'));
+                });
+        };
 
-        const requestUri = createApiFileUri(avatarId);
-        const request = fetchAuthToken(getState().users.user.email).then((token) => {
-            const headers = {
-                'Accept': 'application/json',
-                'Authorization': `Bearer ${token.data}`,
-                'Content-Type': 'application/json'
-            };
+export const fetchUserAvatarFactory = (dependencies) =>
+    (avatarId) =>
+        (dispatch, getState) => {
+            dispatch(startFetchingProfileAvatar());
 
-            return axios.get(requestUri, { headers });
-        });
+            const requestUri = createApiFileUri(avatarId);
+            const request = fetchAuthToken(getState().users.user.email).then((token) => {
+                const headers = {
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token.data}`,
+                    'Content-Type': 'application/json'
+                };
 
-        return request
-            .then(({data}) => {
-                dispatch(updateProfileAvatar(data));
-            })
-            .catch(() => {
-                dispatch(serverError);
+                return dependencies.makeGetRequest(requestUri, { headers });
             });
-    };
 
-export const fetchUserDetails = () =>
+            return request
+                .then(({data}) => {
+                    dispatch(updateProfileAvatar(data));
+                })
+                .catch(() => {
+                    dispatch(serverError);
+                });
+        };
+
+export const fetchUserDetailsFactory = (dependencies) => () =>
     (dispatch, getState) => {
         dispatch(startFetchingProfileDetails());
         dispatch(startFetchingProfileAvatar());
@@ -129,14 +133,14 @@ export const fetchUserDetails = () =>
                 'Content-Type': 'application/json'
             };
 
-            return axios.get(requestUri, { headers });
+            return dependencies.makeGetRequest(requestUri, { headers });
         });
 
         return request
             .then(({data}) => {
                 const details = getUserData(data).customData;
                 dispatch(updateProfileDetails(details));
-                details.avatarId ? dispatch(fetchUserAvatar(details.avatarId)) : dispatch(updateProfileAvatar(null));
+                details.avatarId ? dispatch(dependencies.fetchUserAvatar(details.avatarId)) : dispatch(updateProfileAvatar(null));
             })
             .catch(() => {
                 dispatch(serverError);
@@ -166,3 +170,13 @@ export const startFetchingProfileAvatar = () => ({
 export const startUploadingProfileAvatar = () => ({
     type: actionTypes.PROFILE_AVATAR_UPLOADING_STARTED,
 });
+
+export const uploadUserDetails = uploadUserDetailsFactory({ makePutRequest: axios.put });
+export const fetchUserAvatar = fetchUserAvatarFactory({ makeGetRequest: axios.get });
+export const uploadUserAvatar = uploadUserAvatarFactory({
+    makePostRequest: axios.post,
+    uploadUserDetails: uploadUserDetails,
+    fetchUserAvatar: fetchUserAvatar });
+export const fetchUserDetails = fetchUserDetailsFactory({
+    makeGetRequest: axios.get,
+    fetchUserAvatar: fetchUserAvatar });

@@ -154,9 +154,7 @@ export const attachFileToMessageFactory = (dependencies) =>
                     if(!data || !data[0] || !data[0].id){
                         throw new Error('Attachment uploaded to the server, however, server did not store the file.');
                     }
-                    //dispatch(fetchAttachmentUri(data[0].id, data[0].name, content));
                     dispatch(dependencies.fetchAttachmentUri(data[0].id, data[0].name, content));
-                    //dispatch({id: data[0].id, name: data[0].name, content});
                 })
                 .catch(() => dispatch(serverError()));
         };
